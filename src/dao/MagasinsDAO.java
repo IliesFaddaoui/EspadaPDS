@@ -14,7 +14,7 @@ public class MagasinsDAO extends DAO<Magasins>{
 	public boolean create(Magasins obj) {
 
 		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("INSERT INTO Magasins(idMagasins, nom, superficieM, idEmplacement) values ("+obj.getIdMagasin()+",\""+obj.getNom()+"\","+obj.getSuperficieM()+","+obj.getIdEmplacement()+" )");	
+			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Magasins(idMagasins,nom, superficieM,idEmplacement) values ("+obj.getIdMagasin()+",\""+obj.getNom()+"\","+obj.getSuperficieM()+","+obj.getIdEmplacement()+")");	
 			return true;
 			} catch (SQLException e) {
 				e.printStackTrace();		
