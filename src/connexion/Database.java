@@ -6,9 +6,9 @@ import java.sql.Connection;
 
 public class Database {
 	private static final String DRIVER_NAME ="com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost/PDS";
+	private static final String URL = "jdbc:mysql://localhost/pds";
 	private static final String USER = "root";
-	private static final String PASSWORD = "ilies9495";
+	private static final String PASSWORD = "root";
 	
 	
 	static {
