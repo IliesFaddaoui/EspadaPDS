@@ -17,11 +17,11 @@ public class Test {
 		//m1Dao.create(m1);
 		//System.out.print(m1Dao.find(2).getNom());
 		EmplacementsDAO e1DAO = new EmplacementsDAO(connexion);
-		Emplacements e1 = new Emplacements(1,"Bas-gauche",150, "A", 82);
-		e1DAO.create(e1);
+		//Emplacements e1 = new Emplacements(1,"Bas-gauche",150, "A", 82);
+		//e1DAO.create(e1);
 		System.out.println("ancienne loca: "+e1DAO.find(1).getLocalisation());
-		e1.setLocalisation("Haut-droite");
-		e1DAO.update(e1);
+		//e1.setLocalisation("Haut-droite");
+		//e1DAO.update(e1);
 		System.out.println("nouvelle loca: "+ e1DAO.find(1).getLocalisation());
 
 	}
