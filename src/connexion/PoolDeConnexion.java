@@ -26,7 +26,7 @@ public class PoolDeConnexion implements Pool{
      * @param Poolsize
      */
     public PoolDeConnexion(final int Poolsize){
-        for (int i=1; i<Poolsize; i++){
+        for (int i=0; i<Poolsize; i++){
             try{
                 ListDispo.add(this.newConnection());
             }catch (SQLException e){
@@ -45,6 +45,7 @@ public class PoolDeConnexion implements Pool{
             return null;
         }
         Connection c =ListDispo.remove(ListDispo.size() - 1);
+        System.out.println("Connection done");
         ListUsed.add(c);
         return c;
 

@@ -11,8 +11,14 @@ import pojo.Magasins;
  */
 public class MagasinsDAO extends DAO<Magasins>{
 
+	private Connection con;
 	public MagasinsDAO(Connection conn){
 		super(conn);
+		this.con=conn;
+	}
+
+	public Connection getConnection(){
+		return this.con;
 	}
 	public boolean create(Magasins obj) {
 
