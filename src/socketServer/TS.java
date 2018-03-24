@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class TS {
-	
+	// JSON vers String
 	JSONParser parser;
 	private String filename;
 	

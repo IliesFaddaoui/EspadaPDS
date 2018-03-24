@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 class Server{  
 	public static void main(String args[])throws Exception{   
+		//Initiation de la socket sur le port 5000
 		Socket s;
 		ServerSocket serv;
 		try {

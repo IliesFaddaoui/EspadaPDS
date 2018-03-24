@@ -1,7 +1,7 @@
 package socketServer;
 
 import java.sql.Date;
-
+// Adapter avec DAO Emplacement
 public class ClientDAO {
 	
 	private String nom;

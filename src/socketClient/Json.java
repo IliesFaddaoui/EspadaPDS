@@ -11,7 +11,8 @@ public class Json {
 	public Json(String filename) {
 		this.filename = filename;
 	}
-	//
+	// Class non utilisée , sera supprimé pendant reunion PDS
+	
     public Client toto() {
     	parser = new JSONParser();
     	Client cl;

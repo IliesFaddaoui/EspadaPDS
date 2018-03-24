@@ -23,7 +23,7 @@ import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
+// Création d'une IHM test ,  à supprimer
 public class Fenetre extends JFrame implements MouseListener {
 			  /**
 	 * 
@@ -75,10 +75,15 @@ public class Fenetre extends JFrame implements MouseListener {
 				String txt = this.jtf.getText();
 				String txt2 = this.jtf2.getText();
 				Client p = new Client(txt, txt2);
+				
+				//Récupération des champs textes de l'IHM. 
+				//A modifier selon TextFiled de notre IHM
+				// Puis conversion sous le format JSON
 				String json = gson.toJson(p);
 				System.out.print(json);
 				
-			
+				// Création du fichier 
+				// avec le texte en format JSON
 				File resultFile = new File("Client.json");
 			
 				try {
@@ -92,10 +97,12 @@ public class Fenetre extends JFrame implements MouseListener {
 					System.out.println("Erreur");
 				}
 				
-		//		Socket s;
+		
 				try {
 				
-				
+				// Envoi du fichier généré par l'IHM vers le serveur
+				// Ici 127.0.0.1 correspond à l'adresse du serveur a modifier avec adresse VM
+				// 5000 correspond au numéro de port utilisé par le serveur
 				Socket s = new Socket("127.0.0.1",5000);
 				FileInputStream inf=new FileInputStream(resultFile);
 				ObjectOutputStream out=new ObjectOutputStream(s.getOutputStream());               

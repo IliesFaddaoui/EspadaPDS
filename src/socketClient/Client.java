@@ -1,4 +1,11 @@
+package socketClient;
+
 import java.sql.Date;
+
+
+// A adapter avec EmplacementDAO 
+
+
 
 public class Client {
 	
