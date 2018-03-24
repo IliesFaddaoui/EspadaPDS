@@ -4,7 +4,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * @author ilies
+ * DAO class for emplacement
+ */
 public class EmplacementsDAO extends DAO<Emplacements> {
+
     public EmplacementsDAO(Connection conn){
         super(conn);
     }

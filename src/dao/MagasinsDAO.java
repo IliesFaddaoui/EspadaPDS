@@ -5,7 +5,10 @@ import java.sql.SQLException;
 
 import pojo.Magasins;
 
-
+/**
+ * @author ilies
+ * DAO class for magasin
+ */
 public class MagasinsDAO extends DAO<Magasins>{
 
 	public MagasinsDAO(Connection conn){

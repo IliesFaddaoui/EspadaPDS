@@ -1,27 +1,77 @@
 package connexion;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * @author ilies
+ * @version 1.2
+ * This class set the connection pool, and define methods.
+ */
 public class PoolDeConnexion implements Pool{
 
-    public PoolDeConnexion(int taille){
-        private Connection[] tabDispo = new Connection[taille];
-        private Connection[] tabOccupe = new Connection[taille];
-        for (int i=1; i<taille; i++){
-            tabDispo[i]= new Connection;
+    /**
+     * This list contains all the available Connection in the pool
+     */
+    private List<Connection> ListDispo = new ArrayList<Connection>();
+    /**
+     * This list contains all the used Connection in the pool
+     */
+    private List<Connection> ListUsed = new ArrayList<Connection>();
+
+    /**
+     * Class constructor, which create the amount of connection asked for the pool
+     * @param Poolsize
+     */
+    public PoolDeConnexion(final int Poolsize){
+        for (int i=1; i<Poolsize; i++){
+            try{
+                ListDispo.add(this.newConnection());
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
         }
     }
+
+    /**
+     * public method which return a connection from the pool only if
+     * @return Connection
+     */
     public Connection getConnection() {
-        return null;
+        if (ListDispo.size() == 0) {
+            System.out.println("No connection available, try later");
+            return null;
+        }
+        Connection c =ListDispo.remove(ListDispo.size() - 1);
+        ListUsed.add(c);
+        return c;
+
     }
 
-    @Override
-    public void releaseConnection() {
-
+    /**
+     * This method releases a connection on the pool
+     * @param c
+     * @return boolean
+     */
+    public boolean releaseConnection(Connection c) {
+            ListUsed.remove(c);
+            ListDispo.add(c);
+            return true;
     }
 
-    @Override
-    public void initialiserPool() {
-
+    /**
+     * this method instances a new connection, using the database class
+     * @return Connection
+     * @throws SQLException
+     */
+    private Connection newConnection() throws SQLException {
+        return Database.getConnection();
     }
 }
+
+
+
+
+

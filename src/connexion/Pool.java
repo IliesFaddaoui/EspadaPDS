@@ -2,9 +2,12 @@ package connexion;
 
 import java.sql.Connection;
 
+/**
+ * @author ilies
+ * this interface define the methods needed in Pool classes
+ */
 public interface Pool {
     public Connection getConnection();
-    public void releaseConnection();
-    public void initialiserPool();
+    public boolean releaseConnection(Connection c);
 
 }

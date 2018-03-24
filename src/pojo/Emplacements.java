@@ -1,5 +1,9 @@
 package pojo;
 
+/**
+ * @author ilies
+ * Pojo class for Emplacement
+ */
 public class Emplacements {
 
     private int idEmplacement=0;
