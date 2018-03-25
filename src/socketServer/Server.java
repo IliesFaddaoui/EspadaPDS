@@ -19,16 +19,16 @@ class Server{
 			serv = new ServerSocket(5000);
 			s = serv.accept();
 			ObjectInputStream in = new ObjectInputStream(s.getInputStream());
-			FileOutputStream fout = new FileOutputStream(new File("Client_received.json"));
+			FileOutputStream out = new FileOutputStream(new File("Client_received.json"));
 			byte buf[] = new byte[1024];
 			int n;
 			while ((n = in.read(buf)) != -1) {
-				fout.write(buf, 0, n);
+				out.write(buf, 0, n);
 			}
-			fout.close();
+			out.close();
 			s.close();
 		} catch (Exception e) {}
 	}
-		TS js = new TS("Client_received.json");
-		ClientDAO cl = js.toto();
+		/*TS js = new TS("Client_received.json");
+		ClientDAO cl = js.toto();*/
 }

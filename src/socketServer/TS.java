@@ -2,12 +2,9 @@ package socketServer;
 
 import java.io.FileReader;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 public class TS {
 	// JSON vers String
-	JSONParser parser;
+	/*JSONParser parser;
 	private String filename;
 	
 	public TS(String filename) {
@@ -36,5 +33,5 @@ public class TS {
     		e.printStackTrace();
     		return null;
     	}
-    }
+    }*/
 }

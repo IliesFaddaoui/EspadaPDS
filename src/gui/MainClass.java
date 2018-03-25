@@ -6,7 +6,7 @@ package gui;
  */
 public class MainClass {
 	/**
-	 * Main method which create the main gui window
+	 * ViewMain method which create the main gui window
 	 * 
 	 * @param args
 	 */
