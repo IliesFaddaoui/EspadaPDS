@@ -1,5 +1,8 @@
 package controler;
 
+import com.google.gson.Gson;
+import pojo.Emplacements;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -13,8 +16,13 @@ public class MainServeur {
         try {
             serv = new ServerSocket(5000);
             s = serv.accept();
+            Gson gson = new Gson();
             ObjectInputStream in = new ObjectInputStream(s.getInputStream());
             FileOutputStream out = new FileOutputStream(new File("Client_received.json"));
+            String json = gson.toJson(out);
+            Emplacements e1 = gson.fromJson(json, Emplacements.class);
+            System.out.println("loca: "+ e1.getLocalisation() + " id: "+ e1.getIdEmplacement());
+
             byte buf[] = new byte[1024];
             int n;
             while ((n = in.read(buf)) != -1) {
