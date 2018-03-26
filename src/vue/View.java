@@ -13,7 +13,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 
-import static sun.plugin2.util.PojoUtil.toJson;
+//import static sun.plugin2.util.PojoUtil.toJson;
 
 public class View extends JFrame implements MouseListener {
 
@@ -107,20 +107,23 @@ public class View extends JFrame implements MouseListener {
         try {
             Socket s = new Socket(InetAddress.getLocalHost(),5000);
             FileInputStream inf=new FileInputStream(resultFile);
-            ObjectOutputStream out=new ObjectOutputStream(s.getOutputStream());
-            byte buf[] = new byte[1024];
-            int n;
-            while((n=inf.read(buf))!=-1){
-                out.write(buf,0,n);
-            }
-            inf.close();
-            out.close();
-            s.close();
+            PrintStream out=new PrintStream(s.getOutputStream());
+            String thisLine = null;
+            
+            try {
+            	BufferedReader br = new BufferedReader(new FileReader("Emplacement.json"));
+			       while ((thisLine = br.readLine()) != null) { // while loop begins here
+			         out.println(thisLine);
+			       } // end while 
+			     } // end try
+            	catch (IOException e) {
+			       System.err.println("Error: " + e);
+			     }
+    	}
+		catch (Exception e) {
+			e.printStackTrace();    
         }
-        catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
+     
     }
 
     @Override
