@@ -2,7 +2,6 @@ package controler;
 
 import com.google.gson.Gson;
 import jdk.nashorn.internal.parser.JSONParser;
-import org.json.simple.JSONObject;
 import pojo.Emplacements;
 
 import java.io.BufferedReader;

@@ -1,8 +1,6 @@
 package vue;
 
 import com.google.gson.*;
-import netscape.javascript.JSObject;
-import org.json.simple.JSONObject;
 import pojo.Emplacements;
 import pojo.Magasins;
 
@@ -100,14 +98,13 @@ public class View extends JFrame {
 
 
             String json = gson.toJson(p);
-            JsonObject j1 = new JsonObject();
-            j1.add("idEmplacement",);
-            System.out.print(j1);
+            System.out.print(json);
             File resultFile = new File("Emplacement.json");
             try {
                 Socket s = new Socket(InetAddress.getLocalHost(),5000);
                 PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
                 w1.write(json);
+                w1.flush();
                 BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
 
 

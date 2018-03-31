@@ -1,5 +1,7 @@
 package controler;
 
+import connexion.PoolDeConnexion;
+
 import javax.annotation.processing.Processor;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -21,6 +23,7 @@ public class Server {
         } catch (IOException e1){
             e1.printStackTrace();
         }
+
     }
 
     public void open(){
@@ -28,10 +31,11 @@ public class Server {
         Thread t = new Thread(new Runnable() {
 
             public void run() {
+                PoolDeConnexion con = new PoolDeConnexion(3);
                 while (isRunning){
                     try{
                         Socket s1 = server.accept();
-                        Thread t = new Thread(new ServerProcessor(s1));
+                        Thread t = new Thread(new ServerProcessor(s1, con));
                         t.start();
                     }catch(IOException e){
                         e.printStackTrace();
