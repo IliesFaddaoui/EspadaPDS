@@ -34,7 +34,7 @@ public class View extends JFrame {
     private JLabel label4 = new JLabel ("categorie:");
     private JLabel label5 = new JLabel ("taux occupation:");
     public View(){
-        this.setTitle("Nouveau client");
+        this.setTitle("PhyGit Mall v1: 1.2");
         this.setSize(800, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -42,7 +42,7 @@ public class View extends JFrame {
         container.setLayout(new GridLayout(2,10));
 
         JPanel top = new JPanel();
-        JPanel bot = new JPanel();
+        JPanel bottom = new JPanel();
         Font police = new Font("Arial", Font.BOLD, 14);
         jtf.setFont(police);
         jtf.setPreferredSize(new Dimension(150, 30));
@@ -59,8 +59,10 @@ public class View extends JFrame {
         jtf5.setFont(police);
         jtf5.setPreferredSize(new Dimension(150, 30));
         jtf5.setForeground(Color.BLUE);
-        JButton button = new JButton("Valider");
-        button.addActionListener(new BoutonAjout());
+        JButton buttonAdd = new JButton("Valider");
+        JButton buttonDisplay  = new JButton("Afficher Emplacement");
+        buttonAdd.addActionListener(new BoutonAjout());
+        buttonDisplay.addActionListener(new BoutonAfficher());
         top.add(label);
         top.add(jtf);
         top.add(label2);
@@ -71,9 +73,10 @@ public class View extends JFrame {
         top.add(jtf4);
         top.add(label5);
         top.add(jtf5);
-        top.add(button);
-        container.add(top, BorderLayout.WEST);
-        container.add(bot, BorderLayout.EAST);
+        top.add(buttonAdd);
+        bottom.add(buttonDisplay);
+        container.add(top, BorderLayout.NORTH);
+        container.add(bottom, BorderLayout.SOUTH);
 
 
 
@@ -123,6 +126,13 @@ public class View extends JFrame {
             catch (Exception e4) {
                 e4.printStackTrace();
             }
+        }
+    }
+
+    class BoutonAfficher implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+
+
         }
     }
     private String read(BufferedInputStream reader) throws IOException{
