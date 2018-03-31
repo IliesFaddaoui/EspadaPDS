@@ -97,6 +97,7 @@ public class View extends JFrame {
             Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
 
 
+
             String json = gson.toJson(p);
             System.out.print(json);
             File resultFile = new File("Emplacement.json");
@@ -106,6 +107,16 @@ public class View extends JFrame {
                 w1.write(json);
                 w1.flush();
                 BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+                String retourServer = read(b2);
+                System.out.println(retourServer);
+                JFrame fenResp = new JFrame();
+                JPanel containerResp = new JPanel();
+                fenResp.setSize(300,300);
+                fenResp.setLocationRelativeTo(null);
+                JLabel jlabResp = new JLabel(retourServer);
+                containerResp.add(jlabResp, BorderLayout.CENTER);
+                fenResp.setContentPane(containerResp);
+                fenResp.setVisible(true);
 
 
             }
@@ -113,6 +124,21 @@ public class View extends JFrame {
                 e4.printStackTrace();
             }
         }
+    }
+    private String read(BufferedInputStream reader) throws IOException{
+
+        String response = "";
+
+        int stream;
+
+        byte[] b = new byte[4096];
+
+        stream = reader.read(b);
+
+        response = new String(b, 0, stream);
+
+        return response;
+
     }
 
 }

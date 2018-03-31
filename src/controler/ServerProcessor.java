@@ -37,11 +37,24 @@ public class ServerProcessor implements Runnable {
                 System.out.println("objet crée : ");
                 System.out.println("idEmplacement: "+ e1.getIdEmplacement() + "localisation" + e1.getLocalisation());
                 EmplacementsDAO d = new EmplacementsDAO(connection.getConnection());
-                d.create(e1);
-                System.out.println("Insertion par le dao effectué, vérification en cours...");
-                Emplacements e2 = d.find(e1.getIdEmplacement());
-                System.out.println("objet créé trouvé ! idEmplacement= "+ e2.getIdEmplacement() + " localisation: " + e2.getLocalisation());
+                Emplacements eCheck = d.find(e1.getIdEmplacement());
+                if(eCheck == null)
+                {
+                    d.create(e1);
+                    System.out.println("Insertion par le dao effectué, vérification en cours...");
+                    Emplacements e2 = d.find(e1.getIdEmplacement());
+                    System.out.println("objet créé trouvé ! idEmplacement= "+ e2.getIdEmplacement() + " localisation: " + e2.getLocalisation());
+                    String reponseServ = "Nouvel emplacement numéro" + e1.getIdEmplacement()+ " bien ajouté au référentiel, merci !";
+                    writer.write(reponseServ);
+                    writer.flush();
 
+                }
+                else
+                {
+                    String reponseServ = "Impossible de créer l'objet en question, l'idEmplacement "+ e1.getIdEmplacement() +" est déjà utilisé par un emplacement";
+                    writer.write(reponseServ);
+                    writer.flush();
+                }
 
             }catch (IOException e){
                 e.printStackTrace();
