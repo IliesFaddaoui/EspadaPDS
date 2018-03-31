@@ -1,21 +1,27 @@
 package vue;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
+import netscape.javascript.JSObject;
+import org.json.simple.JSONObject;
 import pojo.Emplacements;
 import pojo.Magasins;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.*;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 
 //import static sun.plugin2.util.PojoUtil.toJson;
 
-public class View extends JFrame implements MouseListener {
+public class View extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel container = new JPanel();
@@ -56,7 +62,7 @@ public class View extends JFrame implements MouseListener {
         jtf5.setPreferredSize(new Dimension(150, 30));
         jtf5.setForeground(Color.BLUE);
         JButton button = new JButton("Valider");
-        button.addMouseListener(this);
+        button.addActionListener(new BoutonAjout());
         top.add(label);
         top.add(jtf);
         top.add(label2);
@@ -78,71 +84,38 @@ public class View extends JFrame implements MouseListener {
     }
 
 
-    public void mouseClicked(MouseEvent arg0) {
-        int txt = Integer.parseInt(this.jtf.getText());
-        String txt2 = this.jtf2.getText();
-        int txt3 = Integer.parseInt(this.jtf3.getText());
-        String txt4 = this.jtf4.getText();
-        float txt5 = Float.parseFloat(this.jtf5.getText());
 
 
-        Emplacements mag = new Emplacements(txt,txt2,txt3, txt4, txt5);
-        Gson gson = new Gson();
-        String json = gson.toJson(mag);
-        System.out.print(json);
+    class BoutonAjout implements ActionListener {
 
-        File resultFile = new File("Emplacement.json");
-        try {
-            if (!resultFile.exists())
-                resultFile.createNewFile();
-            FileWriter writer = new FileWriter(resultFile);
-            writer.write(json);
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Erreur");
-        }
+        public void actionPerformed(ActionEvent e){
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            int txt = Integer.parseInt(jtf.getText());
+            String txt2 = jtf2.getText();
+            int txt3 = Integer.parseInt(jtf3.getText());
+            String txt4 = jtf4.getText();
+            float txt5 = Float.parseFloat(jtf5.getText());
+            Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
 
 
-        try {
-            Socket s = new Socket(InetAddress.getLocalHost(),5000);
-            FileInputStream inf=new FileInputStream(resultFile);
-            PrintStream out=new PrintStream(s.getOutputStream());
-            String thisLine = null;
-            
+            String json = gson.toJson(p);
+            JsonObject j1 = new JsonObject();
+            j1.add("idEmplacement",);
+            System.out.print(j1);
+            File resultFile = new File("Emplacement.json");
             try {
-            	BufferedReader br = new BufferedReader(new FileReader("Emplacement.json"));
-			       while ((thisLine = br.readLine()) != null) { // while loop begins here
-			         out.println(thisLine);
-			       } // end while 
-			     } // end try
-            	catch (IOException e) {
-			       System.err.println("Error: " + e);
-			     }
-    	}
-		catch (Exception e) {
-			e.printStackTrace();    
+                Socket s = new Socket(InetAddress.getLocalHost(),5000);
+                PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
+                w1.write(json);
+                BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+
+
+            }
+            catch (Exception e4) {
+                e4.printStackTrace();
+            }
         }
-     
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
 }
