@@ -38,12 +38,14 @@ public class View extends JFrame {
         this.setSize(800, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+
         container.setBackground(Color.white);
         container.setLayout(new GridLayout(2,10));
 
         JPanel top = new JPanel();
         JPanel bottom = new JPanel();
         Font police = new Font("Arial", Font.BOLD, 14);
+
         jtf.setFont(police);
         jtf.setPreferredSize(new Dimension(150, 30));
         jtf.setForeground(Color.BLUE);
@@ -59,10 +61,12 @@ public class View extends JFrame {
         jtf5.setFont(police);
         jtf5.setPreferredSize(new Dimension(150, 30));
         jtf5.setForeground(Color.BLUE);
+
         JButton buttonAdd = new JButton("Valider");
         JButton buttonDisplay  = new JButton("Afficher Emplacement");
         buttonAdd.addActionListener(new BoutonAjout());
         buttonDisplay.addActionListener(new BoutonAfficher());
+
         top.add(label);
         top.add(jtf);
         top.add(label2);
@@ -73,12 +77,12 @@ public class View extends JFrame {
         top.add(jtf4);
         top.add(label5);
         top.add(jtf5);
+
         top.add(buttonAdd);
         bottom.add(buttonDisplay);
+
         container.add(top, BorderLayout.NORTH);
         container.add(bottom, BorderLayout.SOUTH);
-
-
 
         this.setContentPane(container);
         this.setVisible(true);
@@ -90,6 +94,82 @@ public class View extends JFrame {
     class BoutonAjout implements ActionListener {
 
         public void actionPerformed(ActionEvent e){
+            try{
+                GsonBuilder builder = new GsonBuilder();
+                Gson gson = builder.create();
+                int txt = Integer.parseInt(jtf.getText());
+                String txt2 = jtf2.getText();
+                int txt3 = Integer.parseInt(jtf3.getText());
+                String txt4 = jtf4.getText();
+                float txt5 = Float.parseFloat(jtf5.getText());
+
+                Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
+                String json = gson.toJson(p);
+                System.out.print(json);
+                File resultFile = new File("Emplacement.json");
+                try {
+                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
+                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
+                    w1.write(json);
+                    w1.flush();
+                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+                    String retourServer = read(b2);
+                    System.out.println(retourServer);
+                    JFrame fenResp = new JFrame();
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(retourServer);
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtf.setText("");
+                    jtf2.setText("");
+                    jtf3.setText("");
+                    jtf4.setText("");
+                    jtf5.setText("");
+
+
+                }
+                catch (Exception e4) {
+                    JFrame fenResp = new JFrame();
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(e4.getMessage());
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtf.setText("");
+                    jtf2.setText("");
+                    jtf3.setText("");
+                    jtf4.setText("");
+                    jtf5.setText("");
+                }
+            }catch(NumberFormatException en){
+                JFrame fenResp = new JFrame();
+                JPanel containerResp = new JPanel();
+                fenResp.setSize(300,300);
+                fenResp.setLocationRelativeTo(null);
+                JLabel jlabResp = new JLabel(en.getMessage());
+                containerResp.add(jlabResp, BorderLayout.CENTER);
+                fenResp.setContentPane(containerResp);
+                fenResp.setVisible(true);
+                jtf.setText("");
+                jtf2.setText("");
+                jtf3.setText("");
+                jtf4.setText("");
+                jtf5.setText("");
+            }
+
+
+
+
+        }
+    }
+
+    class BoutonAfficher implements ActionListener{
+        public void actionPerformed(ActionEvent event){
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             int txt = Integer.parseInt(jtf.getText());
@@ -120,18 +200,17 @@ public class View extends JFrame {
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
+                jtf.setText("");
+                jtf2.setText("");
+                jtf3.setText("");
+                jtf4.setText("");
+                jtf5.setText("");
 
 
             }
             catch (Exception e4) {
                 e4.printStackTrace();
             }
-        }
-    }
-
-    class BoutonAfficher implements ActionListener{
-        public void actionPerformed(ActionEvent event){
-
 
         }
     }
