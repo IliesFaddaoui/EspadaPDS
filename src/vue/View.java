@@ -28,11 +28,17 @@ public class View extends JFrame {
     public JTextField jtf3 = new JTextField();
     public JTextField jtf4 = new JTextField();
     public JTextField jtf5 = new JTextField();
+    public JTextField jtfFind = new JTextField();
+    public JTextField jtfDelete = new JTextField();
+
     private JLabel label = new JLabel("idEmplacement :");
     private JLabel label2 = new JLabel("Localisation :");
     private JLabel label3 = new JLabel ("Superficie: ");
     private JLabel label4 = new JLabel ("categorie:");
     private JLabel label5 = new JLabel ("taux occupation:");
+    private JLabel labelFind = new JLabel ("Chercher un emplacement:");
+    private JLabel labelDelete = new JLabel("Supprimer un emplacement");
+
     public View(){
         this.setTitle("PhyGit Mall v1: 1.2");
         this.setSize(800, 800);
@@ -44,6 +50,7 @@ public class View extends JFrame {
 
         JPanel top = new JPanel();
         JPanel bottom = new JPanel();
+        JPanel middle = new JPanel();
         Font police = new Font("Arial", Font.BOLD, 14);
 
         jtf.setFont(police);
@@ -61,11 +68,20 @@ public class View extends JFrame {
         jtf5.setFont(police);
         jtf5.setPreferredSize(new Dimension(150, 30));
         jtf5.setForeground(Color.BLUE);
+        jtfFind.setFont(police);
+        jtfFind.setPreferredSize(new Dimension(150, 30));
+        jtfFind.setForeground(Color.BLUE);
+        jtfDelete.setFont(police);
+        jtfDelete.setPreferredSize(new Dimension(150, 30));
+        jtfDelete.setForeground(Color.BLUE);
 
         JButton buttonAdd = new JButton("Valider");
         JButton buttonDisplay  = new JButton("Afficher Emplacement");
+        JButton buttonDelete = new JButton("Supprimer Emplacement");
+
         buttonAdd.addActionListener(new BoutonAjout());
         buttonDisplay.addActionListener(new BoutonAfficher());
+        buttonDelete.addActionListener(new BoutonSupprimer());
 
         top.add(label);
         top.add(jtf);
@@ -77,12 +93,21 @@ public class View extends JFrame {
         top.add(jtf4);
         top.add(label5);
         top.add(jtf5);
-
         top.add(buttonAdd);
-        bottom.add(buttonDisplay);
+
+        middle.add(labelFind);
+        middle.add(jtfFind);
+        middle.add(buttonDisplay);
+
+
+        bottom.add(labelDelete);
+        bottom.add(jtfDelete);
+        bottom.add(buttonDelete);
 
         container.add(top, BorderLayout.NORTH);
+        container.add(middle, BorderLayout.CENTER);
         container.add(bottom, BorderLayout.SOUTH);
+
 
         this.setContentPane(container);
         this.setVisible(true);
@@ -105,14 +130,21 @@ public class View extends JFrame {
 
                 Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
                 String json = gson.toJson(p);
-                System.out.print(json);
-                File resultFile = new File("Emplacement.json");
                 try {
                     Socket s = new Socket(InetAddress.getLocalHost(),5000);
                     PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
+                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+                    //We inform the server that we want to insert data in database
+                    String demand = "AJOUT";
+                    w1.write(demand);
+                    w1.flush();
+                    //we wait for server's response
+                    String reponse = read(b2);
+                    System.out.println(reponse);
+                    //Now we send to server the JSON file, with the data to insert
                     w1.write(json);
                     w1.flush();
-                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+
                     String retourServer = read(b2);
                     System.out.println(retourServer);
                     JFrame fenResp = new JFrame();
@@ -170,50 +202,80 @@ public class View extends JFrame {
 
     class BoutonAfficher implements ActionListener{
         public void actionPerformed(ActionEvent event){
-            GsonBuilder builder = new GsonBuilder();
-            Gson gson = builder.create();
-            int txt = Integer.parseInt(jtf.getText());
-            String txt2 = jtf2.getText();
-            int txt3 = Integer.parseInt(jtf3.getText());
-            String txt4 = jtf4.getText();
-            float txt5 = Float.parseFloat(jtf5.getText());
-            Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
+            try{
+                int nbr = Integer.parseInt(jtfFind.getText());
+                Emplacements e1 = new Emplacements( nbr, "", 0, "", 0);
+                GsonBuilder builder = new GsonBuilder();
+                Gson gson = builder.create();
+                String data = gson.toJson(e1);
+                try {
+                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
+                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
+                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+                    //We inform the server that we want to find data in database
+                    String demand = "FIND";
+                    w1.write(demand);
+                    w1.flush();
+                    //we wait for server's response
+                    String reponse = read(b2);
+                    System.out.println(reponse);
+                    //Now we send to server the JSON file, with the data to insert
+                    w1.write(data);
+                    w1.flush();
+
+                    String retourServer = read(b2);
+                    System.out.println(retourServer);
+                    String json = gson.toJson(retourServer);
+                    JFrame fenResp = new JFrame();
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(retourServer);
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtfFind.setText("");
 
 
 
-            String json = gson.toJson(p);
-            System.out.print(json);
-            File resultFile = new File("Emplacement.json");
-            try {
-                Socket s = new Socket(InetAddress.getLocalHost(),5000);
-                PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
-                w1.write(json);
-                w1.flush();
-                BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
-                String retourServer = read(b2);
-                System.out.println(retourServer);
+                }
+                catch (Exception e4) {
+                    JFrame fenResp = new JFrame();
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(e4.getMessage());
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtfFind.setText("");
+
+                }
+            }catch(NumberFormatException en){
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(300,300);
                 fenResp.setLocationRelativeTo(null);
-                JLabel jlabResp = new JLabel(retourServer);
+                JLabel jlabResp = new JLabel(en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
-                jtf.setText("");
-                jtf2.setText("");
-                jtf3.setText("");
-                jtf4.setText("");
-                jtf5.setText("");
+                jtfFind.setText("");
+            }
 
 
-            }
-            catch (Exception e4) {
-                e4.printStackTrace();
-            }
+
 
         }
     }
+
+    class BoutonSupprimer implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
     private String read(BufferedInputStream reader) throws IOException{
 
         String response = "";

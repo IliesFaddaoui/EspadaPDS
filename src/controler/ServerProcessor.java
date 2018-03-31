@@ -31,30 +31,68 @@ public class ServerProcessor implements Runnable {
                 writer = new PrintWriter(sock.getOutputStream());
                 reader = new BufferedInputStream(sock.getInputStream());
                 Gson gson = new Gson();
-                String demande = read();
-                System.out.println("objet recu: " +demande);
-                Emplacements e1 = gson.fromJson(demande, Emplacements.class);
-                System.out.println("objet crée : ");
-                System.out.println("idEmplacement: "+ e1.getIdEmplacement() + "localisation" + e1.getLocalisation());
-                EmplacementsDAO d = new EmplacementsDAO(connection.getConnection());
-                Emplacements eCheck = d.find(e1.getIdEmplacement());
-                if(eCheck == null)
-                {
-                    d.create(e1);
-                    System.out.println("Insertion par le dao effectué, vérification en cours...");
-                    Emplacements e2 = d.find(e1.getIdEmplacement());
-                    System.out.println("objet créé trouvé ! idEmplacement= "+ e2.getIdEmplacement() + " localisation: " + e2.getLocalisation());
-                    String reponseServ = "Nouvel emplacement numéro" + e1.getIdEmplacement()+ " bien ajouté au référentiel, merci !";
-                    writer.write(reponseServ);
-                    writer.flush();
+                //first interaction with the client, sending the kind of action
+                String demand = read();
+                switch(demand.toUpperCase()){
+                    case "AJOUT":
+                        //Server understands the action asked, he returns "OK"
+                        String toSend = "OK for insert";
+                        //the Server waits for the data
+                        writer.write(toSend);
+                        writer.flush();
+                        //the server read the data
+                        String request = read();
+                        Emplacements e1 = gson.fromJson(request, Emplacements.class);
+                        EmplacementsDAO daoInsert = new EmplacementsDAO(connection.getConnection());
+                        Emplacements eCheck = daoInsert.find(e1.getIdEmplacement());
+                        if(eCheck == null)
+                        {
+                            daoInsert.create(e1);
+                            Emplacements e2 = daoInsert.find(e1.getIdEmplacement());
+                            String reponseServ = "Nouvel emplacement numéro" + e1.getIdEmplacement()+ " bien ajouté au référentiel, merci !";
+                            writer.write(reponseServ);
+                            writer.flush();
+
+                        }
+                        else
+                        {
+                            String reponseServ = "Impossible de créer l'objet en question, l'idEmplacement "+ e1.getIdEmplacement() +" est déjà utilisé par un emplacement";
+                            writer.write(reponseServ);
+                            writer.flush();
+                        }
+                        break;
+                    case "DELETE":
+                        break;
+                    case "UPDATE:":
+                        break;
+                    case "FIND":
+                        //Server understands the action asked, he returns "OK"
+                        String toSend2 = "OK for find";
+                        //the Server waits for the data
+                        writer.write(toSend2);
+                        writer.flush();
+                        //the server read the data
+                        String toFind = read();
+                        System.out.println("donnée reçu sur le server: "+toFind);
+                        Emplacements e2 = gson.fromJson(toFind, Emplacements.class);
+                        System.out.println("donnée converti en int: "+ e2.getIdEmplacement());
+                        EmplacementsDAO daoFind = new EmplacementsDAO(connection.getConnection());
+                        Emplacements eFind =daoFind.find(e2.getIdEmplacement());
+                        String jsonFind = gson.toJson(eFind);
+                        //the server looks and find (or not) the data asked and return his answer to the client
+                        if(jsonFind == null){
+                            String failFind = "";
+                            writer.write(failFind);
+                            writer.flush();
+                        }else {
+                            writer.write(jsonFind);
+                            writer.flush();
+                            break;
+                        }
+
 
                 }
-                else
-                {
-                    String reponseServ = "Impossible de créer l'objet en question, l'idEmplacement "+ e1.getIdEmplacement() +" est déjà utilisé par un emplacement";
-                    writer.write(reponseServ);
-                    writer.flush();
-                }
+
 
             }catch (IOException e){
                 e.printStackTrace();
