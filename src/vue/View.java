@@ -280,7 +280,62 @@ public class View extends JFrame {
     private class BoutonSupprimer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
+            try{
+                int nbr = Integer.parseInt(jtfDelete.getText());
+                Emplacements e1 = new Emplacements( nbr, "", 0, "", 0);
+                GsonBuilder builder = new GsonBuilder();
+                Gson gson = builder.create();
+                String data = gson.toJson(e1);
+                try {
+                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
+                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
+                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
+                    //We inform the server that we want to find data in database
+                    String demand = "DELETE";
+                    w1.write(demand);
+                    w1.flush();
+                    //we wait for server's response
+                    String reponse = read(b2);
+                    //Now we send to server the JSON file, with the data to insert
+                    w1.write(data);
+                    w1.flush();
+                    //we read the response from the server
+                    String retourServer = read(b2);
+                    System.out.println(retourServer);
+                    JFrame fenResp = new JFrame();
+                    fenResp.setTitle("Suppression d'élément dans emplacement" );
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(retourServer);
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtfFind.setText("");
+                    s.close();
+                }
+                catch (Exception e4) {
+                    JFrame fenResp = new JFrame();
+                    JPanel containerResp = new JPanel();
+                    fenResp.setSize(300,300);
+                    fenResp.setLocationRelativeTo(null);
+                    JLabel jlabResp = new JLabel(e4.getMessage());
+                    containerResp.add(jlabResp, BorderLayout.CENTER);
+                    fenResp.setContentPane(containerResp);
+                    fenResp.setVisible(true);
+                    jtfFind.setText("");
+                }
+            }catch(NumberFormatException en){
+                JFrame fenResp = new JFrame();
+                JPanel containerResp = new JPanel();
+                fenResp.setSize(300,300);
+                fenResp.setLocationRelativeTo(null);
+                JLabel jlabResp = new JLabel(en.getMessage());
+                containerResp.add(jlabResp, BorderLayout.CENTER);
+                fenResp.setContentPane(containerResp);
+                fenResp.setVisible(true);
+                jtfFind.setText("");
+            }
         }
     }
 

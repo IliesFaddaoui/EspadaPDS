@@ -62,9 +62,31 @@ public class ServerProcessor implements Runnable {
                         }
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
+
                     case "DELETE":
-                        break;
-                    case "UPDATE:":
+                        //Server understands the action asked, he returns "OK"
+                        String toSendDelete = "OK for insert";
+                        //the Server waits for the data
+                        writer.write(toSendDelete);
+                        writer.flush();
+                        //the server read the data
+                        String requestDelete = read();
+                        Emplacements eDelete = gson.fromJson(requestDelete, Emplacements.class);
+                        EmplacementsDAO daoDelete = new EmplacementsDAO(connection.getConnection());
+                        System.out.println("nbr id: "+ eDelete.getIdEmplacement());
+                        if(daoDelete.find(eDelete.getIdEmplacement())== null){
+                            String reponseServ = "Impossible de supprimer, emplacement inexistant";
+                            writer.write(reponseServ);
+                            writer.flush();
+                        }
+                        else {
+                            daoDelete.delete(eDelete);
+                            String reponseServ =" Emplacement n°"+eDelete.getIdEmplacement() +" bien supprimé !";
+                            writer.write(reponseServ);
+                            writer.flush();
+
+                        }
+                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                     case "FIND":
                         //Server understands the action asked, he returns "OK"
@@ -92,9 +114,7 @@ public class ServerProcessor implements Runnable {
                         }
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
-
                 }
-
 
             }catch (IOException e){
                 e.printStackTrace();
