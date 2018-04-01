@@ -146,7 +146,7 @@ public class View extends JFrame {
                     System.out.println(retourServer);
                     JFrame fenResp = new JFrame();
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(retourServer);
                     containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -163,7 +163,7 @@ public class View extends JFrame {
                 catch (Exception e4) {
                     JFrame fenResp = new JFrame();
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(e4.getMessage());
                     containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -178,7 +178,7 @@ public class View extends JFrame {
             }catch(NumberFormatException en){
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
-                fenResp.setSize(300,300);
+                fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
                 JLabel jlabResp = new JLabel(en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -236,7 +236,7 @@ public class View extends JFrame {
 
 
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(retourServer);
                     containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -250,7 +250,7 @@ public class View extends JFrame {
                 catch (Exception e4) {
                     JFrame fenResp = new JFrame();
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(e4.getMessage());
                     containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -262,7 +262,7 @@ public class View extends JFrame {
             }catch(NumberFormatException en){
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
-                fenResp.setSize(300,300);
+                fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
                 JLabel jlabResp = new JLabel(en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -305,30 +305,30 @@ public class View extends JFrame {
                     JFrame fenResp = new JFrame();
                     fenResp.setTitle("Suppression d'élément dans emplacement" );
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(retourServer);
                     containerResp.add(jlabResp, BorderLayout.CENTER);
                     fenResp.setContentPane(containerResp);
                     fenResp.setVisible(true);
-                    jtfFind.setText("");
+                    jtfDelete.setText("");
                     s.close();
                 }
                 catch (Exception e4) {
                     JFrame fenResp = new JFrame();
                     JPanel containerResp = new JPanel();
-                    fenResp.setSize(300,300);
+                    fenResp.setSize(600,300);
                     fenResp.setLocationRelativeTo(null);
                     JLabel jlabResp = new JLabel(e4.getMessage());
                     containerResp.add(jlabResp, BorderLayout.CENTER);
                     fenResp.setContentPane(containerResp);
                     fenResp.setVisible(true);
-                    jtfFind.setText("");
+                    jtfDelete.setText("");
                 }
             }catch(NumberFormatException en){
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
-                fenResp.setSize(300,300);
+                fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
                 JLabel jlabResp = new JLabel(en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);

@@ -9,6 +9,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * @author ilies, axel
+ * @version 1.2
+ * Class which instance the Connection Pool, the thread pool
+ */
 public class Server {
 
     private int port =5000;
@@ -26,6 +31,9 @@ public class Server {
 
     }
 
+    /**
+     * Public method to open the server
+     */
     public void open(){
 
         Thread t = new Thread(new Runnable() {
@@ -53,6 +61,9 @@ public class Server {
         t.start();
     }
 
+    /**
+     * Public method to close the server
+     */
     public void close(){
         isRunning = false;
     }

@@ -11,6 +11,11 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.Connection;
 
+/**
+ * @author ilies, axel
+ * @version 1.2
+ * Class with all the Server sockets and operation with database
+ */
 public class ServerProcessor implements Runnable {
 
     private Socket sock;
@@ -24,6 +29,9 @@ public class ServerProcessor implements Runnable {
 
     }
 
+    /**
+     * public method with all the kind of call from the client to server
+     */
     public void run() {
         boolean closeConnexion = false;
         while(!sock.isClosed()){
@@ -124,6 +132,11 @@ public class ServerProcessor implements Runnable {
 
     }
 
+    /**
+     * This methods read the message from the client
+     * @return String
+     * @throws IOException
+     */
     private String read() throws IOException {
         String response ="";
         int stream;
