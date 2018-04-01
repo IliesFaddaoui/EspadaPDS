@@ -11,10 +11,12 @@ import java.sql.SQLException;
 public class EmplacementsDAO extends DAO<Emplacements> {
 
     private Connection con;
+
     public EmplacementsDAO(Connection conn){
         super(conn);
         this.con=conn;
     }
+
 
     public Connection getConnection(){
         return this.con;

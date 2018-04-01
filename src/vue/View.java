@@ -16,9 +16,11 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-
-//import static sun.plugin2.util.PojoUtil.toJson;
-
+/**
+ * @author ilies, axel
+ * @version 1.2
+ * This class with GUI, and the operations made through socket to send requests to server
+ */
 public class View extends JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -36,12 +38,16 @@ public class View extends JFrame {
     private JLabel label3 = new JLabel ("Superficie: ");
     private JLabel label4 = new JLabel ("categorie:");
     private JLabel label5 = new JLabel ("taux occupation:");
+    private JLabel labelAdd = new JLabel("Ajouter un emplacement:");
     private JLabel labelFind = new JLabel ("Chercher un emplacement:");
     private JLabel labelDelete = new JLabel("Supprimer un emplacement");
 
+    /**
+     * Constructor with main frame code
+     */
     public View(){
-        this.setTitle("PhyGit Mall v1: 1.2");
-        this.setSize(800, 800);
+        this.setTitle("PhyGit Mall: Gestion du référentiel Emplacement ");
+        this.setSize(600, 700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
@@ -83,6 +89,7 @@ public class View extends JFrame {
         buttonDisplay.addActionListener(new BoutonAfficher());
         buttonDelete.addActionListener(new BoutonSupprimer());
 
+        top.add(labelAdd);
         top.add(label);
         top.add(jtf);
         top.add(label2);
@@ -113,6 +120,14 @@ public class View extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     * Class which defines the action when someone click on "Bouton ajouter"
+     * This control the input made by users, and return error messages in new temporal frame if
+     * any problems is find
+     * This send to server the kind of action wanted (add element in database here),
+     * the information from the users are then processed into json file, which is send to server
+     * Then, the client wait for server response, and show the operation result on a new temporal frame
+     */
     private class BoutonAjout implements ActionListener {
 
         public void actionPerformed(ActionEvent e){
@@ -180,7 +195,7 @@ public class View extends JFrame {
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
-                JLabel jlabResp = new JLabel(en.getMessage());
+                JLabel jlabResp = new JLabel("Problème avec les infos entrées: " + en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
@@ -196,7 +211,16 @@ public class View extends JFrame {
 
         }
     }
-
+    /**
+     * Class which defines the action when someone click on "Bouton afficher"
+     * This control the input made by users, and return error messages in new temporal frame if
+     * any problems is find
+     * This send to server the kind of action wanted (find element in database here),
+     * the information from the users are then processed into json file, which is send to server
+     * Then, the client wait for server response, and show the operation result on a new temporal frame.
+     * If succeed, the information about the asked emplacement are displayed on a temporal frame, if
+     * the asked emplacement doesn't exist, a error message is displayed instead
+     */
     private class BoutonAfficher implements ActionListener{
         public void actionPerformed(ActionEvent event){
             try{
@@ -264,7 +288,7 @@ public class View extends JFrame {
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
-                JLabel jlabResp = new JLabel(en.getMessage());
+                JLabel jlabResp = new JLabel("Problème avec les infos entrées: " + en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
@@ -277,6 +301,16 @@ public class View extends JFrame {
         }
     }
 
+    /**
+     * Class which defines the action when someone click on "Bouton supprimer"
+     * This control the input made by users, and return error messages in new temporal frame if
+     * any problems is find
+     * This send to server the kind of action wanted (delete element in database here),
+     * the information from the users are then processed into json file, which is send to server
+     * Then, the client wait for server response, and show the operation result on a new temporal frame.
+     * If succeed,a new temporal frame said that the emplacement has been deleted, else the message on the temporal
+     * frame says that the elements doesn't exist, and cannot be deleted them
+     */
     private class BoutonSupprimer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -330,7 +364,7 @@ public class View extends JFrame {
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
-                JLabel jlabResp = new JLabel(en.getMessage());
+                JLabel jlabResp = new JLabel("Problème avec les infos entrées: " + en.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
@@ -339,7 +373,13 @@ public class View extends JFrame {
         }
     }
 
-
+    /**
+     * Private method which read the data send by the server to the client, and return it
+     * into string.
+     * @param reader
+     * @return Strign
+     * @throws IOException
+     */
 
     private String read(BufferedInputStream reader) throws IOException{
 
