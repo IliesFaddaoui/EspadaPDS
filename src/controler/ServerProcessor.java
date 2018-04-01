@@ -60,6 +60,7 @@ public class ServerProcessor implements Runnable {
                             writer.write(reponseServ);
                             writer.flush();
                         }
+                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                     case "DELETE":
                         break;
@@ -87,9 +88,10 @@ public class ServerProcessor implements Runnable {
                         }else {
                             writer.write(jsonFind);
                             writer.flush();
-                            break;
-                        }
 
+                        }
+                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+                        break;
 
                 }
 

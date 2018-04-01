@@ -35,6 +35,9 @@ public class PoolDeConnexion implements Pool{
         }
     }
 
+    public List<Connection> getListUsed(){
+        return this.ListUsed;
+    }
     /**
      * public method which return a connection from the pool only if
      * @return Connection

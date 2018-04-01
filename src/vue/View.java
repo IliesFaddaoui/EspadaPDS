@@ -113,10 +113,7 @@ public class View extends JFrame {
         this.setVisible(true);
     }
 
-
-
-
-    class BoutonAjout implements ActionListener {
+    private class BoutonAjout implements ActionListener {
 
         public void actionPerformed(ActionEvent e){
             try{
@@ -160,7 +157,7 @@ public class View extends JFrame {
                     jtf3.setText("");
                     jtf4.setText("");
                     jtf5.setText("");
-
+                    s.close();
 
                 }
                 catch (Exception e4) {
@@ -200,7 +197,7 @@ public class View extends JFrame {
         }
     }
 
-    class BoutonAfficher implements ActionListener{
+    private class BoutonAfficher implements ActionListener{
         public void actionPerformed(ActionEvent event){
             try{
                 int nbr = Integer.parseInt(jtfFind.getText());
@@ -222,11 +219,22 @@ public class View extends JFrame {
                     //Now we send to server the JSON file, with the data to insert
                     w1.write(data);
                     w1.flush();
-
+                    //we read the response from the server
                     String retourServer = read(b2);
                     System.out.println(retourServer);
-                    String json = gson.toJson(retourServer);
                     JFrame fenResp = new JFrame();
+                    if (retourServer==""){
+                        retourServer = "Cet emplacement n'existe pas";
+                        fenResp.setTitle("Emplacement inexistant !" );
+                    }
+                    else{
+                        Emplacements eRespFind = gson.fromJson(retourServer, Emplacements.class);
+                        retourServer = "idEmplacement: "+ eRespFind.getIdEmplacement() + " location : "+eRespFind.getLocalisation() + " superficie: "+eRespFind.getSuperficieE()+" Catégorie: "+eRespFind.getCategorie();
+                        fenResp.setTitle("Information sur l'emplacement n°"+ eRespFind.getIdEmplacement() );
+                    }
+
+
+
                     JPanel containerResp = new JPanel();
                     fenResp.setSize(300,300);
                     fenResp.setLocationRelativeTo(null);
@@ -235,7 +243,7 @@ public class View extends JFrame {
                     fenResp.setContentPane(containerResp);
                     fenResp.setVisible(true);
                     jtfFind.setText("");
-
+                    s.close();
 
 
                 }
@@ -269,12 +277,14 @@ public class View extends JFrame {
         }
     }
 
-    class BoutonSupprimer implements ActionListener {
+    private class BoutonSupprimer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
 
         }
     }
+
+
 
     private String read(BufferedInputStream reader) throws IOException{
 
