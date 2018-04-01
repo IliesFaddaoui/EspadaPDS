@@ -10,10 +10,10 @@ import java.sql.Connection;
  * Database connection class. Used by the connection pool
  */
 public class Database {
-	private static final String DRIVER_NAME ="com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost/PDS";
-	private static final String USER = "root";
-	private static final String PASSWORD = "root";
+	private static final String driver_name ="com.mysql.jdbc.Driver";
+	private static final String url = "jdbc:mysql://localhost/PDS";
+	private static final String user = "root";
+	private static final String password = "root";
 
 	/**
 	 * static methods with create an instance of the jdbc driver.
@@ -21,18 +21,18 @@ public class Database {
 	 */
 	static {
 		try {
-			Class.forName(DRIVER_NAME).newInstance();
+			Class.forName(driver_name).newInstance();
 			System.out.println("*** Driver loaded.");
 		}
 		catch (ClassNotFoundException e) {
-			System.err.println("*** ERROR: Driver " + DRIVER_NAME + "not found");
+			System.err.println("*** ERROR: Driver " + driver_name + "not found");
 		}
 		catch (InstantiationException e) {
-			System.err.println("*** ERROR: Impossible to create an instance of " + DRIVER_NAME);
+			System.err.println("*** ERROR: Impossible to create an instance of " + driver_name);
 			System.err.println(e.getMessage());
 		}
 		catch (IllegalAccessException e) {
-			System.err.println("*** ERROR: Impossible to create an instance of " + DRIVER_NAME);
+			System.err.println("*** ERROR: Impossible to create an instance of " + driver_name);
 			System.err.println(e.getMessage());
 		}
 	}
@@ -43,7 +43,7 @@ public class Database {
 	 * @throws SQLException
 	 */
 	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection(URL, USER, PASSWORD);
+		return DriverManager.getConnection(url, user, password);
 	}
 }
 		

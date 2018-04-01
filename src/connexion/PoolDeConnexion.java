@@ -15,11 +15,11 @@ public class PoolDeConnexion implements Pool{
     /**
      * This list contains all the available Connection in the pool
      */
-    private List<Connection> ListDispo = new ArrayList<Connection>();
+    private List<Connection> listDispo = new ArrayList<Connection>();
     /**
      * This list contains all the used Connection in the pool
      */
-    private List<Connection> ListUsed = new ArrayList<Connection>();
+    private List<Connection> listUsed = new ArrayList<Connection>();
 
     /**
      * Class constructor, which create the amount of connection asked for the pool
@@ -28,7 +28,7 @@ public class PoolDeConnexion implements Pool{
     public PoolDeConnexion(final int Poolsize){
         for (int i=0; i<Poolsize; i++){
             try{
-                ListDispo.add(this.newConnection());
+                listDispo.add(this.newConnection());
             }catch (SQLException e){
                 e.printStackTrace();
             }
@@ -36,20 +36,20 @@ public class PoolDeConnexion implements Pool{
     }
 
     public List<Connection> getListUsed(){
-        return this.ListUsed;
+        return this.listUsed;
     }
     /**
      * public method which return a connection from the pool only if
      * @return Connection
      */
     public Connection getConnection() {
-        if (ListDispo.size() == 0) {
+        if (listDispo.size() == 0) {
             System.out.println("No connection available, try later");
             return null;
         }
-        Connection c =ListDispo.remove(ListDispo.size() - 1);
+        Connection c =listDispo.remove(listDispo.size() - 1);
         System.out.println("Connection done");
-        ListUsed.add(c);
+        listUsed.add(c);
         return c;
 
     }
@@ -60,8 +60,8 @@ public class PoolDeConnexion implements Pool{
      * @return boolean
      */
     public boolean releaseConnection(Connection c) {
-            ListUsed.remove(c);
-            ListDispo.add(c);
+            listUsed.remove(c);
+            listDispo.add(c);
             return true;
     }
 
