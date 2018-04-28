@@ -5,17 +5,17 @@ import java.util.Date;
 
 public class Client {
     private int idClient;
-    private String name;
-    private String surname;
+    private String ClientName;
+    private String ClientSurname;
     private Date birthDate;
     private String phone;
     private String address;
     private String gender;
 
-    public Client(int idClient, String name, String surname, Date birthDate, String phone, String address, String gender) {
+    public Client(int idClient, String ClientName, String ClientSurname, Date birthDate, String phone, String address, String gender) {
         this.idClient = idClient;
-        this.name = name;
-        this.surname = surname;
+        this.ClientName = ClientName;
+        this.ClientSurname = ClientSurname;
         this.birthDate = birthDate;
         this.phone = phone;
         this.address = address;
@@ -26,12 +26,12 @@ public class Client {
         return idClient;
     }
 
-    public String getName() {
-        return name;
+    public String getClientName() {
+        return ClientName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getClientSurname() {
+        return ClientSurname;
     }
 
     public Date getBirthDate() {
@@ -55,12 +55,12 @@ public class Client {
         this.idClient = idClient;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClientName(String name) {
+        this.ClientName = name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setClientSurname(String surname) {
+        this.ClientSurname = surname;
     }
 
     public void setBirthDate(Date birthDate) {

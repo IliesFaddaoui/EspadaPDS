@@ -22,7 +22,7 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public boolean create(Client obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Client(idClient,name, surname,birthdate, phone, address, gender) values ("+obj.getIdClient()+",\""+obj.getName()+"\","+obj.getSurname()+",\""+obj.getBirthDate()+"\","+obj.getPhone()+"\","+obj.getAddress()+"\","+obj.getGender()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Client(idClient,ClientName, ClientSurname,birthdate, phone, address, gender) values ("+obj.getIdClient()+",\""+obj.getClientName()+"\","+obj.getClientSurname()+",\""+obj.getBirthDate()+"\","+obj.getPhone()+"\","+obj.getAddress()+"\","+obj.getGender()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,7 +44,7 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public boolean update(Client obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Client SET idClient='" + obj.getIdClient() + "', name=" + obj.getName() + ",surname='" + obj.getSurname() + "',birthdate=" + obj.getBirthDate() + " phone=" + obj.getPhone() + "', address=" + obj.getAddress()+ "', gender=" + obj.getGender()+" where idClient=" + obj.getIdClient());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Client SET idClient='" + obj.getIdClient() + "', ClientName=" + obj.getClientName() + ",ClientSurname='" + obj.getClientSurname() + "',birthdate=" + obj.getBirthDate() + " phone=" + obj.getPhone() + "', address=" + obj.getAddress()+ "', gender=" + obj.getGender()+" where idClient=" + obj.getIdClient());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -55,9 +55,9 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public Client find(int id) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idClient,name, surname,birthdate, phone, address, gender FROM Client Where idClient="+ id);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idClient,ClientName, ClientSurname,birthdate, phone, address, gender FROM Client Where idClient="+ id);
             while(result.next()){
-                Client client = new Client(result.getInt("idClient"),result.getString("name"), result.getString("surname"), result.getDate("birthdate"), result.getString("phone"), result.getString("adress"), result.getString("gender"));
+                Client client = new Client(result.getInt("idClient"),result.getString("ClientName"), result.getString("ClientSurname"), result.getDate("birthdate"), result.getString("phone"), result.getString("adress"), result.getString("gender"));
                 return client;
             }
         } catch (SQLException e) {
