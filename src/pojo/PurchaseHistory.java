@@ -9,6 +9,14 @@ public class PurchaseHistory {
     private Date purchaseDate;
     private int Quantity;
 
+    public PurchaseHistory(int idPurchase, int idProduct, int idClient, Date purchaseDate, int quantity) {
+        this.idPurchase = idPurchase;
+        this.idProduct = idProduct;
+        this.idClient = idClient;
+        this.purchaseDate = purchaseDate;
+        Quantity = quantity;
+    }
+
     public int getIdPurchase() {
         return idPurchase;
     }

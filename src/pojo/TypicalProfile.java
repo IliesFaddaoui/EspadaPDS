@@ -6,7 +6,11 @@ public class TypicalProfile {
 
     private int idTypicalProfile;
     private String profilName;
-    private ArrayList<String> keyWordList;
+
+    public TypicalProfile(int idTypicalProfile, String profilName) {
+        this.idTypicalProfile = idTypicalProfile;
+        this.profilName = profilName;
+    }
 
     public int getIdTypicalProfile() {
         return idTypicalProfile;
@@ -16,19 +20,11 @@ public class TypicalProfile {
         return profilName;
     }
 
-    public ArrayList<String> getKeyWordList() {
-        return keyWordList;
-    }
-
     public void setIdTypicalProfile(int idTypicalProfile) {
         this.idTypicalProfile = idTypicalProfile;
     }
 
     public void setProfilName(String profilName) {
         this.profilName = profilName;
-    }
-
-    public void setKeyWordList(ArrayList<String> keyWordList) {
-        this.keyWordList = keyWordList;
     }
 }

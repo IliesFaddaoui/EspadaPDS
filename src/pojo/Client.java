@@ -11,7 +11,16 @@ public class Client {
     private String phone;
     private String address;
     private String gender;
-    private ArrayList<TypicalProfile> linkedProfile;
+
+    public Client(int idClient, String name, String surname, Date birthDate, String phone, String address, String gender) {
+        this.idClient = idClient;
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.phone = phone;
+        this.address = address;
+        this.gender = gender;
+    }
 
     public int getIdClient() {
         return idClient;
@@ -41,9 +50,6 @@ public class Client {
         return gender;
     }
 
-    public ArrayList<TypicalProfile> getLinkedProfile() {
-        return linkedProfile;
-    }
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
@@ -71,9 +77,5 @@ public class Client {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public void setLinkedProfile(ArrayList<TypicalProfile> linkedProfile) {
-        this.linkedProfile = linkedProfile;
     }
 }

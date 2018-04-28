@@ -8,6 +8,14 @@ public class Product {
     private int price;
     private String keyWord;
 
+    public Product(int idProduct, String productReference, int stock, int price, String keyWord) {
+        this.idProduct = idProduct;
+        this.productReference = productReference;
+        this.stock = stock;
+        this.price = price;
+        this.keyWord = keyWord;
+    }
+
     public int getIdProduct() {
         return idProduct;
     }
