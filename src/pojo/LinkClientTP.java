@@ -1,22 +1,22 @@
 package pojo;
 
-public class EtablishedProfile {
-    private int idEtablishedProfile;
+public class LinkClientTP {
+    private int idLinkClientTP;
     private int idTypicalProfile;
     private int idClient;
 
-    public EtablishedProfile(int idEtablishedProfile, int idTypicalProfile, int idClient) {
-        this.idEtablishedProfile = idEtablishedProfile;
+    public LinkClientTP(int idEtablishedProfile, int idTypicalProfile, int idClient) {
+        this.idLinkClientTP = idEtablishedProfile;
         this.idTypicalProfile = idTypicalProfile;
         this.idClient = idClient;
     }
 
-    public int getIdEtablishedProfile() {
-        return idEtablishedProfile;
+    public int getIdLinkClientTP() {
+        return idLinkClientTP;
     }
 
-    public void setIdEtablishedProfile(int idEtablishedProfile) {
-        this.idEtablishedProfile = idEtablishedProfile;
+    public void setIdLinkClientTP(int idEtablishedProfile) {
+        this.idLinkClientTP = idEtablishedProfile;
     }
 
     public int getIdTypicalProfile() {

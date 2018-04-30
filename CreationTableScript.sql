@@ -34,6 +34,19 @@ foreign key(idProduct) references Product(idProduct),
 foreign key(idClient) references Client(idClient) 
 );
 
+CREATE table KeyWord (
+idKeyWord integer not null,
+nameKeyWord varchar(20)
+PRIMARY KEY(idKeyWord));
+
+CREATE table LinkTPKeyWord (
+idLTPKW integer not null,
+idKeyWord integer not null,
+idTypicalProfile integer not null,
+PRIMARY KEY idLTPKW,
+foreign key(idKeyWord) references KeyWord(idKeyWord),
+foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile));
+
 CREATE table EtablishedProfile (
 idEtablishedProfile integer not null,
 idTypicalProfile integer not null,
