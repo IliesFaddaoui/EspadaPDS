@@ -1,4 +1,4 @@
-package controler;
+package server;
 
 import com.google.gson.Gson;
 import connexion.PoolDeConnexion;

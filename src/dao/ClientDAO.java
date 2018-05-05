@@ -1,10 +1,14 @@
 package dao;
 
+import com.sun.rowset.CachedRowSetImpl;
 import pojo.Client;
 
+import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClientDAO extends DAO<Client> {
 
@@ -60,6 +64,28 @@ public class ClientDAO extends DAO<Client> {
                 Client client = new Client(result.getInt("idClient"),result.getString("ClientName"), result.getString("ClientSurname"), result.getDate("birthdate"), result.getString("phone"), result.getString("adress"), result.getString("gender"));
                 return client;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * This method return the list of the client id on the client table
+     * @return List<String>
+     */
+    public List<String> listOfClients(){
+        try{
+            List<String> clientsList = new ArrayList<String>();
+            String sql = "SELECT idClient FROM client";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(con);
+            con.close();
+            while (rs.next()) {
+                clientsList.add(rs.getString("idClient"));
+            }
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
