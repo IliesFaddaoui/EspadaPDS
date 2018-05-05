@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="EspadaPDS" level="project" />
+    <orderEntry type="library" name="springutil-0.0.4.jar" level="project" />
   </component>
 </module>
