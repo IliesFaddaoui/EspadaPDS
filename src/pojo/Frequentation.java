@@ -3,6 +3,12 @@ package pojo;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * @author Anaximandro
+ * @version 2
+ * This is the attendance data model
+ */
+
 public class Frequentation {
 	private Date frequentationDate;
 	private int idMagasin;

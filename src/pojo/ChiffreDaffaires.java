@@ -3,6 +3,12 @@ package pojo;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * @author Anaximandro
+ * @version 2
+ * This is the turnover data model
+ */
+
 public class ChiffreDaffaires {
 	private Date chiffreDate;
 	private int idMagasin;
