@@ -13,7 +13,7 @@ delete from client;
 drop table linktpkeyword;
 drop table etablishedprofile;
 drop table purchasehistory;
-drop table keyword;
 drop table product;
 drop table typicalprofile;
+drop table keyword;
 drop table client;

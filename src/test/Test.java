@@ -37,8 +37,5 @@ public class Test {
 
         ProductDAO m1 = new ProductDAO(connection.getConnection());
 
-
-
-
     }
 }

@@ -13,5 +13,5 @@ Insert into keyword value (7,'AppareilPhoto');
 Insert into keyword value (8, 'EcouteurMusique');
 Insert into keyword value (9, 'Ecran');
 
-Insert into product value(1, 'Television 50cm Asus LG152', 100, 450, 'Ecran');
-Insert into product value(2, 'Nintendo Switch', 100, 299, 'consoleJeuxVideo');
+Insert into product value(1, 'Television 50cm Asus LG152', 100, 450, 9);
+Insert into product value(2, 'Nintendo Switch', 100, 299, 1);
