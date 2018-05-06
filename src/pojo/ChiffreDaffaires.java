@@ -8,9 +8,9 @@ public class ChiffreDaffaires {
 	private int idMagasin;
 	private int montant;
 	
-	public ChiffreDaffaires(Date chiffreDate, int idMagasin, int montant) {
+	public ChiffreDaffaires(Date chiffreDate, int idMagasins, int montant) {
 		this.setChiffreDate(chiffreDate);
-		this.setIdMagasin(idMagasin);
+		this.setIdMagasin(idMagasins);
 		this.setMontant(montant);
 	}
 

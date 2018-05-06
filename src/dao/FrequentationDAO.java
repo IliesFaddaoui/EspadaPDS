@@ -56,19 +56,7 @@ public class FrequentationDAO extends DAO<Frequentation> {
         return false;
     }
 
-    @Override
-    /*public Frequentation find(String type, int id) {
-        try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT frequentationDate, idMagasin, niveauFrequentation FROM Frequentation, Magasin Where Magasin.type="+ type);
-            while(result.next()){
-                Frequentation frequ = new Frequentation (result.getDate("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
-                return freq;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
+ 
 
 	public Frequentation find(int id) {
 		// TODO Auto-generated method stub

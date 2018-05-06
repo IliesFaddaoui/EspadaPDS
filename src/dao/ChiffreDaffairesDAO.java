@@ -56,19 +56,6 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         return false;
     }
 
-    @Override
-    /*public ChiffreDaffaires find(String type, int id) {
-        try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT chiffreDate, idMagasin, montant FROM ChiffreDaffaires, Magasin Where Magasin.type="+ type);
-            while(result.next()){
-                ChiffreDaffaires chiffre = new ChiffreDaffaires (result.getDate("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
-                return chiffre;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
 
 	public ChiffreDaffaires find(int id) {
 		// TODO Auto-generated method stub
