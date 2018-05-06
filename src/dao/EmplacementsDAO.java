@@ -6,12 +6,15 @@ import java.sql.SQLException;
 
 /**
  * @author ilies
- * DAO class for emplacement
+ * this is the Dao for emplacements, which allows to create, delete, update or find an emplacement in the data base
  */
 public class EmplacementsDAO extends DAO<Emplacements> {
 
     private Connection con;
-
+    /**
+     * this is the EmplacementDAO constructor. This use a connection in the Connection pool to have access to the database
+     * @param conn
+     */
     public EmplacementsDAO(Connection conn){
         super(conn);
         this.con=conn;
@@ -22,7 +25,11 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         return this.con;
     }
 
-
+    /**
+     * this method allows to create an emplacement row in the database
+     * @param obj
+     * @return boolean
+     */
     public boolean create(Emplacements obj) {
 
         try{
@@ -33,6 +40,11 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         }
         return false;
     }
+    /**
+     * this method allows to delete an emplacement row in the database
+     * @param obj
+     * @return
+     */
     public boolean delete(Emplacements obj) {
         try {
             int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE from Emplacements WHERE idEmplacement=" + obj.getIdEmplacement());
@@ -42,6 +54,11 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         }
         return false;
     }
+    /**
+     * this method allows to update an emplacement row in the database
+     * @param obj
+     * @return
+     */
     public boolean update(Emplacements obj){
             try {
                 int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Emplacements SET localisation='" + obj.getLocalisation() + "', superficieE=" + obj.getSuperficieE() + ",categorie='" + obj.getCategorie() + "',tauxOccupation=" + obj.getTauxOccupation() + " where idEmplacement=" + obj.getIdEmplacement());
@@ -51,6 +68,11 @@ public class EmplacementsDAO extends DAO<Emplacements> {
             }
             return false;
         }
+    /**
+     * this method allows to find an emplacement row in the database with its id
+     * @param idEmplacement
+     * @return Emplacements
+     */
     public Emplacements find(int idEmplacement) {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, localisation, superficieE, categorie, tauxOccupation FROM Emplacements Where idEmplacement="+ idEmplacement);

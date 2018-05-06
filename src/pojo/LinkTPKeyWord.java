@@ -1,5 +1,9 @@
 package pojo;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the LinkTPKeyWord data model
+ */
 public class LinkTPKeyWord {
     private int idLinkTPKeyWord;
     private int idTypicalProfile;

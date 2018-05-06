@@ -1,7 +1,11 @@
 package pojo;
 
 import java.util.Date;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the PurchaseHistory data model
+ */
 public class PurchaseHistory {
     private int idPurchase;
     private int idProduct;

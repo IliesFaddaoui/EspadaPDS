@@ -5,20 +5,27 @@ import pojo.PurchaseHistory;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * @author Ilies
+ * @version 1
+ * this is the Dao class for PurchaseHistory database table. This class allows to create, delete, update or find PurchaseHistory row in the data base
+ */
 public class PurchaseHistoryDAO extends DAO<PurchaseHistory> {
 
     private Connection con;
-
+    /**
+     * this is the PurchaseHistory constructor. This use a connection in the Connection pool to have access to the database
+     * @param conn
+     */
     public PurchaseHistoryDAO(Connection conn){
         super(conn);
         this.con=conn;
     }
-
-    public Connection getConnection(){
-        return this.con;
-    }
-
+    /**
+     * this method allows to create a PurchaseHistory row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean create(PurchaseHistory obj) {
         try{
@@ -29,7 +36,11 @@ public class PurchaseHistoryDAO extends DAO<PurchaseHistory> {
         }
         return false;
     }
-
+    /**
+     * this method allows to delete a PurchaseHistory row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean delete(PurchaseHistory obj) {
         try {
@@ -40,7 +51,11 @@ public class PurchaseHistoryDAO extends DAO<PurchaseHistory> {
         }
         return false;
     }
-
+    /**
+     * this method allows to update a PurchaseHistory row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean update(PurchaseHistory obj) {
         try {
@@ -51,7 +66,11 @@ public class PurchaseHistoryDAO extends DAO<PurchaseHistory> {
         }
         return false;
     }
-
+    /**
+     * this method allows to find a PurchaseHistory row in the database with its id
+     * @param id
+     * @return PurchaseHistory
+     */
     @Override
     public PurchaseHistory find(int id) {
         try{

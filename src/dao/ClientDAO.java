@@ -10,10 +10,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ilies
+ * @version 2
+ * this is the Dao for client, which allows to create, delete, update or find a client in the data base. It also allows to have the list of all the client in the database
+ */
 public class ClientDAO extends DAO<Client> {
 
     private Connection con;
 
+    /**
+     * this is the ClientDAO constructor. This use a connection in the Connection pool to have access to the database
+     * @param conn
+     */
     public ClientDAO(Connection conn){
         super(conn);
         this.con=conn;
@@ -23,6 +32,11 @@ public class ClientDAO extends DAO<Client> {
         return this.con;
     }
 
+    /**
+     * this method allows to create a client row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean create(Client obj) {
         try{
@@ -34,6 +48,11 @@ public class ClientDAO extends DAO<Client> {
         return false;
     }
 
+    /**
+     * this method allows to delete a client row in the database
+     * @param obj
+     * @return
+     */
     @Override
     public boolean delete(Client obj) {
         try {
@@ -45,6 +64,11 @@ public class ClientDAO extends DAO<Client> {
         return false;
     }
 
+    /**
+     * this method allows to update a client row in the database
+     * @param obj
+     * @return
+     */
     @Override
     public boolean update(Client obj) {
         try {
@@ -56,6 +80,11 @@ public class ClientDAO extends DAO<Client> {
         return false;
     }
 
+    /**
+     * this method allows to find a client row in the database with its id
+     * @param id
+     * @return Client
+     */
     @Override
     public Client find(int id) {
         try{

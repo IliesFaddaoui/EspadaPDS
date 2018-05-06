@@ -1,5 +1,9 @@
 package pojo;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the KeyWord data model
+ */
 public class KeyWord {
     private int idKeyword;
     private int nameKeyWord;
