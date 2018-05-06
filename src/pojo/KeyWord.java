@@ -6,9 +6,9 @@ package pojo;
  */
 public class KeyWord {
     private int idKeyword;
-    private int nameKeyWord;
+    private String nameKeyWord;
 
-    public KeyWord(int idKeyword, int nameKeyWord) {
+    public KeyWord(int idKeyword, String nameKeyWord) {
         this.idKeyword = idKeyword;
         this.nameKeyWord = nameKeyWord;
     }
@@ -21,11 +21,11 @@ public class KeyWord {
         this.idKeyword = idKeyword;
     }
 
-    public int getNameKeyWord() {
+    public String getNameKeyWord() {
         return nameKeyWord;
     }
 
-    public void setNameKeyWord(int nameKeyWord) {
+    public void setNameKeyWord(String nameKeyWord) {
         this.nameKeyWord = nameKeyWord;
     }
 }

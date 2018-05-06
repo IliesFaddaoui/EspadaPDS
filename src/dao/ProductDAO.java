@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * @author Ilies
  * @version 1
- * this is the Dao class for Product database table. This class allows to create, delete, update or find an Product in the data base
+ * this is the Dao class for Product database table. This class allows to create, delete, update or find a Product in the data base
  */
 public class ProductDAO extends DAO<Product> {
 
@@ -29,7 +29,7 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public boolean create(Product obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(idProduct ,productReference, stock,price, keyWord) values ("+obj.getIdProduct()+",\""+obj.getProductReference()+"\","+obj.getStock()+",\""+obj.getStock()+"\","+obj.getPrice()+"\","+obj.getKeyWord()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(idProduct ,productReference, stock,price, keyWord) values ("+obj.getIdProduct()+",'"+obj.getProductReference()+"',"+obj.getStock()+","+obj.getPrice()+","+obj.getKeyWord()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public boolean update(Product obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Product SET productReference=" + obj.getProductReference() + ",stock='" + obj.getStock() + "',price=" + obj.getPrice() + " keyWord=" + obj.getKeyWord()+ " where idProduct=" + obj.getIdProduct());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Product SET productReference='" + obj.getProductReference() + "',stock=" + obj.getStock() + ",price=" + obj.getPrice() + ", keyWord=" + obj.getKeyWord()+ " where idProduct=" + obj.getIdProduct());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
