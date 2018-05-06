@@ -10,9 +10,9 @@ public class Product {
     private String productReference;
     private int stock;
     private int price;
-    private String keyWord;
+    private int keyWord;
 
-    public Product(int idProduct, String productReference, int stock, int price, String keyWord) {
+    public Product(int idProduct, String productReference, int stock, int price, int keyWord) {
         this.idProduct = idProduct;
         this.productReference = productReference;
         this.stock = stock;
@@ -36,7 +36,7 @@ public class Product {
         return price;
     }
 
-    public String getKeyWord() {
+    public int getKeyWord() {
         return keyWord;
     }
 
@@ -56,7 +56,7 @@ public class Product {
         this.price = price;
     }
 
-    public void setKeyWord(String keyWord) {
+    public void setKeyWord(int keyWord) {
         this.keyWord = keyWord;
     }
 }

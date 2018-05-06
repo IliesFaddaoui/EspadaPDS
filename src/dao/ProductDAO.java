@@ -76,7 +76,7 @@ public class ProductDAO extends DAO<Product> {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idProduct, productReference, stock, price,keyword FROM Product Where idProduct="+ id);
             while(result.next()){
-                Product product = new Product(result.getInt("idProduct"),result.getString("productReference"), result.getInt("stock"), result.getInt("price"), result.getString("keyWord"));
+                Product product = new Product(result.getInt("idProduct"),result.getString("productReference"), result.getInt("stock"), result.getInt("price"), result.getInt("keyWord"));
                 return product;
             }
         } catch (SQLException e) {
