@@ -31,7 +31,7 @@ public class FrequentationDAO extends DAO<Frequentation> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return false; 
     }
 
     @Override
@@ -61,7 +61,7 @@ public class FrequentationDAO extends DAO<Frequentation> {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT frequentationDate, idMagasin, niveauFrequentation FROM Frequentation, Magasin Where Magasin.type="+ type);
             while(result.next()){
-                Frequentation freq = new Frequentation (result.getDate("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
+                Frequentation frequ = new Frequentation (result.getDate("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
                 return freq;
             }
         } catch (SQLException e) {

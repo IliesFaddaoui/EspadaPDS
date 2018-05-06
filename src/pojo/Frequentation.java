@@ -8,9 +8,9 @@ public class Frequentation {
 	private int idMagasin;
 	private int niveauFrequentation;
 	
-	public Frequentation(Date frequentationDate, int idMagasin, int niveauFrequentation) {
+	public Frequentation(Date frequentationDate, int idMagasins, int niveauFrequentation) {
 		this.setFrequentationDate(frequentationDate);
-		this.setIdMagasin(idMagasin);
+		this.setIdMagasin(idMagasins);
 		this.setNiveauFrequentation(niveauFrequentation);	
 	}
 
