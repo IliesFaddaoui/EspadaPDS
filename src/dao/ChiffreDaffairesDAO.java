@@ -3,6 +3,11 @@ package dao;
 import com.sun.rowset.CachedRowSetImpl;
 import pojo.ChiffreDaffaires;
 
+/**
+ * @author Anaximandro
+ * @version 2
+ * This is the Dao for turnover, which allows to create, delete, update or find a turnover in the data base. 
+ */
 import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,6 +19,10 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
 
     private Connection con;
 
+    /**
+     * this is the ChiffreDaffairesDAO constructor. This use a connection in the Connection pool to have access to the database
+     * @param conn
+     */ 
     public ChiffreDaffairesDAO(Connection conn){
         super(conn);
         this.con=conn;
@@ -23,6 +32,11 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         return this.con;
     }
 
+    /**
+     * this method allows to create a turnover row in the database
+     * @param obj
+     * @return boolean
+     */ 
     @Override
     public boolean create(ChiffreDaffaires obj) {
         try{
@@ -33,7 +47,12 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         }
         return false;
     }
-
+    
+    /**
+     * this method allows to delete a turnover row in the database
+     * @param obj
+     * @return
+     */
     @Override
     public boolean delete(ChiffreDaffaires obj) {
         try {
@@ -45,6 +64,11 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         return false;
     }
 
+    /**
+     * this method allows to update a turnover row in the database
+     * @param obj
+     * @return
+     */
     @Override
     public boolean update(ChiffreDaffaires obj) {
         try {
@@ -56,7 +80,11 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         return false;
     }
 
-
+    /**
+     * this method allows to find a turnover row in the database with its id
+     * @param id
+     * @return ChiffreDaffaires
+     */
 	public ChiffreDaffaires find(int id) {
 		// TODO Auto-generated method stub
 		return null;
