@@ -1,8 +1,9 @@
 CREATE table Client (
 idClient integer not null,
+pseudo varchar(30) not null,
+password varchar(30) not null,
 clientName varchar(30) not null,
 clientSurname varchar(30) not null,
-birthdate date not null,
 phone varchar(13) ,
 address varchar(100),
 gender varchar(5),
@@ -36,14 +37,14 @@ foreign key(idClient) references Client(idClient)
 
 CREATE table KeyWord (
 idKeyWord integer not null,
-nameKeyWord varchar(20)
+nameKeyWord varchar(20),
 PRIMARY KEY(idKeyWord));
 
 CREATE table LinkTPKeyWord (
 idLTPKW integer not null,
 idKeyWord integer not null,
 idTypicalProfile integer not null,
-PRIMARY KEY idLTPKW,
+PRIMARY KEY (idLTPKW),
 foreign key(idKeyWord) references KeyWord(idKeyWord),
 foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile));
 

@@ -5,18 +5,20 @@ import java.util.Date;
 
 public class Client {
     private int idClient;
+    private String pseudo;
+    private String password;
     private String ClientName;
     private String ClientSurname;
-    private Date birthDate;
     private String phone;
     private String address;
     private String gender;
 
-    public Client(int idClient, String ClientName, String ClientSurname, Date birthDate, String phone, String address, String gender) {
+    public Client(int idClient,String pseudo, String password, String ClientName, String ClientSurname, String phone, String address, String gender) {
         this.idClient = idClient;
+        this.pseudo = pseudo;
+        this.password = password;
         this.ClientName = ClientName;
         this.ClientSurname = ClientSurname;
-        this.birthDate = birthDate;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
@@ -34,9 +36,6 @@ public class Client {
         return ClientSurname;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
 
     public String getPhone() {
         return phone;
@@ -50,7 +49,6 @@ public class Client {
         return gender;
     }
 
-
     public void setIdClient(int idClient) {
         this.idClient = idClient;
     }
@@ -63,10 +61,6 @@ public class Client {
         this.ClientSurname = surname;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -77,5 +71,21 @@ public class Client {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

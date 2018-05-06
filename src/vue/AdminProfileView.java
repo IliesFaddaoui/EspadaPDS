@@ -9,7 +9,7 @@ import java.awt.*;
  * This view allows administrator to add a new profile type on the database,
  * with its linked words
  */
-public class ProfileView extends JFrame {
+public class AdminProfileView extends JFrame {
     private JLabel resume = new JLabel("You can add a new type profile, a new keyword or link a keyword to a type profile here: ");
     private JLabel addNewProfile = new JLabel("Add a new profile: ");
     private JLabel addAKeyWord = new JLabel("Add a keyWord: ");
@@ -27,7 +27,7 @@ public class ProfileView extends JFrame {
     public JComboBox comboProfile = new JComboBox(tab);
     Font police = new Font("Arial", Font.BOLD, 14);
 
-    public ProfileView(){
+    public AdminProfileView(){
         this.setTitle("PhyGit Mall 3.0 : Add profile type ");
         this.setSize(600,600);
         JPanel top = new JPanel();
@@ -81,7 +81,7 @@ public class ProfileView extends JFrame {
     }
 
     public static void main(String[] args){
-        ProfileView p1 = new ProfileView();
+        AdminProfileView p1 = new AdminProfileView();
     }
 
 }
