@@ -6,10 +6,18 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * @author ilies
+ * @version 1
+ * this is the Dao class for LinkClientTP database table. This table creates link between client profile, and type profile. This class allows to create, delete, update or find an link in the data base
+ */
 public class LinkClientTPDAO extends DAO<LinkClientTP> {
 
     private Connection con;
-
+    /**
+     * this is the LinkClientTPDAO constructor. This use a connection in the Connection pool to have access to the database
+     * @param conn
+     */
     public LinkClientTPDAO(Connection conn){
         super(conn);
         this.con=conn;
@@ -18,7 +26,11 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
     public Connection getConnection(){
         return this.con;
     }
-
+    /**
+     * this method allows to create an LinkClientTP row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean create(LinkClientTP obj) {
         try{
@@ -29,7 +41,11 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
         }
         return false;
     }
-
+    /**
+     * this method allows to delete an LinkClientTP row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean delete(LinkClientTP obj) {
         try {
@@ -40,7 +56,11 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
         }
         return false;
     }
-
+    /**
+     * this method allows to update an LinkClientTP row in the database
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean update(LinkClientTP obj) {
         try {
@@ -51,7 +71,11 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
         }
         return false;
     }
-
+    /**
+     * this method allows to find an LinkClientTP row in the database
+     * @param id
+     * @return LinkClientTP
+     */
     @Override
     public LinkClientTP find(int id) {
         try{

@@ -1,5 +1,9 @@
 package pojo;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the Product data model
+ */
 public class Product {
 
     private int idProduct;

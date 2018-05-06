@@ -1,5 +1,9 @@
 package pojo;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the LinkClientTP data model
+ */
 public class LinkClientTP {
     private int idLinkClientTP;
     private int idTypicalProfile;

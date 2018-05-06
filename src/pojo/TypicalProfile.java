@@ -1,7 +1,11 @@
 package pojo;
 
 import java.util.ArrayList;
-
+/**
+ * @author Ilies
+ * @version 2
+ * This is the TypicalProfile data model
+ */
 public class TypicalProfile {
 
     private int idTypicalProfile;

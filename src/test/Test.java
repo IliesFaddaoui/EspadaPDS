@@ -13,7 +13,7 @@ public class Test {
 
         PoolDeConnexion connection= new PoolDeConnexion(5);
 
-        ClientDAO c1 = new ClientDAO(connection.getConnection());
+        /*ClientDAO c1 = new ClientDAO(connection.getConnection());
         Client cli = c1.find(1);
         System.out.println("nom: "+ cli.getClientName());
         Client cli2 = new Client(3, "rob123", "rob123","sylvestre", "robert", "012012", "5 rue soleil", "male");
@@ -27,14 +27,8 @@ public class Test {
 
         c1.delete(cli2);
         System.out.println("Client bien supprimé");
-        /*List<String> s1 = c1.listOfClients();
-        if(s1.isEmpty())
-            System.out.println("remplie");
-        else
-            System.out.println("vide");
-        for(String str:s1)
-            System.out.println(str);
         */
+
 
     }
 }

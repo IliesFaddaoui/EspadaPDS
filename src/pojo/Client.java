@@ -3,6 +3,11 @@ package pojo;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * @author Ilies
+ * @version 2
+ * This is the client data model
+ */
 public class Client {
     private int idClient;
     private String pseudo;
