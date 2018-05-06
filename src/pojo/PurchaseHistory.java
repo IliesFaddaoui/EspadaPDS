@@ -10,10 +10,10 @@ public class PurchaseHistory {
     private int idPurchase;
     private int idProduct;
     private int idClient;
-    private Date purchaseDate;
+    private String purchaseDate;
     private int Quantity;
 
-    public PurchaseHistory(int idPurchase, int idProduct, int idClient, Date purchaseDate, int quantity) {
+    public PurchaseHistory(int idPurchase, int idProduct, int idClient, String purchaseDate, int quantity) {
         this.idPurchase = idPurchase;
         this.idProduct = idProduct;
         this.idClient = idClient;
@@ -45,11 +45,11 @@ public class PurchaseHistory {
         this.idClient = idClient;
     }
 
-    public Date getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchaseDate) {
+    public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 

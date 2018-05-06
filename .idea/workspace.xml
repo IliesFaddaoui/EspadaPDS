@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ClientDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ClientDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/EmplacementsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/EmplacementsDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkTPKeyWordDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkTPKeyWordDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/MagasinsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/MagasinsDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/PurchaseHistoryDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/PurchaseHistoryDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/TypicalProfileDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/TypicalProfileDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Client.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Client.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/KeyWord.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/KeyWord.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/LinkClientTP.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/LinkClientTP.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/LinkTPKeyWord.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/LinkTPKeyWord.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Product.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Product.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/PurchaseHistory.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/PurchaseHistory.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/TypicalProfile.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/TypicalProfile.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/test/Test.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/test/Test.class" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ProductDAO.java" afterPath="$PROJECT_DIR$/src/dao/ProductDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/pojo/KeyWord.java" afterPath="$PROJECT_DIR$/src/pojo/KeyWord.java" />
+      <change beforePath="$PROJECT_DIR$/FlowingScript.sql" afterPath="$PROJECT_DIR$/FlowingScript.sql" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" afterPath="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/pojo/PurchaseHistory.java" afterPath="$PROJECT_DIR$/src/pojo/PurchaseHistory.java" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" afterPath="$PROJECT_DIR$/src/test/Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,8 +28,48 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
+            <state relative-caret-position="834">
               <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PurchaseHistoryDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="78" column="170" lean-forward="false" selection-start-line="78" selection-start-column="170" selection-end-line="78" selection-end-column="170" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PurchaseHistory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pojo/PurchaseHistory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlowingScript.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreationTableScript.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="40" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -121,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/server/PeriodicProfiling.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientProfileView.java" />
         <option value="$PROJECT_DIR$/src/dao/TypicalProfileDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/MagasinsDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
@@ -130,22 +152,23 @@
         <option value="$PROJECT_DIR$/src/pojo/Client.java" />
         <option value="$PROJECT_DIR$/src/pojo/LinkClientTP.java" />
         <option value="$PROJECT_DIR$/src/pojo/LinkTPKeyWord.java" />
-        <option value="$PROJECT_DIR$/src/pojo/PurchaseHistory.java" />
         <option value="$PROJECT_DIR$/src/pojo/TypicalProfile.java" />
         <option value="$PROJECT_DIR$/src/pojo/Product.java" />
         <option value="$PROJECT_DIR$/CreationTableScript.sql" />
         <option value="$PROJECT_DIR$/CleanDBScript.sql" />
-        <option value="$PROJECT_DIR$/FlowingScript.sql" />
         <option value="$PROJECT_DIR$/src/pojo/KeyWord.java" />
         <option value="$PROJECT_DIR$/src/dao/ProductDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
+        <option value="$PROJECT_DIR$/src/pojo/PurchaseHistory.java" />
+        <option value="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
+        <option value="$PROJECT_DIR$/FlowingScript.sql" />
         <option value="$PROJECT_DIR$/src/test/Test.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="100" />
-    <option name="y" value="-9" />
+    <option name="x" value="-157" />
+    <option name="y" value="-17" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -407,7 +430,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05978261" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -659,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/MagasinsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -767,14 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pojo/PurchaseHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/TypicalProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -787,22 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -849,9 +840,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="40" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pojo/PurchaseHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="78" column="170" lean-forward="false" selection-start-line="78" selection-start-column="170" selection-end-line="78" selection-end-column="170" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
+        <state relative-caret-position="834">
           <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
           <folding />
         </state>

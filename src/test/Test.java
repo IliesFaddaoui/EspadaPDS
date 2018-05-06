@@ -1,14 +1,8 @@
 package test;
 
 import connexion.PoolDeConnexion;
-import dao.ClientDAO;
-import dao.KeyWordDAO;
-import dao.MagasinsDAO;
-import dao.ProductDAO;
-import pojo.Client;
-import pojo.KeyWord;
-import pojo.Magasins;
-import pojo.Product;
+import dao.*;
+import pojo.*;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -61,6 +55,13 @@ public class Test {
         System.out.println("bien mis à jour: name :" + k1.find(10).getNameKeyWord());
         k1.delete(kw3);
         System.out.println("bien supprimé !");*/
+
+        // TEST PurchaseHistory
+        ProductDAO prod = new ProductDAO(connection.getConnection());
+        PurchaseHistoryDAO p1 = new PurchaseHistoryDAO(connection.getConnection());
+        PurchaseHistory ph1= p1.find(1);
+        System.out.println("premier achat: " + prod.find(ph1.getIdProduct()).getProductReference());
         
+
     }
 }
