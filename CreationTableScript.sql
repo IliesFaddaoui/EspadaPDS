@@ -1,6 +1,3 @@
--- creation database script
---please don't modify existing line, just add yours
-
 CREATE table Client (
 idClient integer not null,
 clientName varchar(30) not null,
@@ -19,7 +16,7 @@ PRIMARY KEY (idTypicalProfile));
 
 CREATE table KeyWord (
 idKeyWord integer not null,
-nameKeyWord varchar(20)
+nameKeyWord varchar(20),
 PRIMARY KEY(idKeyWord));
 
 CREATE table Product (
@@ -27,9 +24,9 @@ idProduct integer not null,
 productReference varchar(50) not null,
 stock integer not null,
 price integer not null,
-keyword varchar(20) not null,
+keyword integer not null,
 PRIMARY KEY(idProduct),
-foreign key (keyword) references KeyWord(nameKeyWord);
+foreign key (keyword) references KeyWord(idKeyWord)
 );
 
 CREATE table PurchaseHistory (
@@ -40,5 +37,22 @@ purchaseDate date not null,
 Quantity integer not null,
 PRIMARY KEY(idProduct),
 foreign key(idProduct) references Product(idProduct),
-foreign key(idClient) references Client(idClient) 
+foreign key(idClient) references Client(idClient)
+);
+
+CREATE table LinkTPKeyWord (
+idLTPKW integer not null,
+idKeyWord integer not null,
+idTypicalProfile integer not null,
+PRIMARY KEY (idLTPKW),
+foreign key(idKeyWord) references KeyWord(idKeyWord),
+foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile));
+
+CREATE table EtablishedProfile (
+idEtablishedProfile integer not null,
+idTypicalProfile integer not null,
+idClient integer not null,
+PRIMARY KEY(idEtablishedProfile),
+foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile),
+foreign key(idClient) references Client(idClient)
 );
