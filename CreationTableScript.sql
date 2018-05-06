@@ -1,8 +1,9 @@
 CREATE table Client (
 idClient integer not null,
+pseudo varchar(30) not null,
+password varchar(30) not null,
 clientName varchar(30) not null,
 clientSurname varchar(30) not null,
-birthdate date not null,
 phone varchar(13) ,
 address varchar(100),
 gender varchar(5),
