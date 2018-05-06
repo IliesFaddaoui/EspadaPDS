@@ -61,8 +61,8 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT chiffreDate, idMagasin, montant FROM ChiffreDaffaires, Magasin Where Magasin.type="+ type);
             while(result.next()){
-                ChiffreDaffaires chiffre = new ChiffreDaffaires (result.getDate("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
-                return chiffre;
+                ChiffreDaffaires chiffres = new ChiffreDaffaires (result.getDate("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
+                return chiffres;
             }
         } catch (SQLException e) {
             e.printStackTrace();

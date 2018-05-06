@@ -11,7 +11,7 @@ public class ChiffreDaffaires {
 	public ChiffreDaffaires(Date chiffreDate, int idMagasin, int montant) {
 		this.setChiffreDate(chiffreDate);
 		this.setIdMagasin(idMagasin);
-		this.setMontant(montant);	
+		this.setMontant(montant);	;
 	}
 
 	public Date getChiffreDate() {
