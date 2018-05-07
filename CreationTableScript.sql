@@ -57,3 +57,58 @@ PRIMARY KEY(idEtablishedProfile),
 foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile),
 foreign key(idClient) references Client(idClient)
 );
+
+CREATE table Emplacement (
+idEmplacement integer not null,
+localisation varchar(30) not null,
+superficie integer not null,
+categorie varchar(30) not null,
+txOccupation float not null,
+PRIMARY KEY(idEmplacement),
+);
+
+CREATE table Magasin (
+idMagasin integer not null,
+magasinName varchar(30) not null,
+magasinType varchar(30) not null,
+magasinSuperficie integer not null,
+PRIMARY KEY(idMagasin),
+);
+
+CREATE table ChiffreDaffaires (
+chiffreDate date not null,
+idMagasin integer not null,
+Montant integer not null,
+PRIMARY KEY(chiffreDate),
+foreign key(idMagasin) references Magasin(idMagasin)
+);
+
+CREATE table Frequentation (
+frequentationDate date not null,
+idMagasin integer not null,
+niveauFrequentation integer not null,
+PRIMARY KEY(frequentationDate),
+foreign key(idMagasin) references Magasin(idMagasin)
+);
+
+CREATE table Stock (
+idMagasin integer not null,
+idProduct integer not null,
+Quantite integer not null,
+dateEntree date not null,
+dateSortie date not null,
+motifSortie varchar(30) not null,
+PRIMARY KEY(idMagasin, idProduct),
+foreign key(idMagasin) references Magasin(idMagasin),
+foreign key(idProduct) references Product(idProduct)
+);
+
+CREATE table Occupation (
+idEmplacement integer not null,
+idMagasin integer not null,
+dateEntree date not null,
+dateSortie date not null,
+PRIMARY KEY(idEmplacement, idMagasin),
+foreign key(idEmplacement) references Emplacement(idEmplacement)
+foreign key(idMagasin) references Magasin(idMagasin),
+);

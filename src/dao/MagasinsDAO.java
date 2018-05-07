@@ -29,7 +29,7 @@ public class MagasinsDAO extends DAO<Magasins>{
 	public boolean create(Magasins obj) {
 
 		try{
-			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Magasins(idMagasins,nom, superficieM,idEmplacement) values ("+obj.getIdMagasin()+",\""+obj.getNom()+"\","+obj.getSuperficieM()+","+obj.getIdEmplacement()+")");	
+			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Magasins(idMagasins, magasinName, magasinType, magasinSuperficie) values ("+obj.getIdMagasin()+",\""+obj.getMagasinName()+"\","+obj.getMagasinType()+","+obj.getMagasinSuperficie()+")");	
 			return true;
 			} catch (SQLException e) {
 				e.printStackTrace();		
@@ -70,9 +70,9 @@ public class MagasinsDAO extends DAO<Magasins>{
 	public Magasins find(int idMagasins) {
 		;
 		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasins, nom, superficieM, idEmplacement FROM Magasins Where idMagasins="+ idMagasins);
+			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM Magasins Where idMagasin="+ idMagasins);
 			while(result.next()){
-				Magasins mag = new Magasins(result.getInt("idMagasins"),result.getString("nom"), result.getInt("superficieM"), result.getInt("idEmplacement"));
+				Magasins mag = new Magasins(result.getInt("idMagasin"),result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
 				return mag;
 			}
 			} catch (SQLException e) {

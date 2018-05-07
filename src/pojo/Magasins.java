@@ -7,15 +7,15 @@ package pojo;
 public class Magasins {
 	//ID
 	private int idMagasin = 0;
-	private String nom ="";
-	private int superficieM = 0;
-	private int idEmplacement=0;
+	private String magasinName ="";
+	private String magasinType ="";
+	private int magasinSuperficie = 0;
 	
-	public Magasins(int idMagasin, String nom, int superficieM, int idEmplacement){
+	public Magasins(int idMagasin, String magasinName, String magasinType, int magasinSuperficie){
 		this.idMagasin= idMagasin;
-		this.nom = nom;
-		this.superficieM=superficieM;
-		this.idEmplacement=idEmplacement;
+		this.setMagasinName(magasinName);
+		this.setMagasinType(magasinType);
+		this.setMagasinSuperficie(magasinSuperficie);
 	}
 	public Magasins(){}
 	
@@ -26,30 +26,27 @@ public class Magasins {
 	public void setIdMagasin(int idMagasin) {
 		this.idMagasin = idMagasin;
 	}
-
-	public String getNom() {
-		return nom;
+	public String getMagasinName() {
+		return magasinName;
+	}
+	public void setMagasinName(String magasinName) {
+		this.magasinName = magasinName;
+	}
+	public String getMagasinType() {
+		return magasinType;
+	}
+	public void setMagasinType(String magasinType) {
+		this.magasinType = magasinType;
+	}
+	public int getMagasinSuperficie() {
+		return magasinSuperficie;
+	}
+	public void setMagasinSuperficie(int magasinSuperficie) {
+		this.magasinSuperficie = magasinSuperficie;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 
-	public int getSuperficieM() {
-		return superficieM;
-	}
 
-	public void setSuperficieM(int superficieM) {
-		this.superficieM = superficieM;
-	}
-
-	public int getIdEmplacement() {
-		return idEmplacement;
-	}
-
-	public void setIdEmplacement(int idEmplacement) {
-		this.idEmplacement = idEmplacement;
-	}
 	
 	
 }
