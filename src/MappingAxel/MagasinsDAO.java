@@ -1,4 +1,4 @@
-package dao;
+package MappingAxel;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +29,7 @@ public class MagasinsDAO extends DAO<Magasins>{
 	public boolean create(Magasins obj) {
 
 		try{
-			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Magasins(idMagasin, magasinName, magasinType, magasinSuperficie) values ("+obj.getIdMagasin()+",\""+obj.getMagasinName()+"\","+obj.getMagasinType()+","+obj.getMagasinSuperficie()+")");	
+			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Magasins(idMagasins, magasinName, magasinType, magasinSuperficie) values ("+obj.getIdMagasin()+",\""+obj.getMagasinName()+"\","+obj.getMagasinType()+","+obj.getMagasinSuperficie()+")");	
 			return true;
 			} catch (SQLException e) {
 				e.printStackTrace();		
