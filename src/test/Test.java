@@ -13,7 +13,7 @@ public class Test {
 
         PoolDeConnexion connection= new PoolDeConnexion(5);
 
-        /*
+
         // TEST CLIENT OK
         ClientDAO c1 = new ClientDAO(connection.getConnection());
         Client cli = c1.find(1);
@@ -54,12 +54,12 @@ public class Test {
         k1.update(kw3);
         System.out.println("bien mis à jour: name :" + k1.find(10).getNameKeyWord());
         k1.delete(kw3);
-        System.out.println("bien supprimé !");*/
+        System.out.println("bien supprimé !");
 
         // TEST PurchaseHistory
         ProductDAO prod = new ProductDAO(connection.getConnection());
-        PurchaseHistoryDAO p1 = new PurchaseHistoryDAO(connection.getConnection());
-        PurchaseHistory ph1= p1.find(1);
+        PurchaseHistoryDAO phd1 = new PurchaseHistoryDAO(connection.getConnection());
+        PurchaseHistory ph1= phd1.find(1);
         System.out.println("premier achat: " + prod.find(ph1.getIdProduct()).getProductReference());
         
 

@@ -27,7 +27,7 @@ public class KeyWordDAO extends DAO<KeyWord> {
     @Override
     public boolean create(KeyWord obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Keyword(idKeyWord ,nameKeyWord) values ("+obj.getIdKeyword()+",'"+obj.getNameKeyWord()+"')");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO KeyWord(idKeyWord ,nameKeyWord) values ("+obj.getIdKeyword()+",'"+obj.getNameKeyWord()+"')");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class KeyWordDAO extends DAO<KeyWord> {
     @Override
     public boolean delete(KeyWord obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE from Keyword WHERE idKeyWord=" + obj.getIdKeyword());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE from KeyWord WHERE idKeyWord=" + obj.getIdKeyword());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class KeyWordDAO extends DAO<KeyWord> {
     @Override
     public KeyWord find(int id) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idKeyWord, nameKeyWord FROM Keyword Where idKeyWord="+ id);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idKeyWord, nameKeyWord FROM KeyWord Where idKeyWord="+ id);
             while(result.next()){
                 KeyWord keyWord = new KeyWord(result.getInt("idKeyWord"),result.getString("nameKeyWord"));
                 return keyWord;
