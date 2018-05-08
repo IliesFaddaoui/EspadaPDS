@@ -253,7 +253,7 @@ public class View extends JFrame {
                     }
                     else{
                         Emplacements eRespFind = gson.fromJson(retourServer, Emplacements.class);
-                        retourServer = "idEmplacement: "+ eRespFind.getIdEmplacement() + " location : "+eRespFind.getLocalisation() + " superficie: "+eRespFind.getSuperficieE()+" Catégorie: "+eRespFind.getCategorie() +" Taux Occup.: "+ eRespFind.getTauxOccupation();
+                        retourServer = "idEmplacement: "+ eRespFind.getIdEmplacement() + " location : "+eRespFind.getLocalisation() + " superficie: "+eRespFind.getSuperficie()+" Catégorie: "+eRespFind.getCategorie() +" Taux Occup.: "+ eRespFind.getTauxOccupation();
                         fenResp.setTitle("Information sur l'emplacement n°"+ eRespFind.getIdEmplacement() );
                     }
 

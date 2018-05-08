@@ -33,7 +33,7 @@ public class EmplacementsDAO extends DAO<Emplacements> {
     public boolean create(Emplacements obj) {
 
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Emplacements(idEmplacement,localisation, superficieE,categorie, tauxOccupation) values ("+obj.getIdEmplacement()+",\""+obj.getLocalisation()+"\","+obj.getSuperficieE()+",\""+obj.getCategorie()+"\","+obj.getTauxOccupation()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Emplacements(idEmplacement,localisation, superficieE,categorie, tauxOccupation) values ("+obj.getIdEmplacement()+",\""+obj.getLocalisation()+"\","+obj.getSuperficie()+",\""+obj.getCategorie()+"\","+obj.getTauxOccupation()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class EmplacementsDAO extends DAO<Emplacements> {
      */
     public boolean update(Emplacements obj){
             try {
-                int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Emplacements SET localisation='" + obj.getLocalisation() + "', superficieE=" + obj.getSuperficieE() + ",categorie='" + obj.getCategorie() + "',tauxOccupation=" + obj.getTauxOccupation() + " where idEmplacement=" + obj.getIdEmplacement());
+                int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Emplacements SET localisation='" + obj.getLocalisation() + "', superficie=" + obj.getSuperficie()+ ",categorie='" + obj.getCategorie() + "',tauxOccupation=" + obj.getTauxOccupation() + " where idEmplacement=" + obj.getIdEmplacement());
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -77,7 +77,7 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, localisation, superficieE, categorie, tauxOccupation FROM Emplacements Where idEmplacement="+ idEmplacement);
             while(result.next()){
-                Emplacements mag = new Emplacements(result.getInt("idEmplacement"),result.getString("localisation"), result.getInt("superficieE"), result.getString("categorie"), result.getFloat("tauxOccupation"));
+                Emplacements mag = new Emplacements(result.getInt("idEmplacement"),result.getString("localisation"), result.getInt("superficie"), result.getString("categorie"), result.getFloat("tauxOccupation"));
                 return mag;
             }
         } catch (SQLException e) {
