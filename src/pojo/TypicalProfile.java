@@ -14,7 +14,7 @@ public class TypicalProfile {
     public TypicalProfile(int idTypicalProfile, String profilName) {
         this.idTypicalProfile = idTypicalProfile;
         this.profilName = profilName;
-    }
+    } 
 
     public int getIdTypicalProfile() {
         return idTypicalProfile;
