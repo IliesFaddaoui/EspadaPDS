@@ -49,7 +49,7 @@ public class connecterDB {
 		Magazins mag5 = magdao.findMax();
 		OccupationDAO occpdao = new OccupationDAO(con);
 		System.out.println(mag5.getIdMagasin());
-		
+		// Test d'insertion dans la table Occupation
 		if (mag5.getMagasinSuperficie() < empl3.getSuperficie())
 			try {
 				java.sql.Statement stmt = con.createStatement();
