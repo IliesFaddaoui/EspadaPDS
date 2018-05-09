@@ -50,7 +50,7 @@ public class connecterDB {
 
 		Magazins mag5 = magdao.findMax();
 		Emplacements empl6 = empldao.findMax();
-		System.out.println(empl6.getIdEmplacement());
+		System.out.println(empl5.getIdEmplacement());
 		
 		OccupationDAO occpdao = new OccupationDAO(con);
 		System.out.println(mag5.getIdMagasin());
