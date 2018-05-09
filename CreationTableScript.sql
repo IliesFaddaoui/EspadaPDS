@@ -78,7 +78,7 @@ CREATE table ChiffreDaffaires (
 chiffreDate date not null,
 idMagasin integer not null,
 Montant integer not null,
-PRIMARY KEY(chiffreDate),
+PRIMARY KEY(chiffreDate, idMagasin),
 foreign key(idMagasin) references Magasin(idMagasin)
 );
 
@@ -86,7 +86,7 @@ CREATE table Frequentation (
 frequentationDate date not null,
 idMagasin integer not null,
 niveauFrequentation integer not null,
-PRIMARY KEY(frequentationDate),
+PRIMARY KEY(frequentationDate, idMagasin),
 foreign key(idMagasin) references Magasin(idMagasin)
 );
 

@@ -72,7 +72,7 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
     @Override
     public boolean update(ChiffreDaffaires obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Client SET chiffreDate='" + obj.getChiffreDate() + "',idMagasin='" + obj.getIdMagasin() +"',montant='" + obj.getMontant());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE ChiffreDaffaires SET chiffreDate='" + obj.getChiffreDate() + "',idMagasin='" + obj.getIdMagasin() +"',montant='" + obj.getMontant());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
