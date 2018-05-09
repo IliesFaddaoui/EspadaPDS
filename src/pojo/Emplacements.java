@@ -8,14 +8,14 @@ public class Emplacements {
 
     private int idEmplacement=0;
     private String localisation="";
-    private int superficieE=0;
+    private int superficie=0;
     private String categorie="";
     private float tauxOccupation=0;
 
     public Emplacements(int idEmplacement, String localisation, int superficieE, String categorie, float tauxOccupation ){
         this.idEmplacement=idEmplacement;
         this.localisation=localisation;
-        this.superficieE=superficieE;
+        this.superficie=superficieE;
         this.categorie=categorie;
         this.tauxOccupation=tauxOccupation;
     }
@@ -28,8 +28,8 @@ public class Emplacements {
         return localisation;
     }
 
-    public int getSuperficieE() {
-        return superficieE;
+    public int getSuperficie() {
+        return superficie;
     }
 
     public String getCategorie() {
@@ -48,8 +48,8 @@ public class Emplacements {
         this.localisation = localisation;
     }
 
-    public void setSuperficieE(int superficieE) {
-        this.superficieE = superficieE;
+    public void setSuperficie(int superficie) {
+        this.superficie = superficie;
     }
 
     public void setCategorie(String categorie) {
