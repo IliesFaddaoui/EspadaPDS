@@ -2,8 +2,11 @@ package server;
 
 import com.google.gson.Gson;
 import connexion.PoolDeConnexion;
+import dao.ClientDAO;
 import dao.EmplacementsDAO;
+import pojo.Client;
 import pojo.Emplacements;
+import pojo.Identification;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -42,7 +45,7 @@ public class ServerProcessor implements Runnable {
                 //first interaction with the client, sending the kind of action
                 String demand = read();
                 switch(demand.toUpperCase()){
-                    case "AJOUT":
+                    case "AJOUTEMPLACEMENT":
                         //Server understands the action asked, he returns "OK"
                         String toSend = "OK for insert";
                         //the Server waits for the data
@@ -71,7 +74,7 @@ public class ServerProcessor implements Runnable {
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
 
-                    case "DELETE":
+                    case "DELETEEMPLACEMENT":
                         //Server understands the action asked, he returns "OK"
                         String toSendDelete = "OK for insert";
                         //the Server waits for the data
@@ -96,7 +99,7 @@ public class ServerProcessor implements Runnable {
                         }
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
-                    case "FIND":
+                    case "FINDEMPLACEMENT":
                         //Server understands the action asked, he returns "OK"
                         String toSend2 = "OK for find";
                         //the Server waits for the data
@@ -121,6 +124,29 @@ public class ServerProcessor implements Runnable {
 
                         }
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+                        break;
+                    case "PROFILCLIENT":
+                        //Server understands the action asked, he returns "OK"
+                        String toSend3 = "OK for find client";
+                        //the Server waits for the data
+                        writer.write(toSend3);
+                        writer.flush();
+                        //the server read the data
+                        String checkIdentification = read();
+                        Identification identification = gson.fromJson(checkIdentification, Identification.class);
+                        ClientDAO clientDAO = new ClientDAO(connection.getConnection());
+                        Client c = clientDAO.ConnectionClient( identification.getPseudo(), identification.getPassword());
+                        if(c == null){
+                            String failFind = "";
+                            writer.write(failFind);
+                            writer.flush();
+                        }else{
+                            String jsonFindClient = gson.toJson(c);
+                            writer.write(jsonFindClient);
+                            writer.flush();
+                        }
+                        break;
+                    case "PROFILAGE":
                         break;
                 }
 

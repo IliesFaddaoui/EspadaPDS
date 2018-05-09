@@ -121,17 +121,17 @@ public class ClientDAO extends DAO<Client> {
         return null;
     }
 
-    public int ConnectionClient( String pseudo, String password){
+    public Client ConnectionClient( String pseudo, String password){
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idClient FROM client where pseudo='"+ pseudo +"' and password='"+password+"'");
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idClient,pseudo, password, ClientName, ClientSurname, phone, address, gender FROM Client where pseudo='"+ pseudo +"' and password='"+password+"'");
             while(result.next()){
-                int idClient = result.getInt("idClient");
-                return idClient;
+                Client client = new Client(result.getInt("idClient"),result.getString("pseudo"), result.getString("password"),result.getString("ClientName"), result.getString("ClientSurname"), result.getString("phone"), result.getString("address"), result.getString("gender"));
+                return client;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
+        return null;
     }
 
 }
