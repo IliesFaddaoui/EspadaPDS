@@ -2,17 +2,16 @@ package MappingAxel;
 
 import java.sql.Connection;
 
-/**
- * @author ilies
- * @param <T>
- * this abstract class defines all the methods and parameters needed on DAO classes
- */
 public abstract class DAO<T> {
 
 	protected Connection connect = null;
 	
 	public DAO(Connection conn){
 		this.connect= conn;
+	}
+	
+	public DAO() {
+		
 	}
 	
 	/**

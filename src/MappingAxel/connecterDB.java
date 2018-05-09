@@ -13,7 +13,11 @@ public class connecterDB {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
+		EmplacementsDAO empldao = new EmplacementsDAO(con);
+		Emplacements empl1 = empldao.find(9);
+		System.out.println("idEmplacement = "+empl1.getIdEmplacement()+" localisation = "+empl1.getLocalisation());
 	}
+	
 	public static Connection BDD() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

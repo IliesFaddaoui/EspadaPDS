@@ -12,7 +12,7 @@ public class OccupationDAO extends DAO<Occupation>{
 
 		private Connection con;
 		/**
-		 * this is the Magasins constructor. This use a connection in the Connection pool to have access to the database
+		 * this is the Occupation constructor. This use a connection in the Connection pool to have access to the database
 		 * @param conn
 		 */
 		public OccupationDAO(Connection conn){
@@ -65,10 +65,10 @@ public class OccupationDAO extends DAO<Occupation>{
 		 * @param idMagasins
 		 * @return Magasins
 		 */
-		public Occupation find(int idMagasin) {
-			;
+		public Occupation find(int idMagasin, int idEmplacement) {
+			
 			try{
-				ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, idMagasin, dateEntree, dateSortie FROM Occupation Where idMagasin="+ idMagasin);
+				ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, idMagasin, dateEntree, dateSortie FROM Occupation Where idMagasin="+ idMagasin + "AND idEmplacement="+ idEmplacement);
 				while(result.next()){
 					Occupation occup = new Occupation(result.getInt("idEmplacement"),result.getInt("idMagasin"), result.getString("dateEntree"), result.getString("dateSortie"));
 					return occup;
@@ -80,6 +80,9 @@ public class OccupationDAO extends DAO<Occupation>{
 			
 		}
 		
-
+		public Occupation find(int idMagasin) {
+			return null;
+		}
+		
 	}
 
