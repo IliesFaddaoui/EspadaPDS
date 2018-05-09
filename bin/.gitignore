@@ -1,5 +1,11 @@
+/.classpath
+/.project
+/.settings/
+/META-INF/
 /MappingAxel/
+/connexion/
 /dao/
-/test/
 /pojo/
+/server/
+/test/
 /vue/

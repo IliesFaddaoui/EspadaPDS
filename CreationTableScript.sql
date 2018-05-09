@@ -110,4 +110,8 @@ dateSortie date not null,
 PRIMARY KEY(idEmplacement, idMagasin),
 foreign key(idEmplacement) references Emplacement(idEmplacement),
 foreign key(idMagasin) references Magasin(idMagasin)
+<<<<<<< Updated upstream
 );
+=======
+);
+>>>>>>> Stashed changes
