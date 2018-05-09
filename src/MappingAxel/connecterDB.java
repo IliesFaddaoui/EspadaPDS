@@ -50,7 +50,7 @@ public class connecterDB {
 		OccupationDAO occpdao = new OccupationDAO(con);
 		System.out.println(mag5.getIdMagasin());
 		
-		if (mag1.getMagasinSuperficie() > mag4.getMagasinSuperficie() && mag4.getMagasinSuperficie() < empl5.getSuperficie())
+		if (mag5.getMagasinSuperficie() < empl3.getSuperficie())
 			try {
 				java.sql.Statement stmt = con.createStatement();
 				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag5.getIdMagasin()+","+ empl4.getIdEmplacement()+", '"+MediumDateFormat.format(aujourdhui)+"')";
