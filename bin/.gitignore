@@ -1,11 +1,3 @@
-/.classpath
-/.project
-/.settings/
-/META-INF/
 /MappingAxel/
-/connexion/
-/dao/
-/pojo/
-/server/
-/test/
+/clientSocket/
 /vue/
