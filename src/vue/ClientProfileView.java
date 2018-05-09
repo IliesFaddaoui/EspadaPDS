@@ -1,5 +1,6 @@
 package vue;
 
+import clientSocket.SocketClientProfile;
 import connexion.PoolDeConnexion;
 import dao.ClientDAO;
 import pojo.Client;
@@ -25,10 +26,6 @@ public class ClientProfileView extends JFrame {
     private int idClientConnected = 0;
     private JButton connectionButton = new JButton("Connection");
     private JPanel container = new JPanel();
-    /*********************************TO ERASE*****************************/
-    PoolDeConnexion pc1 =new PoolDeConnexion(5);
-    ClientDAO cd1 = new ClientDAO(pc1.getConnection());
-    /**********************************************************************/
     public ClientProfileView(){
 
         this.setTitle("PhyGit Mall: My Profile");
@@ -111,10 +108,9 @@ public class ClientProfileView extends JFrame {
         public void actionPerformed(ActionEvent e){
             String pseudo = jtfPseudo.getText();
             String password = jtfPassword.getText();
-            PoolDeConnexion pc1 =new PoolDeConnexion(5);
-            ClientDAO cd1 = new ClientDAO(pc1.getConnection());
-            int retour = cd1.ConnectionClient(pseudo, password);
-            if(retour == 0){
+            SocketClientProfile s1 = new SocketClientProfile();
+            Client c1 = s1.getClientInformation(pseudo, password);
+            if(c1 == null){
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(600,300);
@@ -125,13 +121,11 @@ public class ClientProfileView extends JFrame {
                 fenResp.setVisible(true);
                 jtfPseudo.setText("pseudo");
                 jtfPassword.setText("password");
-                pc1.releaseConnection(cd1.getConnection());
             }
             else{
 
-                ClientProfileViewConnected c1 = new ClientProfileViewConnected(retour);
+                ClientProfileViewConnected vc1 = new ClientProfileViewConnected(c1);
                 dispose();
-                pc1.releaseConnection(cd1.getConnection());
             }
         }
     }
