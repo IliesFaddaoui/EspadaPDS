@@ -13,8 +13,8 @@ Insert into KeyWord value (7,'AppareilPhoto');
 Insert into KeyWord value (8, 'EcouteurMusique');
 Insert into KeyWord value (9, 'Ecran');
 
-Insert into Product value(1, 'Television 50cm Asus LG152', 100, 450, 9);
-Insert into Product value(2, 'Nintendo Switch', 100, 299, 1);
+Insert into Product value(1, 'Television 50cm Asus LG152', 450, 9);
+Insert into Product value(2, 'Nintendo Switch', 299, 1);
 
 Insert into PurchaseHistory value (1, 1, 1, date(sysdate()), 1);
 Insert into PurchaseHistory value (2, 2, 1, date(sysdate()), 1);

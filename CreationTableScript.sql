@@ -23,7 +23,6 @@ PRIMARY KEY(idKeyWord));
 CREATE table Product (
 idProduct integer not null,
 productReference varchar(50) not null,
-stock integer not null,
 price integer not null,
 keyword integer not null,
 PRIMARY KEY(idProduct),
@@ -64,7 +63,7 @@ localisation varchar(30) not null,
 superficie integer not null,
 categorie varchar(30) not null,
 txOccupation float not null,
-PRIMARY KEY(idEmplacement),
+PRIMARY KEY(idEmplacement)
 );
 
 CREATE table Magasin (
@@ -72,7 +71,7 @@ idMagasin integer not null,
 magasinName varchar(30) not null,
 magasinType varchar(30) not null,
 magasinSuperficie integer not null,
-PRIMARY KEY(idMagasin),
+PRIMARY KEY(idMagasin)
 );
 
 CREATE table ChiffreDaffaires (
@@ -109,6 +108,6 @@ idMagasin integer not null,
 dateEntree date not null,
 dateSortie date not null,
 PRIMARY KEY(idEmplacement, idMagasin),
-foreign key(idEmplacement) references Emplacement(idEmplacement)
-foreign key(idMagasin) references Magasin(idMagasin),
+foreign key(idEmplacement) references Emplacement(idEmplacement),
+foreign key(idMagasin) references Magasin(idMagasin)
 );

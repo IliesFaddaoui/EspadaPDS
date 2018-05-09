@@ -29,7 +29,7 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public boolean create(Product obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(idProduct ,productReference, stock,price, keyWord) values ("+obj.getIdProduct()+",'"+obj.getProductReference()+"',"+obj.getStock()+","+obj.getPrice()+","+obj.getKeyWord()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(idProduct ,productReference, price, keyWord) values ("+obj.getIdProduct()+",'"+obj.getProductReference()+"',"+obj.getPrice()+","+obj.getKeyWord()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public boolean update(Product obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Product SET productReference='" + obj.getProductReference() + "',stock=" + obj.getStock() + ",price=" + obj.getPrice() + ", keyWord=" + obj.getKeyWord()+ " where idProduct=" + obj.getIdProduct());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE Product SET productReference='" + obj.getProductReference() + "',price=" + obj.getPrice() + ", keyWord=" + obj.getKeyWord()+ " where idProduct=" + obj.getIdProduct());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -74,9 +74,9 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public Product find(int id) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idProduct, productReference, stock, price,keyword FROM Product Where idProduct="+ id);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idProduct, productReference, price,keyword FROM Product Where idProduct="+ id);
             while(result.next()){
-                Product product = new Product(result.getInt("idProduct"),result.getString("productReference"), result.getInt("stock"), result.getInt("price"), result.getInt("keyWord"));
+                Product product = new Product(result.getInt("idProduct"),result.getString("productReference"), result.getInt("price"), result.getInt("keyWord"));
                 return product;
             }
         } catch (SQLException e) {

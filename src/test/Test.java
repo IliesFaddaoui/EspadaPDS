@@ -33,10 +33,10 @@ public class Test {
         ProductDAO m1 = new ProductDAO(connection.getConnection());
         Product p1 = m1.find(1);
         System.out.println("nom du product: " + p1.getProductReference());
-        Product p2 = new Product(10, " opop", 100,100,2);
+        Product p2 = new Product(10, " opop",100,2);
         m1.create(p2);
         System.out.println("update bien effectué, nouveau product= " + m1.find(10).getProductReference());
-        Product p3= new Product(10, " apapapaap", 100,100,2);
+        Product p3= new Product(10, " apapapaap",100,2);
         m1.update(p3);
         System.out.println("update bien effectué, nouveau nom du nouveau produit= " + m1.find(10).getProductReference());
         m1.delete(p3);

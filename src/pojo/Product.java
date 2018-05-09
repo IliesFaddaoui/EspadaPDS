@@ -8,14 +8,12 @@ public class Product {
 
     private int idProduct;
     private String productReference;
-    private int stock;
     private int price;
     private int keyWord;
 
-    public Product(int idProduct, String productReference, int stock, int price, int keyWord) {
+    public Product(int idProduct, String productReference, int price, int keyWord) {
         this.idProduct = idProduct;
         this.productReference = productReference;
-        this.stock = stock;
         this.price = price;
         this.keyWord = keyWord;
     }
@@ -28,9 +26,6 @@ public class Product {
         return productReference;
     }
 
-    public int getStock() {
-        return stock;
-    }
 
     public int getPrice() {
         return price;
@@ -46,10 +41,6 @@ public class Product {
 
     public void setProductReference(String productReference) {
         this.productReference = productReference;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
     }
 
     public void setPrice(int price) {
