@@ -7,6 +7,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import com.mysql.jdbc.Statement;
+import pojo.Emplacements;
 
 public class connecterDB {
 
@@ -26,7 +27,7 @@ public class connecterDB {
 			String user="root";
 			String password="root";
 			Connection con=DriverManager.getConnection(url, user, password);
-			System.out.println("Connexion établie");
+			System.out.println("Connexion ï¿½tablie");
 			return con;
 		}catch(Exception e) {
 			e.printStackTrace();
