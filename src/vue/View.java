@@ -1,5 +1,8 @@
 package vue;
 
+import clientSocket.SocketCreateEmplacement;
+import clientSocket.SocketDeleteEmplacement;
+import clientSocket.SocketFindEmplacement;
 import com.google.gson.*;
 import pojo.Emplacements;
 import pojo.Magasins;
@@ -132,70 +135,26 @@ public class View extends JFrame {
 
         public void actionPerformed(ActionEvent e){
             try{
-                GsonBuilder builder = new GsonBuilder();
-                Gson gson = builder.create();
+
                 int txt = Integer.parseInt(jtf.getText());
                 String txt2 = jtf2.getText();
                 int txt3 = Integer.parseInt(jtf3.getText());
                 String txt4 = jtf4.getText();
                 float txt5 = Float.parseFloat(jtf5.getText());
-
                 Emplacements p = new Emplacements(txt, txt2, txt3, txt4, txt5);
-                String json = gson.toJson(p);
-                try {
-                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
-                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
-                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
-                    //We inform the server that we want to insert data in database
-                    String demand = "AJOUT";
-                    w1.write(demand);
-                    w1.flush();
-                    //we wait for server's response
-                    String reponse = read(b2);
-                    System.out.println(reponse);
-                    //Now we send to server the JSON file, with the data to insert
-                    w1.write(json);
-                    w1.flush();
-
-                    String retourServer = read(b2);
-                    System.out.println(retourServer);
-                    JFrame fenResp = new JFrame();
-                    JPanel containerResp = new JPanel();
-                    fenResp.setSize(600,300);
-                    fenResp.setLocationRelativeTo(null);
-                    JLabel jlabResp = new JLabel(retourServer);
-                    containerResp.add(jlabResp, BorderLayout.CENTER);
-                    fenResp.setContentPane(containerResp);
-                    fenResp.setVisible(true);
-                    jtf.setText("");
-                    jtf2.setText("");
-                    jtf3.setText("");
-                    jtf4.setText("");
-                    jtf5.setText("");
-                    s.close();
-
-                }
-                catch (Exception e4) {
-                    JFrame fenResp = new JFrame();
-                    JPanel containerResp = new JPanel();
-                    fenResp.setSize(600,300);
-                    fenResp.setLocationRelativeTo(null);
-                    JLabel jlabResp = new JLabel(e4.getMessage());
-                    containerResp.add(jlabResp, BorderLayout.CENTER);
-                    fenResp.setContentPane(containerResp);
-                    fenResp.setVisible(true);
-                    jtf.setText("");
-                    jtf2.setText("");
-                    jtf3.setText("");
-                    jtf4.setText("");
-                    jtf5.setText("");
-                }
-            }catch(NumberFormatException en){
+                SocketCreateEmplacement s1 = new SocketCreateEmplacement(p);
+                jtf.setText("");
+                jtf2.setText("");
+                jtf3.setText("");
+                jtf4.setText("");
+                jtf5.setText("");
+            }
+            catch (Exception e4) {
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
                 fenResp.setSize(600,300);
                 fenResp.setLocationRelativeTo(null);
-                JLabel jlabResp = new JLabel("Problème avec les infos entrées: " + en.getMessage());
+                JLabel jlabResp = new JLabel(e4.getMessage());
                 containerResp.add(jlabResp, BorderLayout.CENTER);
                 fenResp.setContentPane(containerResp);
                 fenResp.setVisible(true);
@@ -204,11 +163,8 @@ public class View extends JFrame {
                 jtf3.setText("");
                 jtf4.setText("");
                 jtf5.setText("");
+
             }
-
-
-
-
         }
     }
     /**
@@ -230,46 +186,8 @@ public class View extends JFrame {
                 Gson gson = builder.create();
                 String data = gson.toJson(e1);
                 try {
-                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
-                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
-                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
-                    //We inform the server that we want to find data in database
-                    String demand = "FIND";
-                    w1.write(demand);
-                    w1.flush();
-                    //we wait for server's response
-                    String reponse = read(b2);
-                    System.out.println(reponse);
-                    //Now we send to server the JSON file, with the data to insert
-                    w1.write(data);
-                    w1.flush();
-                    //we read the response from the server
-                    String retourServer = read(b2);
-                    System.out.println(retourServer);
-                    JFrame fenResp = new JFrame();
-                    if (retourServer==""){
-                        retourServer = "Cet emplacement n'existe pas";
-                        fenResp.setTitle("Emplacement inexistant !" );
-                    }
-                    else{
-                        Emplacements eRespFind = gson.fromJson(retourServer, Emplacements.class);
-                        retourServer = "idEmplacement: "+ eRespFind.getIdEmplacement() + " location : "+eRespFind.getLocalisation() + " superficie: "+eRespFind.getSuperficie()+" Catégorie: "+eRespFind.getCategorie() +" Taux Occup.: "+ eRespFind.getTauxOccupation();
-                        fenResp.setTitle("Information sur l'emplacement n°"+ eRespFind.getIdEmplacement() );
-                    }
-
-
-
-                    JPanel containerResp = new JPanel();
-                    fenResp.setSize(600,300);
-                    fenResp.setLocationRelativeTo(null);
-                    JLabel jlabResp = new JLabel(retourServer);
-                    containerResp.add(jlabResp, BorderLayout.CENTER);
-                    fenResp.setContentPane(containerResp);
-                    fenResp.setVisible(true);
+                    SocketFindEmplacement s1 = new SocketFindEmplacement(e1);
                     jtfFind.setText("");
-                    s.close();
-
-
                 }
                 catch (Exception e4) {
                     JFrame fenResp = new JFrame();
@@ -281,7 +199,6 @@ public class View extends JFrame {
                     fenResp.setContentPane(containerResp);
                     fenResp.setVisible(true);
                     jtfFind.setText("");
-
                 }
             }catch(NumberFormatException en){
                 JFrame fenResp = new JFrame();
@@ -294,13 +211,8 @@ public class View extends JFrame {
                 fenResp.setVisible(true);
                 jtfFind.setText("");
             }
-
-
-
-
         }
     }
-
     /**
      * Class which defines the action when someone click on "Bouton supprimer"
      * This control the input made by users, and return error messages in new temporal frame if
@@ -317,36 +229,11 @@ public class View extends JFrame {
             try{
                 int nbr = Integer.parseInt(jtfDelete.getText());
                 Emplacements e1 = new Emplacements( nbr, "", 0, "", 0);
-                GsonBuilder builder = new GsonBuilder();
-                Gson gson = builder.create();
-                String data = gson.toJson(e1);
+
                 try {
-                    Socket s = new Socket(InetAddress.getLocalHost(),5000);
-                    PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
-                    BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
-                    //We inform the server that we want to find data in database
-                    String demand = "DELETE";
-                    w1.write(demand);
-                    w1.flush();
-                    //we wait for server's response
-                    String reponse = read(b2);
-                    //Now we send to server the JSON file, with the data to insert
-                    w1.write(data);
-                    w1.flush();
-                    //we read the response from the server
-                    String retourServer = read(b2);
-                    System.out.println(retourServer);
-                    JFrame fenResp = new JFrame();
-                    fenResp.setTitle("Suppression d'élément dans emplacement" );
-                    JPanel containerResp = new JPanel();
-                    fenResp.setSize(600,300);
-                    fenResp.setLocationRelativeTo(null);
-                    JLabel jlabResp = new JLabel(retourServer);
-                    containerResp.add(jlabResp, BorderLayout.CENTER);
-                    fenResp.setContentPane(containerResp);
-                    fenResp.setVisible(true);
+
                     jtfDelete.setText("");
-                    s.close();
+                    SocketDeleteEmplacement s1 = new SocketDeleteEmplacement(e1);
                 }
                 catch (Exception e4) {
                     JFrame fenResp = new JFrame();
