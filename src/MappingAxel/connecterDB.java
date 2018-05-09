@@ -34,7 +34,7 @@ public class connecterDB {
 		
 		DateFormat MediumDateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		System.out.println(MediumDateFormat.format(aujourdhui));
-		
+		// Request to select attribut on the DB
 		Emplacements empl1 = empldao.find(1);
 		Emplacements empl2 = empldao.find(2);
 		Emplacements empl3 = empldao.find(3);
@@ -46,6 +46,7 @@ public class connecterDB {
 		Magazins mag2 = magdao.find(2);
 		Magazins mag3 = magdao.find(3);
 		Magazins mag4 = magdao.find(4);
+
 		Magazins mag5 = magdao.findMax();
 		OccupationDAO occpdao = new OccupationDAO(con);
 		System.out.println(mag5.getIdMagasin());

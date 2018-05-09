@@ -1,3 +1,15 @@
+/.classpath
+/.project
+/.settings/
+/META-INF/
 /MappingAxel/
+<<<<<<< Updated upstream
 /clientSocket/
+=======
+/connexion/
+/dao/
+/pojo/
+/server/
+/test/
+>>>>>>> Stashed changes
 /vue/
