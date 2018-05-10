@@ -114,4 +114,18 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
         }
         return null;
     }
+
+    public boolean cleanLinkedTPForClient(int id){
+        try{
+            String sql = "delete from LinkClientTP where idClient = "+ id + ";";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(this.connect);
+            this.connect.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
