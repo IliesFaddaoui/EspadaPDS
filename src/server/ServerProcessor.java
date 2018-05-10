@@ -7,6 +7,7 @@ import dao.EmplacementsDAO;
 import pojo.Client;
 import pojo.Emplacements;
 import pojo.Identification;
+import pojo.SimpleId;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -152,6 +153,34 @@ public class ServerProcessor implements Runnable {
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                     case "PROFILAGE":
+                        //Server understands the action asked, he returns "OK"
+                        String toSend4 = "OK for find client";
+                        //the Server waits for the data
+                        writer.write(toSend4);
+                        writer.flush();
+                        //the server read the data
+                        String simpleId = read();
+                        SimpleId id = gson.fromJson(simpleId, SimpleId.class);
+                        ClientDAO clientDAO2 = new ClientDAO(connection.getConnection());
+                        Client c2 = clientDAO2.find( id.getId());
+                        // Let's find the keyword list from client purchase history
+                        //let's keep only relevant keyword from this list
+                        //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
+                        // return "OK" if not issue during the processus
+                        // return "Failure" if issue
+                        if(c2 == null){
+                            System.out.println("Client not found");
+                            String failFind = "Fail";
+                            String jsonFindClient = gson.toJson(c2);
+                            writer.write(jsonFindClient);
+                            writer.flush();
+                            System.out.println("error send to client");
+                        }else{
+
+                            writer.write(jsonFindClient);
+                            writer.flush();
+                        }
+                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                 }
 

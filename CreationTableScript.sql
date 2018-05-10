@@ -35,7 +35,7 @@ idProduct integer not null,
 idClient integer not null,
 purchaseDate date not null,
 Quantity integer not null,
-PRIMARY KEY(idProduct),
+PRIMARY KEY(idPurchaseHistory),
 foreign key(idProduct) references Product(idProduct),
 foreign key(idClient) references Client(idClient)
 );

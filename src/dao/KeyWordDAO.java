@@ -1,9 +1,15 @@
 package dao;
 
+import com.sun.rowset.CachedRowSetImpl;
 import pojo.KeyWord;
+
+import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Ilies
  * @version 1
@@ -77,6 +83,23 @@ public class KeyWordDAO extends DAO<KeyWord> {
                 KeyWord keyWord = new KeyWord(result.getInt("idKeyWord"),result.getString("nameKeyWord"));
                 return keyWord;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public List<String> listClientKeyword(int id){
+        try{
+            List<String> clientsList = new ArrayList<String>();
+            String sql = "SELECT k.nameKeyWord FROM client c, purchaseHistory ph, KeyWord k";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(this.connect);
+            this.connect.close();
+            while (rs.next()) {
+                clientsList.add(rs.getString("idClient"));
+            }
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
