@@ -118,6 +118,7 @@ public class ServerProcessor implements Runnable {
                             String failFind = "";
                             writer.write(failFind);
                             writer.flush();
+
                         }else {
                             writer.write(jsonFind);
                             writer.flush();
@@ -138,8 +139,9 @@ public class ServerProcessor implements Runnable {
                         Client c = clientDAO.ConnectionClient( identification.getPseudo(), identification.getPassword());
                         if(c == null){
                             System.out.println("Client not found");
-                            String failFind = "";
-                            writer.write(failFind);
+                            String failFind = "Fail";
+                            String jsonFindClient = gson.toJson(c);
+                            writer.write(jsonFindClient);
                             writer.flush();
                             System.out.println("error send to client");
                         }else{
@@ -147,6 +149,7 @@ public class ServerProcessor implements Runnable {
                             writer.write(jsonFindClient);
                             writer.flush();
                         }
+                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                     case "PROFILAGE":
                         break;

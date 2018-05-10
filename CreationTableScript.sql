@@ -23,7 +23,7 @@ PRIMARY KEY(idKeyWord));
 CREATE table Product (
 idProduct integer not null,
 productReference varchar(50) not null,
-price integer not null,
+price float not null,
 keyword integer not null,
 PRIMARY KEY(idProduct),
 foreign key (keyword) references KeyWord(idKeyWord)

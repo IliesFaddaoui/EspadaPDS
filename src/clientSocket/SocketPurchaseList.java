@@ -3,32 +3,19 @@ package clientSocket;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import pojo.Client;
-import pojo.Emplacements;
 import pojo.Identification;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
-/**
- * @author Ilies
- * @version 1.0
- * This client socket class is used to return client profile data
- */
-public class SocketClientProfile extends AbstractClientSocket {
-    /**
-     * This methods return client profile data from the server to client when propers login/password are given
-     * @param pseudo
-     * @param password
-     * @return Client
-     */
-    public Client getClientInformation(String pseudo, String password){
+public class SocketPurchaseList extends AbstractClientSocket {
+    public Client getClientInformation(String pseudo, String password) {
         try {
-            Identification identification = new Identification(pseudo,password);
+            Identification identification = new Identification(pseudo, password);
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             String jsonIdentification = gson.toJson(identification);
@@ -49,10 +36,16 @@ public class SocketClientProfile extends AbstractClientSocket {
             String retourServer = read(b2);
             System.out.println("retour du serveur:" + retourServer);
             JFrame fenResp = new JFrame();
-            Client clientResponded = gson.fromJson(retourServer, Client.class);
-            s.close();
-            return clientResponded;
-
-        }catch (IOException e){ return null;}
+            if (retourServer == "") {
+                s.close();
+                return null;
+            } else {
+                Client clientResponded = gson.fromJson(retourServer, Client.class);
+                s.close();
+                return clientResponded;
+            }
+        } catch (IOException e) {
+            return null;
+        }
     }
 }

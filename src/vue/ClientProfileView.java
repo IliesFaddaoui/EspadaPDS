@@ -33,10 +33,10 @@ public class ClientProfileView extends JFrame {
     private JButton connectionButton = new JButton("Connection");
     private JPanel container = new JPanel();
     public ClientProfileView(){
-        this.setLocationRelativeTo(null);
         this.setTitle("PhyGit Mall: My Profile");
         this.setSize(600,600);
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
 
         jtfPseudo.getFont().deriveFont(Font.ITALIC);
         jtfPseudo.setForeground(Color.gray);
@@ -127,6 +127,7 @@ public class ClientProfileView extends JFrame {
             String password = jtfPassword.getText();
             SocketClientProfile s1 = new SocketClientProfile();
             Client c1 = s1.getClientInformation(pseudo, password);
+            System.out.println("retour du serveur OK button");
             if(c1 == null){
                 System.out.println("Rentré dans if");
                 JFrame fenResp = new JFrame();

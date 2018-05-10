@@ -8,10 +8,10 @@ public class Product {
 
     private int idProduct;
     private String productReference;
-    private int price;
+    private float price;
     private int keyWord;
 
-    public Product(int idProduct, String productReference, int price, int keyWord) {
+    public Product(int idProduct, String productReference, float price, int keyWord) {
         this.idProduct = idProduct;
         this.productReference = productReference;
         this.price = price;
@@ -27,7 +27,7 @@ public class Product {
     }
 
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -43,7 +43,7 @@ public class Product {
         this.productReference = productReference;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

@@ -67,7 +67,7 @@ public class ClientProfileViewConnected extends JFrame {
         myProfile.setFont(policeEspada);
         top.add(espada);
         top.add(welcomeClient);
-        east.add(myProfile);
+        top.add(myProfile);
 
         center.add(login);
         center.add(loginClient);
