@@ -94,17 +94,17 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
 
     public List<String> getTPKeywords(int id){
         try{
-            List<String> listClientTP = new ArrayList<String>();
-            String sql = "select tp.ProfileName from client c, typeprofile tp, linkclienttp ltpc Where c.idClient = ltpc.idClient and tp.idTypeProfile = ltpc.idTypicalProfile and ltpc.idClient = "+ id + ";";
+            List<String> listtTPKW = new ArrayList<String>();
+            String sql = "select k.nameKeyWord from keyword k, linktpkeyword l, typeprofile t where k.idKeyWord = l.idKeyWord and t.idTypeProfile = l.idTypeProfile and t.idTypeProfile= "+ id + ";";
             CachedRowSet rs = new CachedRowSetImpl();
             rs.setCommand(sql);
             rs.execute(this.connect);
             this.connect.close();
             while (rs.next()) {
-                listClientTP.add(rs.getString("ProfileName"));
+                listtTPKW.add(rs.getString("nameKeyWord"));
             }
             rs.close();
-            return listClientTP;
+            return listtTPKW;
         } catch (SQLException e) {
             e.printStackTrace();
         }
