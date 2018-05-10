@@ -78,9 +78,9 @@ public class BonDeLivraisonDAO extends DAO<BonDeLivraison> {
     @Override
     public BonDeLivraison find(int numeroBon) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT numeroBon, listProduits FROM BonDeLivraison Where numeroBon="+ numeroBon);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT numeroBon, listProduits, idMagasin FROM BonDeLivraison Where numeroBon="+ numeroBon);
             while(result.next()){
-                BonDeLivraison bonDeLivraison = new BonDeLivraison(result.getInt("numeroBon"),result.getString("listProduits"));
+                BonDeLivraison bonDeLivraison = new BonDeLivraison(result.getInt("numeroBon"),result.getString("listProduits"), result.getInt("idMagasin"));
                 return bonDeLivraison;
             }
         } catch (SQLException e) {
