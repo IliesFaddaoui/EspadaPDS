@@ -12,6 +12,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * @author Ilies
+ * @version 1.0
+ * This view allows user to connect throught pseudo and password to their profile
+ * The user has to add his personal information, and he'll be redirected to his profile view
+ */
 public class ClientProfileView extends JFrame {
 
     private JLabel connectionText = new JLabel("Please log in to see your profile: ");
@@ -27,7 +33,7 @@ public class ClientProfileView extends JFrame {
     private JButton connectionButton = new JButton("Connection");
     private JPanel container = new JPanel();
     public ClientProfileView(){
-
+        this.setLocationRelativeTo(null);
         this.setTitle("PhyGit Mall: My Profile");
         this.setSize(600,600);
         this.setResizable(false);
@@ -44,6 +50,9 @@ public class ClientProfileView extends JFrame {
             @Override
             public void mouseEntered(MouseEvent e) {}
             @Override
+            /**
+             * mouseListener: when the user click on the form, the grey text disappears to let him add his login
+             */
             public void mouseClicked(MouseEvent e) {
                 JTextField t1 = ((JTextField)e.getSource());
                 t1.setText("");
@@ -64,6 +73,9 @@ public class ClientProfileView extends JFrame {
             @Override
             public void mouseEntered(MouseEvent e) {}
             @Override
+            /**
+             * mouseListener: when the user click on the form, the grey text disappears to let him add his login
+             */
             public void mouseClicked(MouseEvent e) {
                 JTextField t2 = ((JTextField)e.getSource());
                 t2.setText("");
@@ -104,6 +116,11 @@ public class ClientProfileView extends JFrame {
         this.setContentPane(container);
         this.setVisible(displayConnectionScreen);
     }
+
+    /**
+     * Intern class ConnectionButton. When the user clicks on the button, his login and password are send to the server.
+     *
+     */
     private class ConnectionButton implements ActionListener {
         public void actionPerformed(ActionEvent e){
             String pseudo = jtfPseudo.getText();
@@ -111,9 +128,10 @@ public class ClientProfileView extends JFrame {
             SocketClientProfile s1 = new SocketClientProfile();
             Client c1 = s1.getClientInformation(pseudo, password);
             if(c1 == null){
+                System.out.println("Rentré dans if");
                 JFrame fenResp = new JFrame();
                 JPanel containerResp = new JPanel();
-                fenResp.setSize(600,300);
+                fenResp.setSize(150,150);
                 fenResp.setLocationRelativeTo(null);
                 JLabel jlabResp = new JLabel("Wrong pseudo/password" );
                 containerResp.add(jlabResp, BorderLayout.CENTER);
@@ -128,8 +146,5 @@ public class ClientProfileView extends JFrame {
                 dispose();
             }
         }
-    }
-    public static void main(String[] args){
-        ClientProfileView p1 = new ClientProfileView();
     }
 }

@@ -1,4 +1,4 @@
-package vue;
+package DepreciatedClassFromR2;
 
 import clientSocket.SocketCreateEmplacement;
 import clientSocket.SocketDeleteEmplacement;

@@ -1,5 +1,11 @@
 package pojo;
 
+/**
+ * @author Ilies
+ * @version 1.0
+ * Pojo to define the data model sends to server for login.
+ *
+ */
 public class Identification {
     private String pseudo;
     private String password;

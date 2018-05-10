@@ -12,6 +12,11 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * @author Ilies
+ * @version 2.0
+ * This client socket is used to create a new Emplacement row on the database, through json model.
+ */
 public class SocketCreateEmplacement extends AbstractClientSocket {
     public SocketCreateEmplacement(Emplacements e1){
         GsonBuilder builder = new GsonBuilder();

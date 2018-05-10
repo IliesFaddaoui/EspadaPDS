@@ -14,8 +14,18 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * @author Ilies
+ * @version 1.0
+ * This client socket class is used to return client profile data
+ */
 public class SocketClientProfile extends AbstractClientSocket {
-
+    /**
+     * This methods return client profile data from the server to client when propers login/password are given
+     * @param pseudo
+     * @param password
+     * @return Client
+     */
     public Client getClientInformation(String pseudo, String password){
         try {
             Identification identification = new Identification(pseudo,password);
@@ -37,19 +47,16 @@ public class SocketClientProfile extends AbstractClientSocket {
             w1.flush();
             //we read the response from the server
             String retourServer = read(b2);
-            System.out.println(retourServer);
+            System.out.println("retour du serveur:" + retourServer);
             JFrame fenResp = new JFrame();
             if (retourServer == "") {
                 s.close();
                 return null;
-
             } else {
                 Client clientResponded = gson.fromJson(retourServer, Client.class);
                 s.close();
                 return clientResponded;
-
             }
-
         }catch (IOException e){ return null;}
     }
 }

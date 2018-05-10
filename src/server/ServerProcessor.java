@@ -137,9 +137,11 @@ public class ServerProcessor implements Runnable {
                         ClientDAO clientDAO = new ClientDAO(connection.getConnection());
                         Client c = clientDAO.ConnectionClient( identification.getPseudo(), identification.getPassword());
                         if(c == null){
+                            System.out.println("Client not found");
                             String failFind = "";
                             writer.write(failFind);
                             writer.flush();
+                            System.out.println("error send to client");
                         }else{
                             String jsonFindClient = gson.toJson(c);
                             writer.write(jsonFindClient);

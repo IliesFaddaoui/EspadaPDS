@@ -11,7 +11,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
-
+/**
+ * @author Ilies
+ * @version 2.0
+ * This client socket is used to delete a existing Emplacement row on the database, through json model.
+ */
 public class SocketDeleteEmplacement extends AbstractClientSocket{
     public SocketDeleteEmplacement(Emplacements e1){
         GsonBuilder builder = new GsonBuilder();

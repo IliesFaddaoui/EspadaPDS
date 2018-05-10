@@ -14,11 +14,9 @@ import java.net.UnknownHostException;
  * Class which instance the Connection Pool, the thread pool
  */
 public class Server {
-
     private int port =5000;
     private ServerSocket server = null;
     private boolean isRunning = true;
-
     public Server(){
         try{
             server = new ServerSocket(port, 100, InetAddress.getLocalHost());
@@ -27,9 +25,7 @@ public class Server {
         } catch (IOException e1){
             e1.printStackTrace();
         }
-
     }
-
     /**
      * Public method to open the server
      */
@@ -48,7 +44,6 @@ public class Server {
                         e.printStackTrace();
                     }
                 }
-
                 try{
                     server.close();
                 }catch (IOException e){
@@ -56,10 +51,8 @@ public class Server {
                 }
             }
         });
-
         t.start();
     }
-
     /**
      * Public method to close the server
      */
