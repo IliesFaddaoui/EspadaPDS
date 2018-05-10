@@ -107,6 +107,7 @@ Insert into Emplacement value (2, 'B2', 50, 'Standard', 20.5);
 Insert into Emplacement value (3, 'A3', 75, 'Standard', 11.5);
 Insert into Emplacement value (4, 'B4', 55, 'Standard', 23.0);
 Insert into Emplacement value (5, 'A5', 90, 'Privilégié', 100.5);
+<<<<<<< Updated upstream
 
 Insert into Stock value (8, 2, 300, '12/04/2018', '28/04/2018', 'retour');
 Insert into Stock value (8, 1, 500, '03/12/2017', '16/03/2018', 'retour');
@@ -132,4 +133,4 @@ Insert into Frequentation value ('31/01/2018', 13, 2700);
 Insert into Frequentation value ('28/02/2018', 13, 5000);
 Insert into Frequentation value ('31/03/2018', 13, 3200);
 Insert into Frequentation value ('30/04/2018', 13, 2600);
->>>>>>> Stashed changes
+

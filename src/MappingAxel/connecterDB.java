@@ -34,23 +34,31 @@ public class connecterDB {
 		
 		DateFormat MediumDateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		System.out.println(MediumDateFormat.format(aujourdhui));
-		
+		// Request to select attribut of emplacement on the DB
 		Emplacements empl1 = empldao.find(1);
 		Emplacements empl2 = empldao.find(2);
 		Emplacements empl3 = empldao.find(3);
 		Emplacements empl4 = empldao.find(4);
 		Emplacements empl5 = empldao.find(5);
 		
+		// Request to select attribut of magasin
 		MagasinsDAO magdao = new MagasinsDAO(con);
 		Magazins mag1 = magdao.find(1);
 		Magazins mag2 = magdao.find(2);
 		Magazins mag3 = magdao.find(3);
 		Magazins mag4 = magdao.find(4);
+
+		Magazins mag5 = magdao.findMax();
+		Emplacements empl6 = empldao.findMax();
+		System.out.println(empl1.getIdEmplacement());
+		
 		OccupationDAO occpdao = new OccupationDAO(con);
-		if (mag1.getMagasinSuperficie() > mag4.getMagasinSuperficie() && mag4.getMagasinSuperficie() < empl5.getSuperficie())
+		System.out.println(mag5.getIdMagasin());
+		// Test d'insertion dans la table Occupation
+		if (mag5.getMagasinSuperficie() < empl6.getSuperficie())
 			try {
 				java.sql.Statement stmt = con.createStatement();
-				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag4.getIdMagasin()+","+ empl4.getIdEmplacement()+", '"+MediumDateFormat.format(aujourdhui)+"')";
+				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag5.getIdMagasin()+","+ empl4.getIdEmplacement()+", '"+MediumDateFormat.format(aujourdhui)+"')";
 				stmt.executeUpdate(sql);
 				}catch(SQLException e) {
 					e.printStackTrace();
