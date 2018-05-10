@@ -14,6 +14,7 @@ public class ClientPathView extends JFrame {
         this.setSize(new Dimension(600,600));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         /********************************SAID*************************************************************************/
         // @Said, tu fais ici tes opérations, c'est la fenêtre qui s'ouvre quand tu cliques sur "generate path"
         /**************************************************************************************************************/
