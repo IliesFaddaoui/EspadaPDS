@@ -98,7 +98,16 @@ Insert into purchasehistory value (8, 22, 1, date(sysdate()), 1);
 Insert into PurchaseHistory value (9, 37, 1, date(sysdate()), 1);
 Insert into PurchaseHistory value (10, 27, 1, date(sysdate()), 1);
 Insert into purchasehistory value (11, 38, 1, date(sysdate()), 1);
-
+Insert into PurchaseHistory value (12, 10, 1, date(sysdate()), 1);
+Insert into purchasehistory value (13, 11, 1, date(sysdate()), 1);
+Insert into purchasehistory value (14, 12, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (15, 13, 1, date(sysdate()), 1);
+Insert into purchasehistory value (16, 14, 1, date(sysdate()), 1);
+Insert into purchasehistory value (17, 15, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (18, 63,1, date(sysdate()), 1);
+Insert into purchasehistory value (19, 20, 1, date(sysdate()), 1);
+Insert into purchasehistory value (20, 28, 1, date(sysdate()), 1);
+Insert into purchasehistory value (21, 38, 1, date(sysdate()), 1);
 
 
 Insert into Magasin value (1, 'Courir', 'Sport',875);
