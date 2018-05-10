@@ -89,7 +89,6 @@ public class connecterDB {
 			}
 		else 
 		System.out.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
-		j = j - 1;
 		}
 
 		//System.out.println("Magasin1 = "+mag1.getIdMagasin());
