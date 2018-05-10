@@ -11,9 +11,9 @@ import java.util.List;
 public class Test {
     public static void main(String[]args){
 
-        PoolDeConnexion connection= new PoolDeConnexion(5);
+        PoolDeConnexion connection= new PoolDeConnexion(10);
 
-
+        /*
         // TEST CLIENT OK
         ClientDAO c1 = new ClientDAO(connection.getConnection());
         Client cli = c1.find(1);
@@ -61,7 +61,14 @@ public class Test {
         PurchaseHistoryDAO phd1 = new PurchaseHistoryDAO(connection.getConnection());
         PurchaseHistory ph1= phd1.find(1);
         System.out.println("premier achat: " + prod.find(ph1.getIdProduct()).getProductReference());
-        
+        */
+        // TEST list purchase
+        KeyWordDAO k1 = new KeyWordDAO(connection.getConnection());
+        List<KeyWordOccurence> l1 = k1.getListKeyWordOccurence(1);
+
+        for (KeyWordOccurence kwol : l1) {
+            System.out.println("nom: "+ kwol.getNameKeyWord() + " nbr:" + kwol.getKeyWordOccurence());
+        }
 
     }
 }

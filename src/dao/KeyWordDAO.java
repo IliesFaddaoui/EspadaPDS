@@ -2,6 +2,7 @@ package dao;
 
 import com.sun.rowset.CachedRowSetImpl;
 import pojo.KeyWord;
+import pojo.KeyWordOccurence;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
@@ -88,18 +89,19 @@ public class KeyWordDAO extends DAO<KeyWord> {
         }
         return null;
     }
-    public List<String> listClientKeyword(int id){
+    public List<KeyWordOccurence> getListKeyWordOccurence(int id){
         try{
-            List<String> clientsList = new ArrayList<String>();
-            String sql = "SELECT k.nameKeyWord FROM client c, purchaseHistory ph, KeyWord k";
+            List<KeyWordOccurence> listKeyWordOccurence = new ArrayList<KeyWordOccurence>();
+            String sql = "SELECT nameKeyWord , count(nameKeyWord) FROM client c, purchasehistory ph, keyword k, product p Where k.idKeyWord = p.keyword and ph.idClient = c.idClient and ph.idProduct = p.idProduct and ph.idClient = 1 group by k.nameKeyWord order by count(k.nameKeyWord) desc; ";
             CachedRowSet rs = new CachedRowSetImpl();
             rs.setCommand(sql);
             rs.execute(this.connect);
             this.connect.close();
             while (rs.next()) {
-                clientsList.add(rs.getString("idClient"));
+                listKeyWordOccurence.add(new KeyWordOccurence(rs.getString("nameKeyWord"), rs.getInt("count(nameKeyWord)")));
             }
             rs.close();
+            return listKeyWordOccurence;
         } catch (SQLException e) {
             e.printStackTrace();
         }
