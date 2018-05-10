@@ -1,6 +1,6 @@
 Insert into KeyWord value (1, 'consoleJeuxVideo');
-Insert into KeyWord value (2, 'BandeDessineeAdulte');
-Insert into KeyWord value (3, 'jeuxvideoAdulte');
+Insert into KeyWord value (2, 'BandeDessinee');
+Insert into KeyWord value (3, 'jeuxvideo');
 Insert into KeyWord value (4, 'MusiqueRap');
 Insert into KeyWord value (5, 'MusiqueRock');
 Insert into KeyWord value (6, 'Smartphone');
@@ -13,9 +13,68 @@ Insert into KeyWord value (12, 'beauté');
 
 Insert into Product value(1, 'Television 50cm Asus LG152', 450, 9);
 Insert into Product value(2, 'Nintendo Switch', 299, 1);
-Insert into Product value(3, 'Sandwich jambon beurre deau-nah', 3, 10);
-Insert into Product value(4, 'sac à dos randonnée', 20, 11);
-Insert into Product value(5, 'parfum Dior n°10', 99, 12 );
+Insert into product value(3, 'Playstation 4 pro', 399.99, 1);
+Insert into product value(4, 'xbox one X', 499.99, 1);
+Insert into product value(5, 'Nintendo 3ds', 120.99,1);
+Insert into product value(6, 'Tome 6 Asterix', 9.99, 2);
+Insert into product value(7, 'Tome 7 Asterix', 9.99, 2);
+Insert into product value(8, 'Tome 1 The walking dead', 12.50, 2);
+Insert into product value(9, 'Tome 2 The walkin dead', 12.50, 2);
+Insert into product value(10, 'Tome 3 The walkin dead', 12.50, 2);
+Insert into product value(11, 'Tome 5 The walking dead', 12.50, 2);
+Insert into product value(12, 'Tome 6 The walking dead', 12.50, 2);
+Insert into product value(13, 'Tome 7 The walking dead', 12.50, 2);
+Insert into product value(14, 'Tome 8 The walking dead', 12.50, 2);
+Insert into product value(15, 'Tome 9 The walking dead', 12.50, 2);
+Insert into product value(16, 'god of war', 69.99, 3);
+Insert into product value(17, 'fifa 18', 69.99, 3);
+Insert into product value(18, 'Shadow of the colossus', 69.99, 3);
+Insert into product value(19, 'zelda botw', 49.99, 3);
+Insert into product value(20, 'gta V', 69.99, 3);
+Insert into product value(21, 'Mario kart 8', 39.99, 3);
+Insert into product value(22, 'metal gear solid 5', 29.99, 3);
+Insert into product value(23, 'Rayman legend', 19.99, 3);
+Insert into product value(24, 'Nekfeu humanoide', 15.99, 4);
+Insert into product value(25, 'Booba trone', 15.99, 4);
+Insert into product value(26, 'Kendrick lama DAMN', 15.99, 4);
+Insert into product value(27, 'IAM ecole mic argent', 15.99, 4);
+Insert into product value(28, 'The beatles help', 15.99, 5);
+Insert into product value(29, 'SOAD toxicity', 15.99, 5);
+Insert into product value(30, 'Muse resistance', 15.99, 5);
+Insert into product value(31, 'Nirvana Bleach', 15.99, 5);
+Insert into product value(32, 'Samsung S9+', 850.99, 6);
+Insert into product value(33, 'Iphone X', 1199.99, 6);
+Insert into product value(34, 'Wiko 7p', 159.99, 6);
+Insert into product value(35, 'Canon e354x', 999.99, 7);
+Insert into product value(36, 'Nikon EARTZ', 1600.99, 7);
+Insert into product value(37, 'Olympus 78A', 600.99, 7);
+Insert into product value(38, 'Bose surround 35', 399.99, 8);
+Insert into product value(39, 'Beats studio pro', 350.99, 8);
+Insert into Product value(40, 'Monitor 50cm Asus LG152', 450.99, 9);
+Insert into Product value(41, 'Television 122cm Sony bravia', 699.99, 9);
+Insert into Product value(42, 'Television 130 cm 4k samsung evo2', 899.99, 9);
+Insert into Product value(43, 'Sandwich jambon beurre deau-nah', 3, 10);
+Insert into product value(44, 'Big Mac', 6.99, 10);
+Insert into product value(45, 'otacos xl', 10.99, 10);
+Insert into product value(46, 'pizza vapiano', 17.99, 10);
+Insert into Product value(47, 'Sandwich saumon deau-nah', 6.50, 10);
+Insert into product value(48, 'Sandwich poulet deau-nah', 4.99, 10);
+Insert into product value(49, 'Sandwich dinde deau-nah', 3.99, 10);
+Insert into product value(50, 'Glace italienne jeff', 4.50, 10);
+Insert into Product value(51, 'Coca-cola 50cl', 2.50, 10);
+Insert into product value(52, 'petite frite mcdo', 1.99, 10);
+Insert into product value(53, 'grande frite mcdo', 2.99, 10);
+Insert into product value(54, 'McFlurry', 4.99, 10);
+Insert into product value(55, 'chaussure north face solar', 299.99, 11);
+Insert into product value(56, 'pull quechua laine', 9.99, 11);
+Insert into product value(57, 'tente quechua 3 places', 110.99, 11);
+Insert into product value(58, 'sac à dos Columbia 50L', 150.99, 11);
+Insert into product value(59, 'rouge a levre 20 chanel', 30.99, 12);
+Insert into product value(60, 'gel douche Carrefour', 2.99, 12);
+Insert into product value(61, 'déodorant rexona man', 5.99, 12);
+Insert into product value(62, 'mascara dior', 35.99, 12);
+Insert into product value(63, 'dentifrice signal', 3.52, 12);
+
 
 Insert into Client value(1,'ilies123','ilies123', 'faddaoui', 'ilies', '0618622953', '5 rue a', 'm');
 Insert into Client value(2,'bertrand123','bertrand123', 'renard', 'bertrand','0618156154', '4 rue b', 'm');
@@ -30,6 +89,16 @@ Insert into Client value(10,'jojo123','jojo123', 'john', 'doe','0502030214', '8 
 
 Insert into PurchaseHistory value (1, 1, 1, date(sysdate()), 1);
 Insert into PurchaseHistory value (2, 2, 1, date(sysdate()), 1);
+Insert into purchasehistory value (3, 1, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (4, 53, 1, date(sysdate()), 1);
+Insert into purchasehistory value (5, 44, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (6, 19, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (7, 21, 1, date(sysdate()), 1);
+Insert into purchasehistory value (8, 22, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (9, 37, 1, date(sysdate()), 1);
+Insert into PurchaseHistory value (10, 27, 1, date(sysdate()), 1);
+Insert into purchasehistory value (11, 38, 1, date(sysdate()), 1);
+
 
 
 Insert into Magasin value (1, 'Courir', 'Sport',875);
@@ -75,7 +144,7 @@ Insert into ChiffreDaffaires value ('30/04/2018', 6, 378000);
 Insert into ChiffreDaffaires value ('31/01/2018', 7, 250000);
 Insert into ChiffreDaffaires value ('28/02/2018', 7, 270000);
 Insert into ChiffreDaffaires value ('31/03/2018', 7, 320000);
-Insert into ChiffreDaffaires value ('30/04/2018', 7, 248 000);
+Insert into ChiffreDaffaires value ('30/04/2018', 7, 248000);
 
 
 Insert into Frequentation value ('31/01/2018', 12, 3500);

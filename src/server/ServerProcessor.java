@@ -177,7 +177,7 @@ public class ServerProcessor implements Runnable {
                             System.out.println("error send to client");
                         }else{
 
-                           // writer.write(jsonFindClient);
+                            // writer.write(jsonFindClient);
                             //writer.flush();
                         }
                         connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
