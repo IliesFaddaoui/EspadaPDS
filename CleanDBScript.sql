@@ -13,7 +13,7 @@ delete from ChiffreDaffaires;
 delete from Frequentation;
 delete from Stock;
 delete from Occupation;
-
+delete from bondelivraison;
 
 
 drop table LinkTPKeyword;
@@ -29,3 +29,4 @@ drop table ChiffreDaffaires;
 drop table Frequentation;
 drop table Stock;
 drop table Occupation;
+drop table bondelivraison;

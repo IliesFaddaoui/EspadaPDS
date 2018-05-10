@@ -112,3 +112,8 @@ foreign key(idEmplacement) references Emplacement(idEmplacement),
 foreign key(idMagasin) references Magasin(idMagasin)
 );
 
+CREATE table BonDeLivraison (
+numeroBon integer not null,
+listProduits varchar(50) not null,
+PRIMARY KEY (numeroBon)
+);
