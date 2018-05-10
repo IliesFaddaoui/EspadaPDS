@@ -43,17 +43,17 @@ foreign key(idClient) references Client(idClient)
 CREATE table LinkTPKeyWord (
 idLTPKW integer not null,
 idKeyWord integer not null,
-idTypicalProfile integer not null,
+idTypeProfile integer not null,
 PRIMARY KEY (idLTPKW),
 foreign key(idKeyWord) references KeyWord(idKeyWord),
-foreign key(idTypicalProfile) references TypeProfile(idTypeProfile));
+foreign key(idTypeProfile) references TypeProfile(idTypeProfile));
 
 CREATE table LinkClientTP (
 idLinkClientTP integer not null,
-idTypicalProfile integer not null,
+idTypeProfile integer not null,
 idClient integer not null,
 PRIMARY KEY(idLinkClientTP),
-foreign key(idTypicalProfile) references TypeProfile(idTypeProfile),
+foreign key(idTypeProfile) references TypeProfile(idTypeProfile),
 foreign key(idClient) references Client(idClient)
 );
 

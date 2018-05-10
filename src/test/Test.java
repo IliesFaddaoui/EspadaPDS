@@ -67,7 +67,7 @@ public class Test {
         PurchaseHistoryDAO phd1 = new PurchaseHistoryDAO(connection.getConnection());
         PurchaseHistory ph1= phd1.find(1);
         System.out.println("premier achat: " + prod.find(ph1.getIdProduct()).getProductReference());
-        */
+
         // TEST list purchase
         KeyWordDAO k1 = new KeyWordDAO(connection.getConnection());
         List<KeyWordOccurence> l1 = k1.getListKeyWordOccurence(1);
@@ -75,6 +75,17 @@ public class Test {
         for (KeyWordOccurence kwol : l1) {
             System.out.println("nom: "+ kwol.getNameKeyWord() + " nbr:" + kwol.getKeyWordOccurence());
         }
+
+
+        //Test for linkDAO
+        LinkClientTPDAO k1 = new LinkClientTPDAO(connection.getConnection());
+        List<String> l1 = k1.getClientLinkedTP(1);
+        for (String s1 : l1) {
+            System.out.println("profile type: "+ s1);
+        }
+        */
+        //Test for linkTPKW
+        LinkTPKeyWordDAO k2 = new LinkTPKeyWordDAO(connection.getConnection());
 
     }
 }

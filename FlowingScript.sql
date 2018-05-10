@@ -75,6 +75,27 @@ Insert into product value(61, 'déodorant rexona man', 5.99, 12);
 Insert into product value(62, 'mascara dior', 35.99, 12);
 Insert into product value(63, 'dentifrice signal', 3.52, 12);
 
+Insert into typeprofile value(1, 'CulturePop');
+Insert into typeprofile value(2, 'Photographie');
+Insert into typeprofile value(3, 'Musique');
+Insert into typeprofile value(4, 'Gourmand');
+Insert into typeprofile value(5, 'NouvelleTechnologie');
+Insert into typeprofile value(6, 'coquet');
+Insert into typeprofile value(7, 'CulturePop');
+Insert into typeprofile value(8, 'Sportif');
+
+Insert into linktpkeyword value(1, 1,1);
+Insert into linktpkeyword value(2, 2,1);
+Insert into linktpkeyword value(3, 3,1);
+Insert into linktpkeyword value(4, 4,3);
+Insert into linktpkeyword value(5, 5,3);
+Insert into linktpkeyword value(6, 6,5);
+Insert into linktpkeyword value(7, 7,2);
+Insert into linktpkeyword value(8, 8,3);
+Insert into linktpkeyword value(9, 9,5);
+Insert into linktpkeyword value(10, 10,4);
+Insert into linktpkeyword value(11, 11,8);
+Insert into linktpkeyword value(12, 12,6);
 
 Insert into Client value(1,'ilies123','ilies123', 'faddaoui', 'ilies', '0618622953', '5 rue a', 'm');
 Insert into Client value(2,'bertrand123','bertrand123', 'renard', 'bertrand','0618156154', '4 rue b', 'm');
@@ -86,6 +107,10 @@ Insert into Client value(7,'fatou123','fatou123', 'fatoumata', 'benarfa','091751
 Insert into Client value(8,'Wong123','Wong123', 'Wong', 'shihao','0615263659', '8 rue lajoulie', 'f');
 Insert into Client value(9,'adam123','adam123', 'adamska', 'Shalaskala','0501020302', '8 rue 4 mai', 'm');
 Insert into Client value(10,'jojo123','jojo123', 'john', 'doe','0502030214', '8 rue zero', '?');
+
+Insert into linkclienttp value(1, 4,1);
+Insert into linkclienttp value(2, 1,1);
+Insert into linkclienttp value(3, 5,1);
 
 Insert into PurchaseHistory value (1, 1, 1, date(sysdate()), 1);
 Insert into PurchaseHistory value (2, 2, 1, date(sysdate()), 1);

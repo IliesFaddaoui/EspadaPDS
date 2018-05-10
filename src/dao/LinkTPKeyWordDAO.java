@@ -1,10 +1,14 @@
 package dao;
 
+import com.sun.rowset.CachedRowSetImpl;
 import pojo.LinkTPKeyWord;
 
+import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Ilies
@@ -82,6 +86,25 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
                 LinkTPKeyWord linkTPKeyWord = new LinkTPKeyWord(result.getInt("idLTPKW"),result.getInt("idKeyWord"), result.getInt("idTypicalProfile"));
                 return linkTPKeyWord;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<String> getTPKeywords(int id){
+        try{
+            List<String> listClientTP = new ArrayList<String>();
+            String sql = "select tp.ProfileName from client c, typeprofile tp, linkclienttp ltpc Where c.idClient = ltpc.idClient and tp.idTypeProfile = ltpc.idTypicalProfile and ltpc.idClient = "+ id + ";";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(this.connect);
+            this.connect.close();
+            while (rs.next()) {
+                listClientTP.add(rs.getString("ProfileName"));
+            }
+            rs.close();
+            return listClientTP;
         } catch (SQLException e) {
             e.printStackTrace();
         }

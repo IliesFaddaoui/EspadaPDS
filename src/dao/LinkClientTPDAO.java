@@ -1,10 +1,16 @@
 package dao;
 
+import com.sun.rowset.CachedRowSetImpl;
+import pojo.KeyWord;
 import pojo.LinkClientTP;
+import pojo.TypeProfile;
 
+import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author ilies
@@ -84,6 +90,25 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
                 LinkClientTP linkClientTP = new LinkClientTP(result.getInt("idLinkClientTP"),result.getInt("idTypicalProfile"), result.getInt("idClient"));
                 return linkClientTP;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<String> getClientLinkedTP(int id){
+        try{
+            List<String> listClientTP = new ArrayList<String>();
+            String sql = "select tp.ProfileName from client c, typeprofile tp, linkclienttp ltpc Where c.idClient = ltpc.idClient and tp.idTypeProfile = ltpc.idTypeProfile and ltpc.idClient = "+ id + ";";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(this.connect);
+            this.connect.close();
+            while (rs.next()) {
+                listClientTP.add(rs.getString("ProfileName"));
+            }
+            rs.close();
+            return listClientTP;
         } catch (SQLException e) {
             e.printStackTrace();
         }
