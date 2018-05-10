@@ -5,6 +5,7 @@ import connexion.PoolDeConnexion;
 import dao.ClientDAO;
 import dao.EmplacementsDAO;
 import dao.KeyWordDAO;
+import dao.LinkClientTPDAO;
 import pojo.*;
 
 import java.io.BufferedInputStream;
@@ -176,8 +177,14 @@ public class ServerProcessor implements Runnable {
                             writer.flush();
                             System.out.println("error send to client");
                         }else{
-                            KeyWordDAO kwd1 = new KeyWordDAO(connection.getConnection());
-                            // Let's find the keyword list from client purchase history
+                            Connection cKw = connection.getConnection();
+                            Connection cLinkClientTP = connection.getConnection();
+                            KeyWordDAO kwd1 = new KeyWordDAO(cKw);
+                            LinkClientTPDAO lctpd1 = new LinkClientTPDAO(cLinkClientTP);
+                            //first, let's clean the existing linked type profile to the client
+                            lctpd1.cleanLinkedTPForClient(id.getId());
+
+                            // Then Let's find the keyword list from client purchase history
                             List<KeyWordOccurence> kwList = kwd1.getListKeyWordOccurence(id.getId());
                             if( kwList.isEmpty()){
                                 String answer = "EMPTY";
@@ -189,6 +196,7 @@ public class ServerProcessor implements Runnable {
                                     if(kwol.getKeyWordOccurence() >3)
                                         pertinentKW.add(kwol.getNameKeyWord());
                                 }
+                                //List<int>
                                 //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
 
 
