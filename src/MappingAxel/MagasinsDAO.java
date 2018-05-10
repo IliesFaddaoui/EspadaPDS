@@ -65,7 +65,8 @@ public class MagasinsDAO extends DAO<Magazins>{
 	public Magazins find(int i) {
 		;
 		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM magasin Where idMagasin="+ i);
+			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM magasin Where idMagasin="+i);
+			System.out.println("le i du find : "+i);
 			while(result.next()){
 				Magazins mag = new Magazins(result.getInt("idMagasin"), result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
 				return mag;
@@ -80,7 +81,7 @@ public class MagasinsDAO extends DAO<Magazins>{
 	public Magazins findMax(int i) {
 
 		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM magasin ORDER BY magasinSuperficie DESC LIMIT 1");
+			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM magasin ORDER BY magasinSuperficie DESC LIMIT 1 IS NOT NULL");
 			while(result.next()){
 				Magazins mag = new Magazins(result.getInt("idMagasin"), result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
 				return mag;

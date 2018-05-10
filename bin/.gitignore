@@ -1,16 +1,6 @@
-/.classpath
-/.project
-/.settings/
-/META-INF/
 /MappingAxel/
-<<<<<<< Updated upstream
-/clientSocket/
-=======
-/connexion/
+/DepreciatedClassFromR2/
 /dao/
 /pojo/
 /server/
 /test/
->>>>>>> Stashed changes
-/vue/
-/DepreciatedClassFromR2/

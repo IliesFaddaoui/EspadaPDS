@@ -62,30 +62,35 @@ public class connecterDB {
 		
 		for(i = 1; i < 10; i++) {
 	
-			j++;
+		
 		Magazins mag1 = magdao.find(i);
 		Magazins mag2 = magdao.find(j);
-		Emplacements empl0 = empldao.find(i); 
-		Emplacements empl01 = empldao.find(j);
-		if (mag1.getMagasinType() != mag2.getMagasinType() && mag1.getMagasinSuperficie() < empl0.getSuperficie())
+		if (mag1 == null)
+			continue ;
+		
+		Emplacements empl0 = empldao.find(j); 
+		 Emplacements empl01 = empldao.find(j);
+		 j++;
+		if (mag1.getMagasinSuperficie() < empl0.getSuperficie())
 			try {
 				java.sql.Statement stmt = con.createStatement();
 				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl0.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 				stmt.executeUpdate(sql);
-				
-				System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
+		//		System.out.println("le mag1 : "+mag1.getIdMagasin());
+		//		System.out.println("le j :"+j);
+		//		System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
 				
 				}catch(SQLException e) {
 					e.printStackTrace();
 				}
-		else if (mag1.getMagasinType() == mag2.getMagasinType() && mag1.getMagasinSuperficie() < empl01.getSuperficie())
+		else if (mag1.getMagasinSuperficie() < empl01.getSuperficie())
 		try {
 			java.sql.Statement stmt = con.createStatement();
 			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl01.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 			stmt.executeUpdate(sql);
 			System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl01.getCategorie());
-			}catch(SQLException e) {
-				e.printStackTrace();
+		}catch(SQLException e) {
+				e.printStackTrace();;
 			}
 		else 
 		System.out.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
