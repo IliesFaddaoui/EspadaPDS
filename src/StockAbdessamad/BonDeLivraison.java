@@ -1,5 +1,4 @@
 package pojo;
-
 /**
  * 
  * @author aramil
@@ -8,16 +7,17 @@ package pojo;
 
 public class BonDeLivraison {
 	private int numeroBon;
-
+	
 	private String listProduits;
 	private int idMagasin;
+
 
 	public BonDeLivraison(int numeroBon, String listProduits, int idMagasin) {
 		this.numeroBon = numeroBon;
 		this.listProduits = listProduits;
 		this.idMagasin = idMagasin;
 	}
-
+	
 	public int getNumeroBon() {
 		return numeroBon;
 	}
@@ -33,7 +33,8 @@ public class BonDeLivraison {
 	public void setListProduits(String listProduits) {
 		this.listProduits = listProduits;
 	}
-
+	
+	
 	public int getIdMagasin() {
 		return idMagasin;
 	}
@@ -41,5 +42,6 @@ public class BonDeLivraison {
 	public void setIdMagasin(int idMagasin) {
 		this.idMagasin = idMagasin;
 	}
-
+	
+	
 }

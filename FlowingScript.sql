@@ -190,4 +190,6 @@ Insert into Frequentation value ('28/02/2018', 13, 5000);
 Insert into Frequentation value ('31/03/2018', 13, 3200);
 Insert into Frequentation value ('30/04/2018', 13, 2600);
 
-insert into bondelivraison value (1, '1,2');
+
+Insert into Bondelivraison value (1, '1,2', 2);
+Insert into Bondelivraison value (2, '2,3', 4);
