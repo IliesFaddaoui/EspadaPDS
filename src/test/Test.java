@@ -86,6 +86,9 @@ public class Test {
         */
         //Test for linkTPKW
         LinkTPKeyWordDAO k2 = new LinkTPKeyWordDAO(connection.getConnection());
-
+        List<String> l2 = k2.getTPKeywords(1);
+        for (String s1 : l2) {
+            System.out.println("kw : "+ s1);
+        }
     }
 }
