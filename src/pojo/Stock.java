@@ -5,8 +5,7 @@ import java.util.Date;
 
 /**
  * @author Anaximandro
- * @version 2
- * This is the stock data model
+ * @version 2 This is the stock data model
  */
 
 public class Stock {
@@ -15,9 +14,9 @@ public class Stock {
 	private int Quantite = 0;
 	private String dateEntree;
 	private String dateSortie;
-	//aramil: motifEntree: Client's return of orders
+	// aramil: motifEntree: Client's return of orders
 	private String motifEntree = "";
-	
+
 	public Stock(int idMagasin, int idProduct, int Quantite, String dateEntree, String dateSortie, String motifEntree) {
 		this.idMagasin = idMagasin;
 		this.idProduct = idProduct;
@@ -75,8 +74,4 @@ public class Stock {
 		this.motifEntree = motifSortie;
 	}
 
-
-	
-	
-	
 }
