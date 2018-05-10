@@ -87,7 +87,7 @@ public class connecterDB {
 				e.printStackTrace();
 			}
 		else 
-		System.out.println("Regarde bien khoya y'a une erreur : " + mag1.getIdMagasin());
+		System.out.println("Le magasin id : " + mag1.getIdMagasin()+" n'a pas pu être placé");
 		}
 
 		//System.out.println("Magasin1 = "+mag1.getIdMagasin());
