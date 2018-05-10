@@ -2,11 +2,17 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/gson-2.6.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/jackson-databind-2.6.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/json-simple-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/ojdbc6 (1).jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/pds/com.sun.rowset.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/jackson-databind-2.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/ojdbc6 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Axel/Desktop/pds/com.sun.rowset.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/json-simple-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/com.sun.rowset.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/gson-2.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Pat/Downloads/jdbc.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
