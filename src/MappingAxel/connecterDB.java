@@ -73,7 +73,7 @@ public class connecterDB {
 				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl0.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 				stmt.executeUpdate(sql);
 				
-				System.out.println(j);
+				System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
 				
 				}catch(SQLException e) {
 					e.printStackTrace();
@@ -83,11 +83,13 @@ public class connecterDB {
 			java.sql.Statement stmt = con.createStatement();
 			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl01.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 			stmt.executeUpdate(sql);
+			System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl01.getCategorie());
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
 		else 
-		System.out.println("Le magasin id : " + mag1.getIdMagasin()+" n'a pas pu être placé");
+		System.out.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
+		j = j - 1;
 		}
 
 		//System.out.println("Magasin1 = "+mag1.getIdMagasin());
