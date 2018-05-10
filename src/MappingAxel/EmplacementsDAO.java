@@ -76,9 +76,9 @@ public class EmplacementsDAO extends DAO<Emplacements> {
      * @param idEmplacement
      * @return Emplacements
      */
-    public Emplacements find(int idEmplacement) {
+    public Emplacements find(int i) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, localisation, superficie, categorie, txOccupation FROM emplacement Where idEmplacement="+ idEmplacement);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, localisation, superficie, categorie, txOccupation FROM emplacement Where idEmplacement="+ i);
             while(result.next()){
                 Emplacements mag = new Emplacements(result.getInt("idEmplacement"),result.getString("localisation"), result.getInt("superficie"), result.getString("categorie"), result.getFloat("txOccupation"));
                 return mag;
@@ -105,7 +105,7 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         return idEmpls;
     }
     
-    public Emplacements findMax() {
+    public Emplacements findMax(int i) {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM emplacement ORDER BY superficie DESC LIMIT 1");
             while(result.next()){

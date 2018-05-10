@@ -62,10 +62,10 @@ public class MagasinsDAO extends DAO<Magazins>{
 	 * @param idMagasins
 	 * @return Magazins
 	 */
-	public Magazins find(int idMagasins) {
+	public Magazins find(int i) {
 		;
 		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM magasin Where idMagasin="+ idMagasins);
+			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM magasin Where idMagasin="+ i);
 			while(result.next()){
 				Magazins mag = new Magazins(result.getInt("idMagasin"), result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
 				return mag;
@@ -77,7 +77,7 @@ public class MagasinsDAO extends DAO<Magazins>{
 		
 	}
 	
-	public Magazins findMax() {
+	public Magazins findMax(int i) {
 
 		try{
 			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM magasin ORDER BY magasinSuperficie DESC LIMIT 1");
