@@ -1,6 +1,8 @@
-package dao;
+package StockAbdessamad;
 
 import com.sun.rowset.CachedRowSetImpl;
+
+import dao.DAO;
 import pojo.ChiffreDaffaires;
 import pojo.Product;
 import pojo.Stock;

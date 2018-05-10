@@ -1,10 +1,11 @@
-package dao;
+package StockAbdessamad;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import dao.DAO;
 import pojo.Magasins;
 import pojo.Stock;
 
