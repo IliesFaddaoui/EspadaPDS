@@ -24,12 +24,9 @@ public class ClientProfileView extends JFrame {
     private JLabel espada = new JLabel("PhyGit Mall");
     private Font police = new Font("Arial", Font.BOLD, 14);
     private Font policeEspada = new Font("Arial", Font.BOLD, 28);
-    private JLabel labelConnection;
     public JTextField jtfPseudo = new JTextField("pseudo");
     public JTextField jtfPassword = new JTextField("password");
-    private boolean isConnected = false;
     private boolean displayConnectionScreen = true;
-    private int idClientConnected = 0;
     private JButton connectionButton = new JButton("Connection");
     private JPanel container = new JPanel();
     public ClientProfileView(){

@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/clientSocket/SocketPurchaseList.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/pojo/ClientPurchaseList.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/vue/ClientPathView.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CreationTableScript.sql" afterPath="$PROJECT_DIR$/CreationTableScript.sql" />
-      <change beforePath="$PROJECT_DIR$/FlowingScript.sql" afterPath="$PROJECT_DIR$/FlowingScript.sql" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/EmplacementsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/EmplacementsDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MagasinsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MagasinsDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/connecterDB.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/connecterDB.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Product.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Product.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/test/Test.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/test/Test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/vue/ClientProfileViewConnected.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/vue/ClientProfileViewConnected.class" />
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
-      <change beforePath="$PROJECT_DIR$/src/pojo/Product.java" afterPath="$PROJECT_DIR$/src/pojo/Product.java" />
-      <change beforePath="$PROJECT_DIR$/src/server/ServerProcessor.java" afterPath="$PROJECT_DIR$/src/server/ServerProcessor.java" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketPurchaseList.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/vue/ClientProfileView.java" afterPath="$PROJECT_DIR$/src/vue/ClientProfileView.java" />
       <change beforePath="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" afterPath="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
     </list>
@@ -38,10 +27,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ClientProfileViewConnected.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="668">
+              <caret line="113" column="61" lean-forward="false" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientProfileView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="120" column="53" lean-forward="false" selection-start-line="120" selection-start-column="53" selection-end-line="120" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketClientProfiling.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientPathView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/ClientPathView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SocketClientProfile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="685">
               <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding />
             </state>
@@ -63,16 +96,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="20" column="147" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="147" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientProfileView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="38" column="12" lean-forward="false" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -131,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java" />
         <option value="$PROJECT_DIR$/src/server/Server.java" />
         <option value="$PROJECT_DIR$/src/vue/ViewMain.java" />
-        <option value="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
         <option value="$PROJECT_DIR$/src/clientSocket/SocketPurchaseList.java" />
         <option value="$PROJECT_DIR$/src/pojo/ClientPurchaseList.java" />
         <option value="$PROJECT_DIR$/CreationTableScript.sql" />
@@ -142,6 +164,9 @@
         <option value="$PROJECT_DIR$/src/server/ServerProcessor.java" />
         <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientProfileView.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
+        <option value="$PROJECT_DIR$/src/vue/ClientPathView.java" />
+        <option value="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
       </list>
     </option>
   </component>
@@ -443,6 +468,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -452,7 +478,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23695652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05978261" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -517,8 +543,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pojo/EtablishedProfile.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/EtablishedProfileDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/layout/SpringCompactGrid.java" />
     <entry file="file://$PROJECT_DIR$/EspadaPDS.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -871,9 +895,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,24 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="147" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="147" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="51" lean-forward="false" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -911,11 +915,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="53" column="35" lean-forward="true" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/ClientPathView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="38" column="12" lean-forward="false" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+        <state relative-caret-position="294">
+          <caret line="120" column="53" lean-forward="false" selection-start-line="120" selection-start-column="53" selection-end-line="120" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="113" column="61" lean-forward="false" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

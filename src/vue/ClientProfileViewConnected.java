@@ -1,9 +1,13 @@
 package vue;
 
+import clientSocket.SocketClientProfile;
+import clientSocket.SocketClientProfiling;
 import pojo.Client;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Ilies
@@ -14,14 +18,16 @@ public class ClientProfileViewConnected extends JFrame {
 
     private Font police = new Font("Arial", Font.BOLD, 14);
     private Font policeEspada = new Font("Arial", Font.BOLD, 28);
+    private int idClient=0;
 
     public ClientProfileViewConnected(Client client){
-
 
         this.setTitle("PhyGit Mall: My Profile");
         this.setSize(new Dimension(600,600));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        idClient=client.getIdClient();
+        Client clientConnected = client;
         JLabel welcomeClient = new JLabel("Welcome, "+client.getClientSurname() + " "+ client.getClientName() +"!" );
         JLabel espada = new JLabel("PhyGit Mall");
         JLabel myProfile = new JLabel("MY PROFILE:");
@@ -36,7 +42,11 @@ public class ClientProfileViewConnected extends JFrame {
         JLabel genderClient = new JLabel(client.getGender());
 
         JButton updateProfile = new JButton("Update My profile");
+        updateProfile.addActionListener(new UpdateProfile());
+
         JButton generatePath = new JButton("Generate path");
+        generatePath.addActionListener(new GeneratePath());
+
         updateProfile.setFont(police);
         generatePath.setFont(police);
 
@@ -89,5 +99,21 @@ public class ClientProfileViewConnected extends JFrame {
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    private class UpdateProfile implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+
+            SocketClientProfiling s1 = new SocketClientProfiling();
+            s1.setClientProfiling(idClient);
+        }
+    }
+    private class GeneratePath implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            /************************************************SAID*****************************************************/
+            ClientPathView c1 = new ClientPathView(idClient);
+            /*********************************************************************************************************/
+
+        }
     }
 }
