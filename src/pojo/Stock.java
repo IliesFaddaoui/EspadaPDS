@@ -13,17 +13,18 @@ public class Stock {
 	private int idMagasin = 0;
 	private int idProduct = 0;
 	private int Quantite = 0;
-	private Date dateEntree;
-	private Date dateSortie;
-	private String motifSortie = "";
+	private String dateEntree;
+	private String dateSortie;
+	//aramil: motifEntree: Client's return of orders
+	private String motifEntree = "";
 	
-	public Stock(int idMagasin, int idProduct, int Quantite, Date dateEntree, Date dateSortie, String motifSortie) {
+	public Stock(int idMagasin, int idProduct, int Quantite, String dateEntree, String dateSortie, String motifEntree) {
 		this.idMagasin = idMagasin;
 		this.idProduct = idProduct;
 		this.Quantite = Quantite;
 		this.dateEntree = dateEntree;
 		this.dateSortie = dateSortie;
-		this.motifSortie = motifSortie;
+		this.motifEntree = motifEntree;
 	}
 
 	public int getIdMagasin() {
@@ -50,28 +51,28 @@ public class Stock {
 		Quantite = quantite;
 	}
 
-	public Date getDateEntree() {
+	public String getDateEntree() {
 		return dateEntree;
 	}
 
-	public void setDateEntree(Date dateEntree) {
+	public void setDateEntree(String dateEntree) {
 		this.dateEntree = dateEntree;
 	}
 
-	public Date getDateSortie() {
+	public String getDateSortie() {
 		return dateSortie;
 	}
 
-	public void setDateSortie(Date dateSortie) {
+	public void setDateSortie(String dateSortie) {
 		this.dateSortie = dateSortie;
 	}
 
-	public String getMotifSortie() {
-		return motifSortie;
+	public String getMotifEntree() {
+		return motifEntree;
 	}
 
-	public void setMotifSortie(String motifSortie) {
-		this.motifSortie = motifSortie;
+	public void setMotifEntree(String motifSortie) {
+		this.motifEntree = motifSortie;
 	}
 
 

@@ -96,7 +96,7 @@ idProduct integer not null,
 Quantite integer not null,
 dateEntree date not null,
 dateSortie date not null,
-motifSortie varchar(30) not null,
+motifEntree varchar(30) not null,
 PRIMARY KEY(idMagasin, idProduct),
 foreign key(idMagasin) references Magasin(idMagasin),
 foreign key(idProduct) references Product(idProduct)
@@ -115,5 +115,6 @@ foreign key(idMagasin) references Magasin(idMagasin)
 CREATE table BonDeLivraison (
 numeroBon integer not null,
 listProduits varchar(50) not null,
+idMagasin integer not null,
 PRIMARY KEY (numeroBon)
 );
