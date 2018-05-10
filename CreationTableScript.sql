@@ -10,10 +10,10 @@ gender varchar(5),
 PRIMARY KEY(idClient)
 );
 
-CREATE table TypicalProfile (
-idTypicalProfile integer not null,
+CREATE table TypeProfile (
+idTypeProfile integer not null,
 ProfileName varchar(30),
-PRIMARY KEY (idTypicalProfile));
+PRIMARY KEY (idTypeProfile));
 
 CREATE table KeyWord (
 idKeyWord integer not null,
@@ -46,14 +46,14 @@ idKeyWord integer not null,
 idTypicalProfile integer not null,
 PRIMARY KEY (idLTPKW),
 foreign key(idKeyWord) references KeyWord(idKeyWord),
-foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile));
+foreign key(idTypicalProfile) references TypeProfile(idTypeProfile));
 
-CREATE table EtablishedProfile (
-idEtablishedProfile integer not null,
+CREATE table LinkClientTP (
+idLinkClientTP integer not null,
 idTypicalProfile integer not null,
 idClient integer not null,
-PRIMARY KEY(idEtablishedProfile),
-foreign key(idTypicalProfile) references TypicalProfile(idTypicalProfile),
+PRIMARY KEY(idLinkClientTP),
+foreign key(idTypicalProfile) references TypeProfile(idTypeProfile),
 foreign key(idClient) references Client(idClient)
 );
 

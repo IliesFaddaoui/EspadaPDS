@@ -1,11 +1,11 @@
 -- Clean database script
 
 delete from LinkTPKeyword;
-delete from EtablishedProfile;
+delete from LinkClientTP;
 delete from PurchaseHistory;
 delete from Product;
 delete from KeyWord;
-delete from TypicalProfile;
+delete from TypeProfile;
 delete from Client;
 delete from Emplacement;
 delete from Magasin;
@@ -17,9 +17,9 @@ delete from bondelivraison;
 
 
 drop table LinkTPKeyword;
-drop table EtablishedProfile;
+drop table LinkClientTP;
 drop table PurchaseHistory;
-drop table TypicalProfile;
+drop table TypeProfile;
 drop table Client;
 drop table ChiffreDaffaires;
 drop table Frequentation;

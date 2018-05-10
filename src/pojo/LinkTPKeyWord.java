@@ -6,12 +6,12 @@ package pojo;
  */
 public class LinkTPKeyWord {
     private int idLinkTPKeyWord;
-    private int idTypicalProfile;
+    private int idTypeProfile;
     private int idKeyWord;
 
-    public LinkTPKeyWord(int idLinkTPKeyWord, int idTypicalProfile, int idKeyWord) {
+    public LinkTPKeyWord(int idLinkTPKeyWord, int idTypeProfile, int idKeyWord) {
         this.idLinkTPKeyWord = idLinkTPKeyWord;
-        this.idTypicalProfile = idTypicalProfile;
+        this.idTypeProfile = idTypeProfile;
         this.idKeyWord = idKeyWord;
     }
 
@@ -23,12 +23,12 @@ public class LinkTPKeyWord {
         this.idLinkTPKeyWord = idLinkTPKeyWord;
     }
 
-    public int getIdTypicalProfile() {
-        return idTypicalProfile;
+    public int getIdTypeProfile() {
+        return idTypeProfile;
     }
 
-    public void setIdTypicalProfile(int idTypicalProfile) {
-        this.idTypicalProfile = idTypicalProfile;
+    public void setIdTypeProfile(int idTypeProfile) {
+        this.idTypeProfile = idTypeProfile;
     }
 
     public int getIdKeyWord() {

@@ -32,7 +32,7 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
     @Override
     public boolean create(LinkTPKeyWord obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkTPKeyWord(idLTPKW,idKeyWord, idTypicalProfile) values ("+obj.getIdLinkTPKeyWord()+",\""+obj.getIdKeyWord()+"\","+obj.getIdTypicalProfile()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkTPKeyWord(idLTPKW,idKeyWord, idTypicalProfile) values ("+obj.getIdLinkTPKeyWord()+",\""+obj.getIdKeyWord()+"\","+obj.getIdTypeProfile()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
     @Override
     public boolean update(LinkTPKeyWord obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE LinkTPKeyWord SET idLTPKW='" + obj.getIdLinkTPKeyWord() + "', idKeyWord=" + obj.getIdKeyWord()+" where idTypicalProfile=" + obj.getIdTypicalProfile());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE LinkTPKeyWord SET idLTPKW='" + obj.getIdLinkTPKeyWord() + "', idKeyWord=" + obj.getIdKeyWord()+" where idTypicalProfile=" + obj.getIdTypeProfile());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

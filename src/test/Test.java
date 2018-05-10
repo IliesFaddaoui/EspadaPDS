@@ -8,6 +8,12 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Ilies
+ * @version 2.0
+ * This class with a simple main can be use to test dao/model
+ *
+ */
 public class Test {
     public static void main(String[]args){
 

@@ -6,12 +6,12 @@ package pojo;
  */
 public class LinkClientTP {
     private int idLinkClientTP;
-    private int idTypicalProfile;
+    private int idTypeProfile;
     private int idClient;
 
-    public LinkClientTP(int idEtablishedProfile, int idTypicalProfile, int idClient) {
+    public LinkClientTP(int idEtablishedProfile, int idTypeProfile, int idClient) {
         this.idLinkClientTP = idEtablishedProfile;
-        this.idTypicalProfile = idTypicalProfile;
+        this.idTypeProfile = idTypeProfile;
         this.idClient = idClient;
     }
 
@@ -23,12 +23,12 @@ public class LinkClientTP {
         this.idLinkClientTP = idEtablishedProfile;
     }
 
-    public int getIdTypicalProfile() {
-        return idTypicalProfile;
+    public int getIdTypeProfile() {
+        return idTypeProfile;
     }
 
-    public void setIdTypicalProfile(int idTypicalProfile) {
-        this.idTypicalProfile = idTypicalProfile;
+    public void setIdTypeProfile(int idTypeProfile) {
+        this.idTypeProfile = idTypeProfile;
     }
 
     public int getIdClient() {

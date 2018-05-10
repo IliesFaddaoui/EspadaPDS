@@ -283,5 +283,7 @@ public class View extends JFrame {
         return response;
 
     }
-
+    public static void main(String[]args){
+        View v1 = new View();
+    }
 }

@@ -34,7 +34,7 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
     @Override
     public boolean create(LinkClientTP obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkClientTP(idLinkClientTP,idTypicalProfile, idClient) values ("+obj.getIdLinkClientTP()+",\""+obj.getIdTypicalProfile()+"\","+obj.getIdClient()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkClientTP(idLinkClientTP,idTypeProfile, idClient) values ("+obj.getIdLinkClientTP()+",\""+obj.getIdTypeProfile()+"\","+obj.getIdClient()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
     @Override
     public boolean update(LinkClientTP obj) {
         try {
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE LinkClientTP SET idClient='" + obj.getIdClient() + "', idTypicalProfile=" + obj.getIdTypicalProfile()+" where idLinkClientTP=" + obj.getIdLinkClientTP());
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE LinkClientTP SET idClient='" + obj.getIdClient() + "', idTypicalProfile=" + obj.getIdTypeProfile()+" where idLinkClientTP=" + obj.getIdLinkClientTP());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

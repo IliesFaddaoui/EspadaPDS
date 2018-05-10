@@ -4,16 +4,16 @@ import com.google.gson.Gson;
 import connexion.PoolDeConnexion;
 import dao.ClientDAO;
 import dao.EmplacementsDAO;
-import pojo.Client;
-import pojo.Emplacements;
-import pojo.Identification;
-import pojo.SimpleId;
+import dao.KeyWordDAO;
+import pojo.*;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author ilies, axel
@@ -163,8 +163,8 @@ public class ServerProcessor implements Runnable {
                         SimpleId id = gson.fromJson(simpleId, SimpleId.class);
                         ClientDAO clientDAO2 = new ClientDAO(connection.getConnection());
                         Client c2 = clientDAO2.find( id.getId());
-                        // Let's find the keyword list from client purchase history
-                        //let's keep only relevant keyword from this list
+
+
                         //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
                         // return "OK" if not issue during the processus
                         // return "Failure" if issue
@@ -176,7 +176,23 @@ public class ServerProcessor implements Runnable {
                             writer.flush();
                             System.out.println("error send to client");
                         }else{
+                            KeyWordDAO kwd1 = new KeyWordDAO(connection.getConnection());
+                            // Let's find the keyword list from client purchase history
+                            List<KeyWordOccurence> kwList = kwd1.getListKeyWordOccurence(id.getId());
+                            if( kwList.isEmpty()){
+                                String answer = "EMPTY";
+                            }
+                            else{
+                                //let's keep only relevant keyword from this list
+                                List<String> pertinentKW = new ArrayList<String>();
+                                for(KeyWordOccurence kwol : kwList){
+                                    if(kwol.getKeyWordOccurence() >3)
+                                        pertinentKW.add(kwol.getNameKeyWord());
+                                }
+                                //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
 
+
+                            }
                             // writer.write(jsonFindClient);
                             //writer.flush();
                         }
