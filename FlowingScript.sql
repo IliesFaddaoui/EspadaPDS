@@ -96,6 +96,7 @@ Insert into linktpkeyword value(9, 9,5);
 Insert into linktpkeyword value(10, 10,4);
 Insert into linktpkeyword value(11, 11,8);
 Insert into linktpkeyword value(12, 12,6);
+insert into linktpkeyword value(13,1,5);
 
 Insert into Client value(1,'ilies123','ilies123', 'faddaoui', 'ilies', '0618622953', '5 rue a', 'm');
 Insert into Client value(2,'bertrand123','bertrand123', 'renard', 'bertrand','0618156154', '4 rue b', 'm');

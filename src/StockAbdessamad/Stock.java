@@ -1,4 +1,4 @@
-package pojo;
+package StockAbdessamad;
 
 import java.util.ArrayList;
 import java.util.Date;
