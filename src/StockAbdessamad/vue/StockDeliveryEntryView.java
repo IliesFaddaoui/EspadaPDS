@@ -65,37 +65,37 @@ public class StockDeliveryEntryView extends JFrame {
 		// Container's design
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 784, 465);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 13, 434, 22);
+		panel.setBounds(0, 13, 754, 25);
 		contentPane.add(panel);
 
 		// Components's design
 		JLabel lblNewLabel = new JLabel("Gestion des bons de livraison");
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		panel.add(lblNewLabel);
-		JLabel lblBonLivraison = new JLabel("Numero du bon de livraison");
-		lblBonLivraison.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		lblBonLivraison.setBounds(100, 117, 150, 16);
+		JLabel lblBonLivraison = new JLabel("Num du bon de livraison:");
+		lblBonLivraison.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblBonLivraison.setBounds(137, 117, 205, 16);
 		contentPane.add(lblBonLivraison);
 		lblBonLivraison.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblBonLivraison.setHorizontalAlignment(SwingConstants.LEFT);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(214, 113, 116, 22);
+		textField_1.setBounds(365, 114, 116, 22);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBackground(Color.LIGHT_GRAY);
-		btnSubmit.setBounds(203, 170, 97, 25);
+		btnSubmit.setBounds(338, 217, 97, 25);
 		contentPane.add(btnSubmit);
 
 		this.setVisible(true);

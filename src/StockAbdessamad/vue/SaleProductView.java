@@ -71,58 +71,58 @@ public class SaleProductView extends JFrame {
 	 */
 	public SaleProductView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 594, 394);
+		setBounds(100, 100, 813, 478);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 13, 538, 22);
+		panel.setBounds(12, 13, 741, 37);
 		contentPane.add(panel);
 
 		JLabel lblNewLabel = new JLabel("Vente de produits");
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 15));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		panel.add(lblNewLabel);
 		// La quanti
-		JLabel lblQuantity = new JLabel("Quantity");
-		lblQuantity.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblQuantity.setBounds(156, 172, 71, 16);
+		JLabel lblQuantity = new JLabel("Quantité:");
+		lblQuantity.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblQuantity.setBounds(234, 202, 87, 16);
 		contentPane.add(lblQuantity);
 		lblQuantity.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblQuantity.setHorizontalAlignment(SwingConstants.LEFT);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(250, 169, 116, 22);
+		textField_1.setBounds(377, 199, 116, 22);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
-		JButton btnSubmit = new JButton("Submit:");
-		btnSubmit.setBounds(256, 257, 97, 25);
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(370, 287, 97, 25);
 		contentPane.add(btnSubmit);
 		// Le code barre du produit
-		JLabel lblBarCode = new JLabel("Bar Code:");
-		lblBarCode.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblBarCode.setBounds(156, 119, 82, 16);
+		JLabel lblBarCode = new JLabel("Code barre:");
+		lblBarCode.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblBarCode.setBounds(234, 136, 98, 19);
 		contentPane.add(lblBarCode);
 		lblBarCode.setHorizontalAlignment(SwingConstants.LEFT);
 		lblBarCode.setVerticalAlignment(SwingConstants.TOP);
 
 		textField = new JTextField();
-		textField.setBounds(250, 116, 116, 22);
+		textField.setBounds(377, 133, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(250, 63, 116, 22);
+		textField_2.setBounds(377, 83, 116, 22);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 
 		JLabel lblMagasin = new JLabel("Magasin:");
-		lblMagasin.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblMagasin.setBounds(156, 66, 82, 16);
+		lblMagasin.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblMagasin.setBounds(234, 86, 97, 19);
 		contentPane.add(lblMagasin);
 
 		this.setVisible(true);
