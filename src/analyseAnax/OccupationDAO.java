@@ -3,9 +3,12 @@ package analyseAnax;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import pojo.Magasins;
 import pojo.Occupation;
+import pojo.Stock;
 
 public class OccupationDAO extends DAO<Occupation>{
 	
@@ -84,6 +87,24 @@ public class OccupationDAO extends DAO<Occupation>{
 		public Occupation find(int idMagasin) {
 			return null;
 		}
-		
+		public Collection<Integer> findOccupation() throws SQLException{
+			Collection <Integer> Occupations = new ArrayList<Integer>();
+			ResultSet compteur = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (dateEntree) as count FROM Occupation");
+			int cpt = compteur.getInt("count");
+			try {
+				for(int i = 1; i<cpt; i++) {
+	            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (dateEntree) as count2 FROM Occupation Where dateSortie = null and DATEDIFF(month, GETDATE(), S.dateEntree) = " + i);
+	            while(result.next()){
+	            	int cpt2 = compteur.getInt("count2");
+	            	Occupations.add(cpt2);        
+	            }
+				}
+				return Occupations;
+			}
+			catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+			return null;
 	}
 
+}

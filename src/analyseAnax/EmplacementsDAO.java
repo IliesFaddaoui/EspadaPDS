@@ -1,4 +1,4 @@
-package dao;
+package analyseAnax;
 import pojo.Emplacements;
 import java.sql.Connection;
 import java.sql.ResultSet;

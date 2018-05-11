@@ -31,11 +31,8 @@ public class FrequentationView extends JFrame {
 	private JLabel espada = new JLabel("PhyGit Mall");
 	private Font police = new Font("Arial", Font.BOLD, 14);
 	private Font policeEspada = new Font("Arial", Font.BOLD, 28);
-	private JLabel labelConnection;
 	public JTextField jtfType = new JTextField("category");
-	private boolean isConnected = false;
 	private boolean displayConnectionScreen = true;
-	private int idClientConnected = 0;
 	private JButton rechercheButton = new JButton("Rechecher");
 	private JPanel container = new JPanel();
 
@@ -135,7 +132,7 @@ public class FrequentationView extends JFrame {
 
 				for (Frequentation freq : fs) {
 					Magasins m = md.find(freq.getIdMagasin());
-					System.out.println(m.getMagasinName() + " | " + freq.getNiveauFrequentation());
+					System.out.println("Magasin :" + m.getMagasinName() + " | Niveau de frequentation :" + freq.getNiveauFrequentation());
 				}
 			}
 		}
