@@ -24,6 +24,19 @@ public class connecterDB {
 		return empls;
 	}*/
 	
+	private String selectedMagasin;
+	private String selectedEmplacement;
+	
+	public void setSelectedMagasin(String selectedMagasin) {
+		this.selectedMagasin = selectedMagasin;
+	}
+
+
+	public void setSelectedEmplacement(String selectedEmplacement) {
+		this.selectedEmplacement = selectedEmplacement;
+	}
+
+
 	public connecterDB() {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
@@ -60,7 +73,7 @@ public class connecterDB {
 	//	System.out.println(mag5.getIdMagasin());
 		// Test d'insertion dans la table Occupation
 		
-		for(i = 1; i < 13; i++) {
+		for(i = 1; i < 10; i++) {
 	
 		
 		Magazins mag1 = magdao.find(i);
@@ -70,8 +83,8 @@ public class connecterDB {
 	//	System.out.println("mag normal: "+ mag1.getIdMagasin());
 
 		//System.out.println("mag1 avec + 1 : =" +mag7);
-		Emplacements empl0 = empldao.find(j); 
-		 Emplacements empl01 = empldao.find(j);
+		Emplacements empl0 = empldao.find(i); 
+		 Emplacements empl01 = empldao.find(i);
 		 j++;
 		if (mag1.getMagasinSuperficie() < empl0.getSuperficie())
 			try {
@@ -103,6 +116,25 @@ public class connecterDB {
 	//	System.out.println("Emplacement1 = "+ empl1.getIdEmplacement());
 	}
 	
+	public void newStore(String magasin, String emplacement) {
+		
+		Connection con = BDD();
+		Date aujourdhui = new Date();
+		SimpleDateFormat formater = null;
+		formater = new SimpleDateFormat("dd-MM-yy");
+		MagasinsDAO magdao1 = new MagasinsDAO(con);
+		EmplacementsDAO empldao = new EmplacementsDAO(con);
+		try {
+			Magazins magname = magdao1.findName(magasin);
+			Emplacements emp = empldao.findName(emplacement);
+			java.sql.Statement stmt = con.createStatement();
+			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+magname.getIdMagasin()+","+ emp.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
+			stmt.executeUpdate(sql);
+			System.out.println("Le magasin "+ magname.getMagasinName() +" a été placé à l'emplacement "+ emp.getLocalisation());
+		}catch(SQLException e) {
+				System.out.println("marche pas");
+			}
+	}
 	public static Connection BDD() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

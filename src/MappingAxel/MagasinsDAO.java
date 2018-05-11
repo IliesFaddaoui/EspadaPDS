@@ -77,6 +77,21 @@ public class MagasinsDAO extends DAO<Magazins>{
 		
 	}
 	
+	public Magazins findName(String i) {
+		;
+		try{
+			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM magasin Where magasinName='"+i+"'");
+			while(result.next()){
+				Magazins mag = new Magazins(result.getInt("idMagasin"), result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
+				return mag;
+			}
+			} catch (SQLException e) {
+				e.printStackTrace();		
+			}
+		return null;
+		
+	}
+	
 	public Magazins findMax(int i) {
 
 		try{

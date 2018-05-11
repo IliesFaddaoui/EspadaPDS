@@ -32,10 +32,13 @@ public class MappingView extends JFrame {
 	private JTextField jtf2 = new JTextField();
 	  private JLabel label = new JLabel("");
 	  private JButton b = new JButton ("OK");
+	  
+	  private connecterDB conDB;
 	
 	private JPanel container = new JPanel();
 	
-	    public MappingView(){
+	    public MappingView(connecterDB con){
+	    	this.conDB = con;
 	    	
 	    	    this.setTitle("Phygit : Store Location");
 	    	    this.setSize(600, 600);
@@ -95,5 +98,37 @@ public class MappingView extends JFrame {
 	    	         
 	    	            }
 	    	});
+	    	    
+	    	    b.addMouseListener(new MouseListener() {
+	    	    	  @Override
+	    	            public void mouseReleased(MouseEvent e) {}
+	    	            @Override
+	    	            public void mousePressed(MouseEvent e) {}
+	    	            @Override
+	    	            public void mouseExited(MouseEvent e) {}
+	    	            @Override
+	    	            public void mouseEntered(MouseEvent e) {}
+	    	            @Override
+	    	            /**
+	    	             * mouseListener: when the user click on the form, the grey text disappears to let him add his login
+	    	             */
+	    	            public void mouseClicked(MouseEvent e) {
+	    	            	String magasin = jtf.getText();
+	    	            	String emplacement = jtf2.getText();
+	    	            	//conDB.setSelectedMagasin(magasin);
+	    	            	//conDB.setSelectedEmplacement(emplacement);
+	    	            	System.out.println(magasin);
+	    	            	System.out.println(emplacement);
+	    	            	conDB.newStore(magasin, emplacement);
+	    	            }
+	    	    });
+	    }
+
+	    public String getMagasin() {
+	    	return jtf.getText();
+	    }
+	    
+	    public String getEmplacement() {
+	    	return jtf2.getText();
 	    }
 }
