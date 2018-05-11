@@ -1,6 +1,8 @@
 package dao;
 
 import com.sun.rowset.CachedRowSetImpl;
+
+import pojo.ChiffreDaffaires;
 import pojo.Frequentation;
 
 import javax.sql.rowset.CachedRowSet;
@@ -96,9 +98,9 @@ public class FrequentationDAO extends DAO<Frequentation> {
 	public Collection<Frequentation> find(String type) {
 		Collection <Frequentation> Frequentations = new ArrayList<Frequentation>();
 		try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT C.chiffreDate C.idMagasin, C.montant FROM ChiffreDaffaires as C, Magasin as M Where M.magasinType="+ type +"and M.idMagasin = C.idMagasin and DATEDIFF(month, GETDATE(), C.chiffreDate) = 1 ");
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT F.frequentationDate F.idMagasin, F.niveauFrequentation FROM Frequentation as F, Magasin as M Where M.magasinType="+ type +"and M.idMagasin = F.idMagasin and DATEDIFF(month, GETDATE(), F.frequentationDate) = 1 ");
             while(result.next()){
-                Frequentation freq = new Frequentation(result.getDate("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
+                Frequentation freq = new Frequentation(result.getString("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
                 Frequentations.add(freq);        
             }
             return Frequentations;
@@ -106,5 +108,25 @@ public class FrequentationDAO extends DAO<Frequentation> {
             e.printStackTrace();
         }
         return null;
+	}
+	
+	public Collection<Frequentation> findHistory(int idMagasin) throws SQLException{
+		Collection <Frequentation> Frequentations = new ArrayList<Frequentation>();
+		ResultSet compteur = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (frequentationDate) as count FROM Frequentation");
+		int cpt = compteur.getInt("count");
+		try {
+			for(int i = 1; i<cpt; i++) {
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT F.frequentationDate F.idMagasin, F.niveauFrequentation FROM Frequentation as F, Magasin as M Where M.idMagasin="+ idMagasin +"and M.idMagasin = F.idMagasin and DATEDIFF(month, GETDATE(), F.frequentationDate) = " + i);
+            while(result.next()){
+                Frequentation freq = new Frequentation(result.getString("frequentationDate"),result.getInt("idMagasin"), result.getInt("niveauFrequentation"));
+                Frequentations.add(freq);        
+            }
+			}
+			return Frequentations;
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		return null;
 	}
 }

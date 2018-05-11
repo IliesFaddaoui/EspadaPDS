@@ -10,21 +10,21 @@ import java.util.Date;
  */
 
 public class Frequentation {
-	private Date frequentationDate;
+	private String frequentationDate;
 	private int idMagasin;
 	private int niveauFrequentation;
 	
-	public Frequentation(Date frequentationDate, int idMagasin, int niveauFrequentation) {
+	public Frequentation(String frequentationDate, int idMagasin, int niveauFrequentation) {
 		this.frequentationDate = frequentationDate;
 		this.idMagasin = idMagasin;
 		this.niveauFrequentation = niveauFrequentation;	
 	}
 
-	public Date getFrequentationDate() {
+	public String getFrequentationDate() {
 		return frequentationDate;
 	}
 
-	public void setFrequentationDate(Date frequentationDate) {
+	public void setFrequentationDate(String frequentationDate) {
 		this.frequentationDate = frequentationDate;
 	}
 

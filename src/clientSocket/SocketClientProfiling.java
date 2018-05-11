@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import pojo.Client;
 import pojo.Identification;
 import pojo.SimpleId;
+import vue.ServerAnswerView;
 
 import javax.swing.*;
 import java.io.BufferedInputStream;
@@ -39,6 +40,7 @@ public class SocketClientProfiling extends AbstractClientSocket {
             //we read the response from the server
             String retourServer = read(b2);
             System.out.println("retour du serveur:" + retourServer);
+            ServerAnswerView sv1 = new ServerAnswerView(retourServer);
             JFrame fenResp = new JFrame();
             s.close();
 

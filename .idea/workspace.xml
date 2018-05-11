@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="$PROJECT_DIR$/CreationTableScript.sql" afterPath="$PROJECT_DIR$/CreationTableScript.sql" />
-      <change beforePath="$PROJECT_DIR$/FlowingScript.sql" afterPath="$PROJECT_DIR$/FlowingScript.sql" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ClientDAO.java" afterPath="$PROJECT_DIR$/src/dao/ClientDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/KeyWordDAO.java" afterPath="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" afterPath="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java" afterPath="$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ProductDAO.java" afterPath="$PROJECT_DIR$/src/dao/ProductDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" afterPath="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/dao/TypeProfileDAO.java" afterPath="$PROJECT_DIR$/src/dao/TypeProfileDAO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/vue/ServerAnswerView.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/EmplacementsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/EmplacementsDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MagasinsDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MagasinsDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView$1.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView$2.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingView.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingViewMain.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/MappingViewMain.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/connecterDB.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/MappingAxel/connecterDB.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfiling.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfiling.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ClientDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ClientDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/FactureDAO.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/KeyWordDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/KeyWordDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkTPKeyWordDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkTPKeyWordDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/ProductDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/PurchaseHistoryDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/PurchaseHistoryDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/TypeProfileDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/TypeProfileDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/pojo/Facture.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/server/ServerProcessor.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/server/ServerProcessor.class" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,21 +42,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+      <file leaf-file-name="SocketClientProfiling.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+            <state relative-caret-position="510">
+              <caret line="42" column="68" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerProcessor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ServerAnswerView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/ServerAnswerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="88" lean-forward="false" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/ServerProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="225" column="37" lean-forward="false" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
+            <state relative-caret-position="356">
+              <caret line="186" column="54" lean-forward="false" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
               <folding>
                 <element signature="e#10189#10197#0" expanded="true" />
               </folding>
@@ -52,31 +76,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlowingScript.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KeyWordDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/KeyWordDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="73" column="7" lean-forward="false" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlowingScript.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="135" column="108" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="108" />
+            <state relative-caret-position="1212">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="107" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ProductDAO.java">
+      <file leaf-file-name="ClientProfileView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="31" column="195" lean-forward="false" selection-start-line="31" selection-start-column="195" selection-end-line="31" selection-end-column="195" />
+            <state relative-caret-position="583">
+              <caret line="137" column="40" lean-forward="false" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkTPKeyWordDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="195" lean-forward="false" selection-start-line="39" selection-start-column="195" selection-end-line="39" selection-end-column="195" />
+            <state relative-caret-position="362">
+              <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -85,48 +119,18 @@
       <file leaf-file-name="LinkClientTPDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="42" column="216" lean-forward="false" selection-start-line="42" selection-start-column="216" selection-end-line="42" selection-end-column="216" />
+            <state relative-caret-position="83">
+              <caret line="87" column="229" lean-forward="false" selection-start-line="87" selection-start-column="229" selection-end-line="87" selection-end-column="229" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeProfileDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/TypeProfileDAO.java">
+      <file leaf-file-name="ClientProfileViewConnected.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="31" column="179" lean-forward="false" selection-start-line="31" selection-start-column="179" selection-end-line="31" selection-end-column="179" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PurchaseHistoryDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="43" column="109" lean-forward="false" selection-start-line="43" selection-start-column="109" selection-end-line="43" selection-end-column="109" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyWordDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/KeyWordDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="36" column="174" lean-forward="false" selection-start-line="36" selection-start-column="174" selection-end-line="36" selection-end-column="174" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ClientDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="42" column="230" lean-forward="false" selection-start-line="42" selection-start-column="230" selection-end-line="42" selection-end-column="230" />
+            <state relative-caret-position="498">
+              <caret line="106" column="28" lean-forward="false" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -157,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pojo/EtablishedProfile.java" />
         <option value="$PROJECT_DIR$/src/dao/EtablishedProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/layout/SpringCompactGrid.java" />
         <option value="$PROJECT_DIR$/src/vue/ProfileView.java" />
@@ -188,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientPathView.java" />
         <option value="$PROJECT_DIR$/src/pojo/SimpleId.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
         <option value="$PROJECT_DIR$/src/pojo/KeyWordOccurence.java" />
         <option value="$PROJECT_DIR$/src/DepreciatedClassFromR2/View.java" />
         <option value="$PROJECT_DIR$/CleanDBScript.sql" />
@@ -197,16 +199,19 @@
         <option value="$PROJECT_DIR$/src/pojo/TypeProfile.java" />
         <option value="$PROJECT_DIR$/src/test/Test.java" />
         <option value="$PROJECT_DIR$/src/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/server/ServerProcessor.java" />
         <option value="$PROJECT_DIR$/CreationTableScript.sql" />
         <option value="$PROJECT_DIR$/FlowingScript.sql" />
         <option value="$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/TypeProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/ClientDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/ProductDAO.java" />
+        <option value="$PROJECT_DIR$/src/vue/ErrorView.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
+        <option value="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
+        <option value="$PROJECT_DIR$/src/vue/ServerAnswerView.java" />
+        <option value="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
+        <option value="$PROJECT_DIR$/src/server/ServerProcessor.java" />
       </list>
     </option>
   </component>
@@ -244,6 +249,12 @@
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
               <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="clientSocket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
@@ -454,8 +465,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ViewMain" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MainServeur (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MainServeur (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ViewMain" />
         <item index="2" class="java.lang.String" itemvalue="Application.Test" />
         <item index="3" class="java.lang.String" itemvalue="Application.View" />
         <item index="4" class="java.lang.String" itemvalue="Application.ClientProfileView" />
@@ -480,22 +491,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08369565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46847826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05978261" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -576,13 +586,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pojo/Emplacements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/Magasins.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -797,24 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="113" column="61" lean-forward="false" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/TypicalProfile.java" />
     <entry file="file://$PROJECT_DIR$/src/pojo/TypeProfile.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -856,46 +841,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/LinkClientTP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ServerProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="225" column="37" lean-forward="false" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
-          <folding>
-            <element signature="e#10189#10197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -908,26 +857,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CleanDBScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ClientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="42" column="230" lean-forward="false" selection-start-line="42" selection-start-column="230" selection-end-line="42" selection-end-column="230" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/KeyWordDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="36" column="174" lean-forward="false" selection-start-line="36" selection-start-column="174" selection-end-line="36" selection-end-column="174" />
           <folding />
         </state>
       </provider>
@@ -948,14 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="42" column="216" lean-forward="false" selection-start-line="42" selection-start-column="216" selection-end-line="42" selection-end-column="216" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -972,11 +897,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CleanDBScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="32" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="87" column="229" lean-forward="false" selection-start-line="87" selection-start-column="229" selection-end-line="87" selection-end-column="229" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="135" column="108" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="108" />
+        <state relative-caret-position="1212">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="107" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="42" column="68" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="106" column="28" lean-forward="false" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/ServerAnswerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="88" lean-forward="false" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="137" column="40" lean-forward="false" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/KeyWordDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="73" column="7" lean-forward="false" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ServerProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="186" column="54" lean-forward="false" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
+          <folding>
+            <element signature="e#10189#10197#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

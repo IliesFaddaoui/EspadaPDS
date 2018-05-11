@@ -100,7 +100,7 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
 		try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT C.chiffreDate C.idMagasin, C.montant FROM ChiffreDaffaires as C, Magasin as M Where M.magasinType="+ type +"and M.idMagasin = C.idMagasin and DATEDIFF(month, GETDATE(), C.chiffreDate) = 1 ");
             while(result.next()){
-                ChiffreDaffaires chiffre = new ChiffreDaffaires(result.getDate("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
+                ChiffreDaffaires chiffre = new ChiffreDaffaires(result.getString("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
                 ChiffresDaffaires.add(chiffre);        
             }
             return ChiffresDaffaires;
@@ -108,5 +108,25 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
             e.printStackTrace();
         }
         return null;
+	}
+	
+	public Collection<ChiffreDaffaires> findHistory(int idMagasin) throws SQLException{
+		Collection <ChiffreDaffaires> ChiffresDaffaires = new ArrayList<ChiffreDaffaires>();
+		ResultSet compteur = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (chiffreDate) as count FROM ChiffreDaifaires");
+		int cpt = compteur.getInt("count");
+		try {
+			for(int i = 1; i<cpt; i++) {
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT C.chiffreDate C.idMagasin, C.montant FROM ChiffreDaffaires as C, Magasin as M Where M.idMagasin="+ idMagasin +"and M.idMagasin = C.idMagasin and DATEDIFF(month, GETDATE(), C.chiffreDate) = " + i);
+            while(result.next()){
+                ChiffreDaffaires chiffre = new ChiffreDaffaires(result.getString("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
+                ChiffresDaffaires.add(chiffre);        
+            }
+			}
+			return ChiffresDaffaires;
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		return null;
 	}
 }
