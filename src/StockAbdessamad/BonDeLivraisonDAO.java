@@ -1,4 +1,4 @@
-package dao;
+package StockAbdessamad;
 /**
  * 
  * @author aramil
@@ -9,6 +9,9 @@ import pojo.BonDeLivraison;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import dao.DAO;
+
 
 /**
  * @version 1
@@ -71,7 +74,7 @@ public class BonDeLivraisonDAO extends DAO<BonDeLivraison> {
         return false;
     }
     /**
-     * this method allows to find a BonDeLivraison row in the database with its id
+     * this method allows to find a BonDeLivraison row in the database from its id
      * @param id
      * @return BonDeLivraison
      */
