@@ -1,8 +1,9 @@
-package dao;
+package redevanceDan;
 
 import java.util.Date;
 
-import pojo.Facture;
+import dao.DAO;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import java.sql.SQLException;
 
       private Connection con;
       /**
-       * this is the EmplacementDAO constructor. This use a connection in the Connection pool to have access to the database
+       * this is the FactureDAO constructor. This use a connection in the Connection pool to have access to the database
        * @param conn
        */
       public FactureDAO(Connection conn){
