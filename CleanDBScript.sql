@@ -14,7 +14,7 @@ delete from Frequentation;
 delete from Stock;
 delete from Occupation;
 delete from BonDeLivraison;
-
+delete from ParcoursType;
 
 drop table LinkTPKeyword;
 drop table LinkClientTP;
@@ -30,3 +30,4 @@ drop table Emplacement;
 drop table Magasin;
 drop table KeyWord;
 drop table BonDeLivraison;
+drop table ParcoursType;
