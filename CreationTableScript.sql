@@ -115,7 +115,7 @@ CREATE table Occupation (
 idEmplacement integer not null,
 idMagasin integer not null,
 dateEntree date not null,
-dateSortie date not null,
+dateSortie date,
 PRIMARY KEY(idEmplacement, idMagasin),
 foreign key(idEmplacement) references Emplacement(idEmplacement),
 foreign key(idMagasin) references Magasin(idMagasin)

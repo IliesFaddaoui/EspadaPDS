@@ -161,11 +161,19 @@ Insert into Magasin value (19, 'New look', 'Vetement',654);
 Insert into Magasin value (20, 'Primark', 'Vetement',1200);
 Insert into Magasin value (21, 'Jules', 'Vetement',624);
 
-Insert into Emplacement value (1, 'A1', 50, 'Standard', 10.5);
-Insert into Emplacement value (2, 'B2', 50, 'Standard', 20.5);
-Insert into Emplacement value (3, 'A3', 75, 'Standard', 11.5);
-Insert into Emplacement value (4, 'B4', 55, 'Standard', 23.0);
-Insert into Emplacement value (5, 'A5', 90, 'Privil�gi�', 100.5);
+Insert into Emplacement value (1, 'A1', 1200, 'Standard', 1.5);
+Insert into Emplacement value (2, 'B1', 1500, 'Standard', 2.5);
+Insert into Emplacement value (3, 'C1', 750, 'Standard', 11.5);
+Insert into Emplacement value (4, 'D1', 1550, 'Standard', 3.0);
+Insert into Emplacement value (5, 'A2', 1900, 'Standard', 9.5);
+Insert into Emplacement value (5, 'B2', 1700, 'Standard', 7.5);
+Insert into Emplacement value (6, 'C2', 800, 'Standard', 1.5);
+Insert into Emplacement value (7, 'D2', 600, 'Standard', 0.75);
+Insert into Emplacement value (8, 'A3', 700, 'Standard', 1.5);
+Insert into Emplacement value (9, 'B3', 1600, 'Standard', 1.5);
+Insert into Emplacement value (10, 'C3', 1000, 'Standard', 0.5);
+Insert into Emplacement value (11, 'D3', 980, 'Standard', 0.5);
+
 
 Insert into Stock value (8, 2, 300, '12-04-2018', '28-04-2018', 'retour');
 Insert into Stock value (8, 1, 500, '03-12-2017', '16-03-2018', 'retour');

@@ -79,7 +79,7 @@ public class MagasinsDAO extends DAO<Magazins>{
 	
 	/**
 	 * this method allows to find a Magasin row in the database
-	 * @param magasinName
+	 * @param MagasinName
 	 * @return Magazins
 	 */
 	public Magazins findName(String i) {
