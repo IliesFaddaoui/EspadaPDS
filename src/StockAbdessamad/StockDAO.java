@@ -82,18 +82,29 @@ public class StockDAO extends DAO<Stock> {
 	}
 
 	/**
-	 * this method allows to update a stock row in the database
+	 * aramil: this method allows updating stock's row in the database
 	 * 
 	 * @param obj
-	 * @return
+	 * @return boolean
 	 */
 	@Override
 	public boolean update(Stock obj) {
+
+		PreparedStatement preparedStatement = null;
+		String updateSQL = "UPDATE Stock SET Quantite= ?, dateEntree= ?, dateSortie= ?, motifEntree= ? Where idProduct= ? and idMagasin= ?";
 		try {
-			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
-					.executeUpdate("UPDATE Stock SET Quantite= " + obj.getQuantite() + " WHERE idMagasin = "
-							+ obj.getIdMagasin() + " and idProduct =" + obj.getIdProduct());
+			preparedStatement = con.prepareStatement(updateSQL);
+			preparedStatement.setInt(1, obj.getQuantite());
+			preparedStatement.setString(2, obj.getDateEntree());
+			preparedStatement.setString(3, obj.getDateSortie());
+			preparedStatement.setString(4, obj.getMotifEntree());
+			preparedStatement.setInt(5, obj.getIdProduct());
+			preparedStatement.setInt(6, obj.getIdMagasin());
+
+			preparedStatement.executeUpdate();
+
 			return true;
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -112,11 +123,12 @@ public class StockDAO extends DAO<Stock> {
 	}
 
 	/**
-	 * this method allows to find stock's product from its id and id of magasin
+	 * aramil: this method allows to find stock's product from its id and id of
+	 * magasin
 	 * 
 	 * @param idProduct,
 	 *            idMagasin
-	 * @return Product
+	 * @return Stock
 	 */
 
 	public Stock find(int idProduct, int idMagasin) {

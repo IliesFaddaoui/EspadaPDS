@@ -1,4 +1,4 @@
-package dao;
+package StockAbdessamad;
 
 import pojo.PurchaseHistory;
 
@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import dao.DAO;
 
 /**
  * @author Ilies
