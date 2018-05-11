@@ -155,6 +155,31 @@ public class StockDAO extends DAO<Stock> {
 
 	}
 
+	/**
+	 * aramil: Getting stock table's data
+	 * @return List<Stock>
+	 */
+	public List<Stock> getAll() {
+		List<Stock> resultStock = new ArrayList<>();
+		PreparedStatement preparedStatement = null;
+		String selectSQL = "SELECT * FROM Stock";
+		try {
+			preparedStatement = con.prepareStatement(selectSQL);
+			ResultSet result = preparedStatement.executeQuery();
+
+			while (result.next()) {
+				Stock stock = new Stock(result.getInt("idMagasin"), result.getInt("idProduct"),
+						result.getInt("Quantite"), result.getString("dateEntree"), result.getString("dateSortie"),
+						result.getString("motifEntree"));
+				resultStock.add(stock);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return resultStock;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
