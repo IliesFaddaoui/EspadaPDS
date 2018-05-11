@@ -2,6 +2,7 @@ package dao;
 
 import com.sun.rowset.CachedRowSetImpl;
 import pojo.LinkTPKeyWord;
+import pojo.TypeProfile;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
@@ -105,6 +106,25 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
             }
             rs.close();
             return listtTPKW;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Integer> getTPbyKeyword(String kw){
+        try{
+            List<Integer> listtTPbyKW = new ArrayList<Integer>();
+            String sql = "select l.idTypeProfile from linktpkeyword l, keyword k where k.idKeyWord = l.idKeyWord and k.idKeyWord=(select idKeyWord from keyword where nameKeyWord ='"+ kw + "');";
+            CachedRowSet rs = new CachedRowSetImpl();
+            rs.setCommand(sql);
+            rs.execute(this.connect);
+            this.connect.close();
+            while (rs.next()) {
+                listtTPbyKW.add(rs.getInt("idTypeProfile"));
+            }
+            rs.close();
+            return listtTPbyKW;
         } catch (SQLException e) {
             e.printStackTrace();
         }

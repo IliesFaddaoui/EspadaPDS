@@ -2,10 +2,7 @@ package server;
 
 import com.google.gson.Gson;
 import connexion.PoolDeConnexion;
-import dao.ClientDAO;
-import dao.EmplacementsDAO;
-import dao.KeyWordDAO;
-import dao.LinkClientTPDAO;
+import dao.*;
 import pojo.*;
 
 import java.io.BufferedInputStream;
@@ -164,8 +161,6 @@ public class ServerProcessor implements Runnable {
                         SimpleId id = gson.fromJson(simpleId, SimpleId.class);
                         ClientDAO clientDAO2 = new ClientDAO(connection.getConnection());
                         Client c2 = clientDAO2.find( id.getId());
-
-
                         //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
                         // return "OK" if not issue during the processus
                         // return "Failure" if issue
@@ -179,11 +174,13 @@ public class ServerProcessor implements Runnable {
                         }else{
                             Connection cKw = connection.getConnection();
                             Connection cLinkClientTP = connection.getConnection();
+                            Connection cLinkTPKW = connection.getConnection();
                             KeyWordDAO kwd1 = new KeyWordDAO(cKw);
                             LinkClientTPDAO lctpd1 = new LinkClientTPDAO(cLinkClientTP);
+                            LinkTPKeyWordDAO ltpkw = new LinkTPKeyWordDAO(cLinkTPKW);
+
                             //first, let's clean the existing linked type profile to the client
                             lctpd1.cleanLinkedTPForClient(id.getId());
-
                             // Then Let's find the keyword list from client purchase history
                             List<KeyWordOccurence> kwList = kwd1.getListKeyWordOccurence(id.getId());
                             if( kwList.isEmpty()){
@@ -196,8 +193,16 @@ public class ServerProcessor implements Runnable {
                                     if(kwol.getKeyWordOccurence() >3)
                                         pertinentKW.add(kwol.getNameKeyWord());
                                 }
-                                //List<int>
-                                //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
+                                //Let's find the type profile where there is similar keyword(s)
+                                List<Integer> listFindedProfiles = new ArrayList<>();
+
+                                for(String listKw : pertinentKW){
+                                    List<Integer> listIdProfiles = ltpkw.getTPbyKeyword(listKw);
+                                    for(int idProfile : listIdProfiles)
+                                        listFindedProfiles.add(idProfile);
+                                }
+                                //now we have list of type profiles with similitude with client purchase list
+                                //if there is more than 
 
 
                             }
