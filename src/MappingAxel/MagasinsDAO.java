@@ -62,6 +62,7 @@ public class MagasinsDAO extends DAO<Magazins>{
 	 * @param idMagasins
 	 * @return Magazins
 	 */
+	
 	public Magazins find(int i) {
 		;
 		try{
@@ -73,10 +74,14 @@ public class MagasinsDAO extends DAO<Magazins>{
 			} catch (SQLException e) {
 				e.printStackTrace();		
 			}
-		return null;
-		
+		return null;		
 	}
 	
+	/**
+	 * this method allows to find a Magasin row in the database
+	 * @param magasinName
+	 * @return Magazins
+	 */
 	public Magazins findName(String i) {
 		;
 		try{
@@ -91,20 +96,4 @@ public class MagasinsDAO extends DAO<Magazins>{
 		return null;
 		
 	}
-	
-	public Magazins findMax(int i) {
-
-		try{
-			ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM magasin ORDER BY magasinSuperficie DESC LIMIT 1 IS NOT NULL");
-			while(result.next()){
-				Magazins mag = new Magazins(result.getInt("idMagasin"), result.getString("magasinName"), result.getString("magasinType"), result.getInt("magasinSuperficie"));
-				return mag;
-			}
-			} catch (SQLException e) {
-				e.printStackTrace();		
-			}
-		return null;
-		
-	}
-
 }

@@ -84,17 +84,5 @@ public class OccupationDAO extends DAO<Occupation>{
 		public Occupation find(int idMagasin) {
 			return null;
 		}
-		
-
-		/*public Occupation creer(int idMagasin, int idEmplacement) {
-	requete = "INSERT INTO Occupation( idEmplacement, idMagasin, dateEntree, dateSortie) values ("+idMagasin+","+idEmplacement+")";
-	try {
-	Statement stmt = con.createStatement();
-	int nbMaj = stmt.executeUpdate(requete);
-	}catch (SQLException e) {
-		e.printStackTrace();
-	}
-			return null;*/
-			
 		}
 		

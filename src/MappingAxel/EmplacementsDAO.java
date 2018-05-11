@@ -89,22 +89,11 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         return null;
     }
     
-    public ArrayList<Integer> getAllIdEmplacements() {
-    	ArrayList<Integer> idEmpls = new ArrayList();
-    	try {
-    		ResultSet result = 
-    				this.connect.createStatement(
-    						ResultSet.TYPE_SCROLL_INSENSITIVE, 
-    						ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement FROM emplacement");
-            while(result.next()){
-            	idEmpls.add(result.getInt("idEmplacement"));
-            }
-    	}  catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return idEmpls;
-    }
-    
+    /**
+     * this method allows to find an emplacement row in the database with its name
+     * @param localisation
+     * @return Emplacements
+     */
     public Emplacements findName(String i) {
         try{
             ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idEmplacement, localisation, superficie, categorie, txOccupation FROM emplacement Where localisation='"+ i+"'");
@@ -117,6 +106,12 @@ public class EmplacementsDAO extends DAO<Emplacements> {
         }
         return null;
     }
+    
+    /**
+     * this method allows to find an emplacement row in the database with its id
+     * @param idEmplacement
+     * @return Emplacements
+     */
     
     public Emplacements findMax(int i) {
         try{
