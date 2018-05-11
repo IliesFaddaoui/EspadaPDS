@@ -24,7 +24,7 @@ public class connecterDB {
 		return empls;
 	}*/
 	
-	public static void main(String[] args) {
+	public connecterDB() {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
 		EmplacementsDAO empldao = new EmplacementsDAO(con);
@@ -37,15 +37,15 @@ public class connecterDB {
 		
 		
 		// Request to select attribut of emplacement on the DB
-		Emplacements empl1 = empldao.find(1);
+	/*	Emplacements empl1 = empldao.find(1);
 		Emplacements empl2 = empldao.find(2);
 		Emplacements empl3 = empldao.find(3);
 		Emplacements empl4 = empldao.find(4);
 		Emplacements empl5 = empldao.find(5);
 		
 		// Request to select attribut of magasin
-		MagasinsDAO magdao = new MagasinsDAO(con);
-	/*	Magazins mag1 = magdao.find(1);
+		*/MagasinsDAO magdao = new MagasinsDAO(con);
+		/*Magazins mag1 = magdao.find(1);
 		Magazins mag2 = magdao.find(2);
 		Magazins mag3 = magdao.find(3);
 		Magazins mag4 = magdao.find(4);*/
@@ -53,21 +53,23 @@ public class connecterDB {
 		//Magazins mag5 = magdao.findMax();
 		int i = 0;
 		int j = 1;
-		Emplacements empl10 = empldao.findMax(i);
+	//	Emplacements empl10 = empldao.findMax(i);
 	
 		
 		OccupationDAO occpdao = new OccupationDAO(con);
 	//	System.out.println(mag5.getIdMagasin());
 		// Test d'insertion dans la table Occupation
 		
-		for(i = 1; i < 10; i++) {
+		for(i = 1; i < 13; i++) {
 	
 		
 		Magazins mag1 = magdao.find(i);
 		Magazins mag2 = magdao.find(j);
 		if (mag1 == null)
 			continue ;
-		
+	//	System.out.println("mag normal: "+ mag1.getIdMagasin());
+
+		//System.out.println("mag1 avec + 1 : =" +mag7);
 		Emplacements empl0 = empldao.find(j); 
 		 Emplacements empl01 = empldao.find(j);
 		 j++;
@@ -78,11 +80,12 @@ public class connecterDB {
 				stmt.executeUpdate(sql);
 		//		System.out.println("le mag1 : "+mag1.getIdMagasin());
 		//		System.out.println("le j :"+j);
-		//		System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
+			System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
 				
 				}catch(SQLException e) {
-					e.printStackTrace();
+					System.out.println("Magasin "+mag1.getMagasinName()+" à déjà été placé à l'emplacement "+empl0.getLocalisation());
 				}
+			
 		else if (mag1.getMagasinSuperficie() < empl01.getSuperficie())
 		try {
 			java.sql.Statement stmt = con.createStatement();
@@ -90,7 +93,7 @@ public class connecterDB {
 			stmt.executeUpdate(sql);
 			System.out.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl01.getCategorie());
 		}catch(SQLException e) {
-				e.printStackTrace();;
+				System.out.println("Le magasin "+mag1.getMagasinName()+" a déjà été placé à l'emplacement "+empl01.getLocalisation());
 			}
 		else 
 		System.out.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
@@ -98,8 +101,7 @@ public class connecterDB {
 
 		//System.out.println("Magasin1 = "+mag1.getIdMagasin());
 	//	System.out.println("Emplacement1 = "+ empl1.getIdEmplacement());
-		}
-	
+	}
 	
 	public static Connection BDD() {
 		try {

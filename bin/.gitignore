@@ -1,7 +1,8 @@
+/clientSocket/
 /MappingAxel/
-/DepreciatedClassFromR2/
+/analyseAnax/
 /dao/
-/pojo/
 /server/
-/test/
-/vue/
+/StockAbdessamad/
+/said/
+*.class
