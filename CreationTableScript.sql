@@ -1,5 +1,5 @@
 CREATE table Client (
-idClient integer not null,
+idClient integer not null AUTO_INCREMENT,
 pseudo varchar(30) not null,
 password varchar(30) not null,
 clientName varchar(30) not null,
@@ -11,17 +11,17 @@ PRIMARY KEY(idClient)
 );
 
 CREATE table TypeProfile (
-idTypeProfile integer not null,
+idTypeProfile integer not null AUTO_INCREMENT,
 ProfileName varchar(30),
 PRIMARY KEY (idTypeProfile));
 
 CREATE table KeyWord (
-idKeyWord integer not null,
+idKeyWord integer not null AUTO_INCREMENT,
 nameKeyWord varchar(20),
 PRIMARY KEY(idKeyWord));
 
 CREATE table Product (
-idProduct integer not null,
+idProduct integer not null AUTO_INCREMENT,
 productReference varchar(50) not null,
 price float not null,
 keyword integer not null,
@@ -30,7 +30,7 @@ foreign key (keyword) references KeyWord(idKeyWord)
 );
 
 CREATE table PurchaseHistory (
-idPurchaseHistory integer not null,
+idPurchaseHistory integer not null AUTO_INCREMENT,
 idProduct integer not null,
 idClient integer not null,
 purchaseDate date not null,
@@ -41,7 +41,7 @@ foreign key(idClient) references Client(idClient)
 );
 
 CREATE table LinkTPKeyWord (
-idLTPKW integer not null,
+idLTPKW integer not null AUTO_INCREMENT,
 idKeyWord integer not null,
 idTypeProfile integer not null,
 PRIMARY KEY (idLTPKW),
@@ -49,7 +49,7 @@ foreign key(idKeyWord) references KeyWord(idKeyWord),
 foreign key(idTypeProfile) references TypeProfile(idTypeProfile));
 
 CREATE table LinkClientTP (
-idLinkClientTP integer not null,
+idLinkClientTP integer not null AUTO_INCREMENT,
 idTypeProfile integer not null,
 idClient integer not null,
 PRIMARY KEY(idLinkClientTP),

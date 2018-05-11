@@ -29,7 +29,7 @@ public class ProductDAO extends DAO<Product> {
     @Override
     public boolean create(Product obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(idProduct ,productReference, price, keyWord) values ("+obj.getIdProduct()+",'"+obj.getProductReference()+"',"+obj.getPrice()+","+obj.getKeyWord()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Product(productReference, price, keyWord) values ('"+obj.getProductReference()+"',"+obj.getPrice()+","+obj.getKeyWord()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

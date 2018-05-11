@@ -40,7 +40,7 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public boolean create(Client obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Client(idClient, pseudo, password, ClientName, ClientSurname, phone, address, gender) values ("+obj.getIdClient()+",'"+obj.getPseudo()+"','"+obj.getPassword()+"','"+obj.getClientName()+"','"+obj.getClientSurname()+"',',"+obj.getPhone()+"','"+obj.getAddress()+"','"+obj.getGender()+"')");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO Client( pseudo, password, ClientName, ClientSurname, phone, address, gender) values ('"+obj.getPseudo()+"','"+obj.getPassword()+"','"+obj.getClientName()+"','"+obj.getClientSurname()+"',',"+obj.getPhone()+"','"+obj.getAddress()+"','"+obj.getGender()+"')");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

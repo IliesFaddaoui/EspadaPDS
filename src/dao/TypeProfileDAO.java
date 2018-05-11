@@ -29,7 +29,7 @@ public class TypeProfileDAO extends DAO<TypeProfile> {
     @Override
     public boolean create(TypeProfile obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO TypeProfile (idTypeProfile,profileName) values ("+obj.getIdTypeProfile()+",\""+obj.getProfilName()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO TypeProfile (profileName) values ("+obj.getProfilName()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

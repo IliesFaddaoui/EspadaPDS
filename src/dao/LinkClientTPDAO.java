@@ -40,7 +40,7 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
     @Override
     public boolean create(LinkClientTP obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkClientTP(idLinkClientTP,idTypeProfile, idClient) values ("+obj.getIdLinkClientTP()+",\""+obj.getIdTypeProfile()+"\","+obj.getIdClient()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkClientTP(idTypeProfile, idClient) values ("+obj.getIdTypeProfile()+","+obj.getIdClient()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -41,8 +41,7 @@ public class PurchaseHistoryDAO extends DAO<PurchaseHistory> {
 		try {
 			int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeUpdate(
-							"INSERT INTO PurchaseHistory (idPurchaseHistory,idProduct,idClient,PurchaseDate,Quantity) values ("
-									+ obj.getIdPurchase() + ",\"" + obj.getIdProduct() + "\"," + obj.getIdClient()
+							"INSERT INTO PurchaseHistory (idProduct,idClient,PurchaseDate,Quantity) values (" + obj.getIdProduct() + "\"," + obj.getIdClient()
 									+ ",\"" + obj.getPurchaseDate() + "\"," + obj.getQuantity() + ")");
 			return true;
 		} catch (SQLException e) {

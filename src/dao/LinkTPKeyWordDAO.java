@@ -37,7 +37,7 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
     @Override
     public boolean create(LinkTPKeyWord obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkTPKeyWord(idLTPKW,idKeyWord, idTypicalProfile) values ("+obj.getIdLinkTPKeyWord()+",\""+obj.getIdKeyWord()+"\","+obj.getIdTypeProfile()+")");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO LinkTPKeyWord(idKeyWord, idTypicalProfile) values ("+obj.getIdKeyWord()+","+obj.getIdTypeProfile()+")");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -34,7 +34,7 @@ public class KeyWordDAO extends DAO<KeyWord> {
     @Override
     public boolean create(KeyWord obj) {
         try{
-            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO KeyWord(idKeyWord ,nameKeyWord) values ("+obj.getIdKeyword()+",'"+obj.getNameKeyWord()+"')");
+            int result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO KeyWord(nameKeyWord) values ('"+obj.getNameKeyWord()+"')");
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
