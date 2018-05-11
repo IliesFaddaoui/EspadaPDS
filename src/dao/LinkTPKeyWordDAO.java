@@ -119,7 +119,6 @@ public class LinkTPKeyWordDAO extends DAO<LinkTPKeyWord> {
             CachedRowSet rs = new CachedRowSetImpl();
             rs.setCommand(sql);
             rs.execute(this.connect);
-            this.connect.close();
             while (rs.next()) {
                 listtTPbyKW.add(rs.getInt("idTypeProfile"));
             }

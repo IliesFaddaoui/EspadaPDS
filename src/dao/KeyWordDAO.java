@@ -92,11 +92,10 @@ public class KeyWordDAO extends DAO<KeyWord> {
     public List<KeyWordOccurence> getListKeyWordOccurence(int id){
         try{
             List<KeyWordOccurence> listKeyWordOccurence = new ArrayList<KeyWordOccurence>();
-            String sql = "SELECT nameKeyWord , count(nameKeyWord) FROM client c, purchasehistory ph, keyword k, product p Where k.idKeyWord = p.keyword and ph.idClient = c.idClient and ph.idProduct = p.idProduct and ph.idClient = 1 group by k.nameKeyWord order by count(k.nameKeyWord) desc; ";
+            String sql = "SELECT nameKeyWord , count(nameKeyWord) FROM client c, purchasehistory ph, keyword k, product p Where k.idKeyWord = p.keyword and ph.idClient = c.idClient and ph.idProduct = p.idProduct and ph.idClient ="+id+" group by k.nameKeyWord order by count(k.nameKeyWord) desc; ";
             CachedRowSet rs = new CachedRowSetImpl();
             rs.setCommand(sql);
             rs.execute(this.connect);
-            this.connect.close();
             while (rs.next()) {
                 listKeyWordOccurence.add(new KeyWordOccurence(rs.getString("nameKeyWord"), rs.getInt("count(nameKeyWord)")));
             }

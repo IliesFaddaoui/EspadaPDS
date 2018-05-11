@@ -159,14 +159,16 @@ public class ServerProcessor implements Runnable {
                         //the server read the data
                         String simpleId = read();
                         SimpleId id = gson.fromJson(simpleId, SimpleId.class);
-                        ClientDAO clientDAO2 = new ClientDAO(connection.getConnection());
+                        Connection cClient = connection.getConnection();
+                        ClientDAO clientDAO2 = new ClientDAO(cClient);
                         Client c2 = clientDAO2.find( id.getId());
+                        String answer;
                         //let's compare this keyword list to type profile keyword list, if the comparaison seems good, we link this type profile to the client
                         // return "OK" if not issue during the processus
                         // return "Failure" if issue
                         if(c2 == null){
                             System.out.println("Client not found");
-                            String failFind = "Fail";
+                            String failFind = "NOEXIST";
                             String jsonFindClient = gson.toJson(c2);
                             writer.write(jsonFindClient);
                             writer.flush();
@@ -184,7 +186,7 @@ public class ServerProcessor implements Runnable {
                             // Then Let's find the keyword list from client purchase history
                             List<KeyWordOccurence> kwList = kwd1.getListKeyWordOccurence(id.getId());
                             if( kwList.isEmpty()){
-                                String answer = "EMPTY";
+                                answer = "EMPTY";
                             }
                             else{
                                 //let's keep only relevant keyword from this list
@@ -193,23 +195,54 @@ public class ServerProcessor implements Runnable {
                                     if(kwol.getKeyWordOccurence() >3)
                                         pertinentKW.add(kwol.getNameKeyWord());
                                 }
-                                //Let's find the type profile where there is similar keyword(s)
-                                List<Integer> listFindedProfiles = new ArrayList<>();
-
-                                for(String listKw : pertinentKW){
-                                    List<Integer> listIdProfiles = ltpkw.getTPbyKeyword(listKw);
-                                    for(int idProfile : listIdProfiles)
-                                        listFindedProfiles.add(idProfile);
+                                if(pertinentKW.isEmpty()){
+                                    answer="NPERTINENT";
                                 }
-                                //now we have list of type profiles with similitude with client purchase list
-                                //if there is more than 
+                                else{
+                                    //Let's find the type profile where there is similar keyword(s)
+                                    List<Integer> listFindedProfiles = new ArrayList<>();
+                                    for(String kW : pertinentKW){
+                                        List<Integer> listIdProfiles = ltpkw.getTPbyKeyword(kW);
+                                        for(int idProfile : listIdProfiles)
+                                            listFindedProfiles.add(idProfile);
+                                    }
+                                    //now we have list of id from type profiles with similitude with client purchase list
+                                    //if an type profile id appears more than 3 times, we can link it to the client
+                                    int compteur=0;
+                                    List<Integer> TPtoBeLinked = new ArrayList<>();
+                                    for(Integer i : listFindedProfiles){
+                                        compteur=0;
+                                        for(Integer j :listFindedProfiles){
+                                            if(i==j){
+                                                compteur++;
+                                            }
+                                        }
+                                        if(compteur > 1){
+                                            TPtoBeLinked.add(i);
+                                        }
+                                    }
+                                    if(TPtoBeLinked.isEmpty()){
+                                        answer="NOTPLINKED";
+                                    }
+                                    else{
+                                        //we have ours TPs which have to be linked to the client
+                                        for(Integer i: TPtoBeLinked){
+                                            if(lctpd1.find(i) == null){
+                                                lctpd1.create(new LinkClientTP(0,id.getId(),i));
+                                            }
+                                        }
+                                        answer="SUCCESS";
 
-
+                                    }
+                                }
                             }
-                            // writer.write(jsonFindClient);
-                            //writer.flush();
+                            connection.releaseConnection(cKw);
+                            connection.releaseConnection(cLinkClientTP);
+                            connection.releaseConnection(cLinkTPKW);
+                            connection.releaseConnection(cClient);
+                            writer.write(answer);
+                            writer.flush();
                         }
-                        connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
                         break;
                 }
 

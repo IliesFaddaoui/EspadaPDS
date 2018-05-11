@@ -34,7 +34,7 @@ public class Server {
         Thread t = new Thread(new Runnable() {
 
             public void run() {
-                PoolDeConnexion con = new PoolDeConnexion(3);
+                PoolDeConnexion con = new PoolDeConnexion(20);
                 while (isRunning){
                     try{
                         Socket s1 = server.accept();

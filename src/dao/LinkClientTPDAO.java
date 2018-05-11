@@ -121,7 +121,6 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
             CachedRowSet rs = new CachedRowSetImpl();
             rs.setCommand(sql);
             rs.execute(this.connect);
-            this.connect.close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
