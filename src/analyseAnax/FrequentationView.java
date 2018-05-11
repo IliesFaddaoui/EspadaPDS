@@ -2,9 +2,9 @@ package analyseAnax;
 
 import connexion.Database;
 import connexion.PoolDeConnexion;
-import dao.ChiffreDaffairesDAO;
+import dao.FrequentationDAO;
 import dao.MagasinsDAO;
-import pojo.ChiffreDaffaires;
+import pojo.Frequentation;
 import pojo.Magasins;
 
 import javax.swing.*;
@@ -21,13 +21,13 @@ import java.util.Collection;
 
 /**
  * @author Anaximandro
- * @version 1.0 This view allows to see the turnover of the differents stores of
+ * @version 1.0 This view allows to see the attendance of the differents stores of
  *          a category
  */
-public class ChiffreDaffairesView extends JFrame {
+public class FrequentationView extends JFrame {
 	PoolDeConnexion connection= new PoolDeConnexion(10);
 	
-	private JLabel rechercheText = new JLabel("Please enter the category turnover you want to see: ");
+	private JLabel rechercheText = new JLabel("Please enter the category attendance you want to see: ");
 	private JLabel espada = new JLabel("PhyGit Mall");
 	private Font police = new Font("Arial", Font.BOLD, 14);
 	private Font policeEspada = new Font("Arial", Font.BOLD, 28);
@@ -39,7 +39,7 @@ public class ChiffreDaffairesView extends JFrame {
 	private JButton rechercheButton = new JButton("Rechecher");
 	private JPanel container = new JPanel();
 
-	public ChiffreDaffairesView() {
+	public FrequentationView() {
 		this.setLocationRelativeTo(null);
 		this.setTitle("PhyGit Mall: Mall activity indicators");
 		this.setSize(600, 600);
@@ -117,10 +117,10 @@ public class ChiffreDaffairesView extends JFrame {
 	private class RechercheButton implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String type = jtfType.getText();
-			ChiffreDaffairesDAO cdo = new ChiffreDaffairesDAO(connection.getConnection());
-			Collection<ChiffreDaffaires> cds = cdo.find(type);
+			FrequentationDAO fdo = new FrequentationDAO(connection.getConnection());
+			Collection<Frequentation> fs = fdo.find(type);
 			MagasinsDAO md = new MagasinsDAO(connection.getConnection());
-			if (cds == null) {
+			if (fs == null) {
 				JFrame fenResp = new JFrame();
 				JPanel containerResp = new JPanel();
 				fenResp.setSize(150, 150);
@@ -131,11 +131,11 @@ public class ChiffreDaffairesView extends JFrame {
 				fenResp.setVisible(true);
 				jtfType.setText("category");
 			} else {
-				System.out.println("Chiffre d'affaires du mois précédent pour les magasins de la catégorie " + type);
+				System.out.println("Niveau de fréquentation du mois précédent pour les magasins de la catégorie " + type);
 
-				for (ChiffreDaffaires cd : cds) {
-					Magasins m = md.find(cd.getIdMagasin());
-					System.out.println(m.getMagasinName() + " | " + cd.getMontant());
+				for (Frequentation freq : fs) {
+					Magasins m = md.find(freq.getIdMagasin());
+					System.out.println(m.getMagasinName() + " | " + freq.getNiveauFrequentation());
 				}
 			}
 		}

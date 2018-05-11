@@ -1,6 +1,7 @@
-package dao;
+package analyseAnax;
 
 import com.sun.rowset.CachedRowSetImpl;
+
 import pojo.Frequentation;
 
 import javax.sql.rowset.CachedRowSet;
