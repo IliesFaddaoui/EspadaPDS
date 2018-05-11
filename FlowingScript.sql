@@ -134,6 +134,7 @@ Insert into PurchaseHistory(idProduct, idClient, purchaseDate, Quantity) value (
 Insert into PurchaseHistory(idProduct, idClient, purchaseDate, Quantity) value ( 20, 1, date(sysdate()), 1);
 Insert into PurchaseHistory(idProduct, idClient, purchaseDate, Quantity) value ( 28, 1, date(sysdate()), 1);
 Insert into PurchaseHistory(idProduct, idClient, purchaseDate, Quantity) value ( 38, 1, date(sysdate()), 1);
+Insert into PurchaseHistory(idProduct, idClient, purchaseDate, Quantity) value ( 39, 1, '16-03-2018', 1);
 
 
 Insert into Magasin value (1, 'Courir', 'Sport',875);
@@ -166,10 +167,12 @@ Insert into Emplacement value (3, 'A3', 75, 'Standard', 11.5);
 Insert into Emplacement value (4, 'B4', 55, 'Standard', 23.0);
 Insert into Emplacement value (5, 'A5', 90, 'Privil�gi�', 100.5);
 
-Insert into Stock value (8, 2, 300, '12/04/2018', '28/04/2018', 'retour');
-Insert into Stock value (8, 1, 500, '03/12/2017', '16/03/2018', 'retour');
-Insert into Stock value (10, 2, 300, '27/08/2017', '30/01/2018', 'retour');
-Insert into Stock value (10, 1, 500, '09/11/2017', '16/05/2018', 'retour');
+Insert into Stock value (8, 2, 300, '12-04-2018', '28-04-2018', 'retour');
+Insert into Stock value (8, 1, 500, '03-12-2017', '16-03-2018', 'retour');
+Insert into Stock value (10, 2, 300, '27-08-2017', '16-03-2018', 'livraison');
+Insert into Stock value (10, 1, 500, '09-11-2017', '16-05-2018', 'retour');
+Insert into Stock value (10, 1, 500, '09-11-2017', '16-05-2018', 'retour');
+Insert into Stock value (1, 2, 100, '09-11-2017', '', 'livraison');
 
 
 Insert into ChiffreDaffaires value ('31/01/2018', 6, 350000);
