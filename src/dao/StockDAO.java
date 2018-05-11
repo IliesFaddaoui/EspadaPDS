@@ -202,5 +202,25 @@ public class StockDAO extends DAO<Stock> {
         }
         return null;
 	}
+	
+	public Collection<Stock> findHistory(int idProduct) throws SQLException{
+		Collection <Stock> Stocks = new ArrayList<Stock>();
+		ResultSet compteur = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (dateEntree) as count FROM Stock where motifEntree = 'retourclient'");
+		int cpt = compteur.getInt("count");
+		try {
+			for(int i = 1; i<cpt; i++) {
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT S.idMagasin S.idProduct, S.Quantite, S.dateEntree, S.dateSortie, S.motifEntree FROM Stock as C, Product as P Where P.idProduct="+ idProduct +"and M.idMagasin = S.idMagasin and motifEntree = 'retourclient' and DATEDIFF(month, GETDATE(), S.dateEntree) = " + i);
+            while(result.next()){
+                Stock stock = new Stock(result.getInt("idMagasin"),result.getInt("idProduct"), result.getInt("Quantite"), result.getString("dateEntree"), result.getString("dateSortie"), result.getString("motifEntree"));
+                Stocks.add(stock);        
+            }
+			}
+			return Stocks;
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		return null;
+	}
 
 }
