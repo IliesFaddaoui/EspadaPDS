@@ -1,8 +1,10 @@
 package redevanceDan;
 
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 
-public class Facture
+public class Facture 
 {
   private int idFacture;
   private Date factureDate;
@@ -10,7 +12,10 @@ public class Facture
   private int idEmplacement;
   private boolean categorie;
   private int niveauFrequentation;
-  private int montant;
+  private double montant;
+  private int chiffreDaffaires;
+  private boolean caterogie;
+  private int superficie;
   
   public Facture(int idFacture, Date factureDate, int idMagasin, int idEmplacement, boolean categorie, int niveauFrequentation, int montant ){
     this.idFacture = idFacture; 
@@ -62,14 +67,20 @@ public class Facture
     this.niveauFrequentation = niveauFrequentation;
   }
 
-  public int getMontant()
+  public double getMontant()
   {
     return montant;
   }
 
-  public void setMontant(int montant)
+  public void setMontant(double montant)
   {
-    this.montant = montant;
+    {
+      if (isCaterogie() == true){
+        montant = ((getChiffreDaffaires()/getSuperficie())+(niveauFrequentation)*1.2);
+        }else{
+        montant = ((getChiffreDaffaires()/getSuperficie())+(niveauFrequentation));
+      }
+    } 
   }
 
   public boolean isCategorie()
@@ -92,13 +103,39 @@ public class Facture
     this.idFacture = idFacture;
   }
   
-  
-  public int CalculRedevance(int chiffreAffaire, boolean caterogie, int niveauFrequentation, int superficie) {
-    
-    if (caterogie == true) 
-    {montant = (int)((chiffreAffaire/superficie)+(niveauFrequentation)*1.2);}
-    else 
-    {montant = (int)((chiffreAffaire/superficie)+(niveauFrequentation));}
-    return montant;
+
+  public int getChiffreDaffaires()
+  {
+    return chiffreDaffaires;
   }
+
+  public void setChiffreAffaire(int chiffreDaffaires)
+  {
+    this.chiffreDaffaires = chiffreDaffaires;
+  }
+
+  public boolean isCaterogie()
+  {
+    return caterogie;
+  }
+
+  public void setCaterogie(boolean caterogie)
+  {
+    this.caterogie = caterogie;
+  }
+
+  public int getSuperficie()
+  {
+    return superficie;
+  }
+
+  public void setSuperficie(int superficie)
+  {
+    this.superficie = superficie;
+  }
+  
+ 
+  
+  
+  
 }
