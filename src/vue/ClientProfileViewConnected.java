@@ -110,7 +110,7 @@ public class ClientProfileViewConnected extends JFrame {
     }
     private class GeneratePath implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            /************************************************SAID*****************************************************/
+            /*****************************************************************************************************/
             ClientPathView c1 = new ClientPathView(idClient);
             /*********************************************************************************************************/
 
