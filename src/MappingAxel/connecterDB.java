@@ -29,7 +29,7 @@ public class connecterDB {
 		FileWriter fw = null;
 		
 		try {
-			fw = new FileWriter("toto.txt");
+			fw = new FileWriter("Location.txt");
 			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
