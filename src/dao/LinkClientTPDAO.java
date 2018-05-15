@@ -85,9 +85,9 @@ public class LinkClientTPDAO extends DAO<LinkClientTP> {
     @Override
     public LinkClientTP find(int id) {
         try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idLinkClientTP,idTypicalProfile, idClient FROM LinkClientTP Where idEtablishedProfile="+ id);
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT idLinkClientTP,idTypeProfile, idClient FROM LinkClientTP Where idLinkClientTP="+ id);
             while(result.next()){
-                LinkClientTP linkClientTP = new LinkClientTP(result.getInt("idLinkClientTP"),result.getInt("idTypicalProfile"), result.getInt("idClient"));
+                LinkClientTP linkClientTP = new LinkClientTP(result.getInt("idLinkClientTP"),result.getInt("idTypeProfile"), result.getInt("idClient"));
                 return linkClientTP;
             }
         } catch (SQLException e) {

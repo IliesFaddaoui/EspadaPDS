@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EspadaPDS.iml" filepath="$PROJECT_DIR$/EspadaPDS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/espadaPDS.iml" filepath="$PROJECT_DIR$/espadaPDS.iml" />
     </modules>
   </component>
 </project>
