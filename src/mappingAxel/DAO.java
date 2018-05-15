@@ -1,4 +1,4 @@
-package MappingAxel;
+package mappingAxel;
 
 import java.sql.Connection;
 

@@ -1,10 +1,6 @@
-package StockAbdessamad;
-
-import com.sun.rowset.CachedRowSetImpl;
+package stockAbdessamad;
 
 import dao.DAO;
-import pojo.ChiffreDaffaires;
-import pojo.Product;
 import pojo.Stock;
 
 /**
@@ -12,13 +8,11 @@ import pojo.Stock;
  * @version 2
  * This is the Dao for turnover, which allows to create, delete, update or find a turnover in the data base. 
  */
-import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class StockDAO extends DAO<Stock> {

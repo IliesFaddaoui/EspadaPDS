@@ -1,4 +1,4 @@
-package StockAbdessamad;
+package stockAbdessamad;
 
 public class ToDelete {
 }

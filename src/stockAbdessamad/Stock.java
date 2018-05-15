@@ -1,7 +1,4 @@
-package StockAbdessamad;
-
-import java.util.ArrayList;
-import java.util.Date;
+package stockAbdessamad;
 
 /**
  * @author Anaximandro

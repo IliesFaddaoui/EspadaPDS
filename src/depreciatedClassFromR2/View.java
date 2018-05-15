@@ -1,23 +1,16 @@
-package DepreciatedClassFromR2;
+package depreciatedClassFromR2;
 
 import clientSocket.SocketCreateEmplacement;
 import clientSocket.SocketDeleteEmplacement;
 import clientSocket.SocketFindEmplacement;
 import com.google.gson.*;
 import pojo.Emplacements;
-import pojo.Magasins;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.*;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
 
 /**
  * @author ilies, axel

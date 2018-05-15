@@ -1,16 +1,10 @@
-package MappingAxel;
+package mappingAxel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.text.NumberFormat;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

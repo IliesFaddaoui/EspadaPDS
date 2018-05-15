@@ -1,4 +1,4 @@
-package MappingAxel;
+package mappingAxel;
 
 public class Occupation {
     private int idEmplacement;

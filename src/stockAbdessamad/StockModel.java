@@ -1,4 +1,4 @@
-package StockAbdessamad;
+package stockAbdessamad;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import pojo.Stock;
 
 public class StockModel extends AbstractTableModel {
 
-	private final String[] entetes = { "Produit", "Magasin", "Quantité", "Date entree", "Date sortie", "Motif Entree" };
+	private final String[] entetes = { "Produit", "Magasin", "Quantitï¿½", "Date entree", "Date sortie", "Motif Entree" };
 
 	private List<Stock> listStock;
 

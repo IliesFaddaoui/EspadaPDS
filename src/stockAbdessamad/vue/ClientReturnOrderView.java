@@ -1,4 +1,4 @@
-package StockAbdessamad.vue;
+package stockAbdessamad.vue;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -6,12 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import connexion.PoolDeConnexion;
-import dao.BonDeLivraisonDAO;
 import dao.MagasinsDAO;
-import dao.ProductDAO;
 import dao.PurchaseHistoryDAO;
 import dao.StockDAO;
-import pojo.BonDeLivraison;
 import pojo.PurchaseHistory;
 import pojo.Stock;
 
@@ -22,18 +19,10 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  * 
@@ -170,7 +159,7 @@ public class ClientReturnOrderView extends JFrame {
 			}
 			if (updated == false) {
 
-				System.out.println("Aucun produit ne correspond à votre saisie");
+				System.out.println("Aucun produit ne correspond ï¿½ votre saisie");
 			}
 		}
 

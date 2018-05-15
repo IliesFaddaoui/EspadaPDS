@@ -1,21 +1,15 @@
-package StockAbdessamad.vue;
+package stockAbdessamad.vue;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import connexion.PoolDeConnexion;
-import dao.BonDeLivraisonDAO;
 import dao.MagasinsDAO;
 import dao.ProductDAO;
 import dao.StockDAO;
-import pojo.BonDeLivraison;
 import pojo.Magasins;
 import pojo.Product;
 import pojo.Stock;
@@ -27,16 +21,10 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedInputStream;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
 
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  * 
@@ -87,7 +75,7 @@ public class SaleProductView extends JFrame {
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		panel.add(lblNewLabel);
 		// La quanti
-		JLabel lblQuantity = new JLabel("Quantité:");
+		JLabel lblQuantity = new JLabel("Quantitï¿½:");
 		lblQuantity.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblQuantity.setBounds(234, 202, 87, 16);
 		contentPane.add(lblQuantity);
@@ -152,7 +140,7 @@ public class SaleProductView extends JFrame {
 			int idMagasin = magasin.getIdMagasin();
 
 			if (magasin != null && product != null) {
-				System.out.println("Recherche du produit et du magasin associé");
+				System.out.println("Recherche du produit et du magasin associï¿½");
 
 				StockDAO stockDAO = new StockDAO(connection.getConnection());
 				// Updating Stock table

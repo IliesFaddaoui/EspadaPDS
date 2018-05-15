@@ -1,4 +1,4 @@
-package StockAbdessamad.vue;
+package stockAbdessamad.vue;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -19,16 +19,9 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  * 
@@ -126,7 +119,7 @@ public class StockDeliveryEntryView extends JFrame {
 			BonDeLivraison bonLivraison = bonDeLivraisonDAO.find(numeroBonToSearch);
 			//
 			if (bonLivraison != null) {
-				System.out.println("Bon de livraison trouve... Recherche des produits associés");
+				System.out.println("Bon de livraison trouve... Recherche des produits associï¿½s");
 				String[] listProduits = bonLivraison.getListProduits().split(",");
 				int idMagasin = bonLivraison.getIdMagasin();
 

@@ -14,10 +14,19 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * @author Ilies
+ * @version 1.0
+ * This client socket class is used to profile client profile data
+ */
 public class SocketClientProfiling extends AbstractClientSocket {
     public SocketClientProfiling(){
     }
-
+    /**
+     * This methods return client profile data from the server to client when propers login/password are given
+     * @param clientId
+     * @return void
+     */
     public void setClientProfiling(int clientId){
         try {
             SimpleId id = new SimpleId(clientId);

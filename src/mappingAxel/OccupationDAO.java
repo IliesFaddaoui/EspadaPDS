@@ -1,10 +1,8 @@
-package MappingAxel;
+package mappingAxel;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import com.mysql.jdbc.Statement;
 
 public class OccupationDAO extends DAO<Occupation>{
 	

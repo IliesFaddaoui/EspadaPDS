@@ -1,6 +1,5 @@
-package StockAbdessamad.vue;
+package stockAbdessamad.vue;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,34 +8,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import StockAbdessamad.StockModel;
+import stockAbdessamad.StockModel;
 import connexion.PoolDeConnexion;
-import dao.BonDeLivraisonDAO;
-import dao.ProductDAO;
 import dao.StockDAO;
-import pojo.BonDeLivraison;
-import pojo.Product;
 import pojo.Stock;
 
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.util.ArrayList;
 import java.util.List;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  * 
