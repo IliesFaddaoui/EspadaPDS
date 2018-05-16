@@ -145,10 +145,10 @@ Insert into Magasin value (5, 'Go sport', 'Sport',888);
 Insert into Magasin value (6, 'Intersport', 'Sport',600);
 Insert into Magasin value (7, 'Decathlon', 'Sport',1400);
 Insert into Magasin value (23, 'JDsport', 'Sport',943);
-Insert into Magasin value (8, 'Fnac', 'Multimďż˝dia',963);
-Insert into Magasin value (9, 'Darty', 'Multimďż˝dia',1065);
-Insert into Magasin value (10, 'Boulanger', 'Multimďż˝dia',875);
-Insert into Magasin value (22, 'Apple', 'Multimďż˝dia',747);
+Insert into Magasin value (8, 'Fnac', 'Multimedia',963);
+Insert into Magasin value (9, 'Darty', 'Multimedia',1065);
+Insert into Magasin value (10, 'Boulanger', 'Multimedia',875);
+Insert into Magasin value (22, 'Apple', 'Multimedia',747);
 Insert into Magasin value (11, 'H&M', 'Vetement',1000);
 Insert into Magasin value (12, 'Devred', 'Vetement',875);
 Insert into Magasin value (13, 'Zara', 'Vetement',1176);
@@ -165,8 +165,8 @@ Insert into Magasin value (25, 'Calzedonia', 'Vetement',500);
 Insert into Magasin value (26, 'Carol', 'Vetement',145);
 Insert into Magasin value (27, 'Desigual', 'Vetement',367);
 Insert into Magasin value (28, 'Naf Naf', 'Vetement',432);
-Insert into Magasin value (29, 'Carrefour', 'Supermarché',1460);
-Insert into Magasin value (30, 'Bouygues', 'Multimédia',435);
+Insert into Magasin value (29, 'Carrefour', 'Supermarche',1460);
+Insert into Magasin value (30, 'Bouygues', 'Multimedia',435);
 
 Insert into Emplacement value (1, 'A1', 1200, 'Standard', 1.5);
 Insert into Emplacement value (2, 'B1', 1500, 'Standard', 2.5);
@@ -210,12 +210,24 @@ Insert into Emplacement value (38, 'C10', 1400, 'Standard', 0.5);
 Insert into Emplacement value (39, 'D10', 980, 'Standard', 2.1);
 
 
-Insert into Stock value (8, 2, 300, '12-04-2018', '28-04-2018', 'retour');
-Insert into Stock value (8, 1, 500, '03-12-2017', '16-03-2018', 'retour');
-Insert into Stock value (10, 2, 300, '27-08-2017', '16-03-2018', 'livraison');
-Insert into Stock value (10, 1, 500, '09-11-2017', '16-05-2018', 'retour');
-Insert into Stock value (10, 1, 500, '09-11-2017', '16-05-2018', 'retour');
-Insert into Stock value (1, 2, 100, '09-11-2017', '', 'livraison');
+Insert into Stock value (1, 2, 300, '2018-04-12', '2018-04-30', 'livraison');
+Insert into Stock value (2, 1, 500, '2017-10-20', '2017-12-21', 'livraison');
+Insert into Stock value (3, 3, 300, '2016-08-17', '2016-11-18', 'livraison');
+Insert into Stock value (4, 4, 500, '2015-01-05', '2015-10-11', 'livraison');
+Insert into Stock value (5, 6, 500, '2016-05-14', '2016-09-06', 'livraison');
+Insert into Stock value (6, 5, 100, '2018-03-24', '2018-07-22', 'livraison');
+Insert into Stock value (7, 10, 300, '2018-03-12', '2018-04-25', 'livraison');
+Insert into Stock value (8, 11, 500, '2017-10-01', '2017-12-30', 'livraison');
+Insert into Stock value (9, 12, 300, '2016-07-17', '2016-11-28', 'livraison');
+Insert into Stock value (10, 13, 500, '2015-02-05', '2015-05-11', 'livraison');
+Insert into Stock value (11, 14, 500, '2016-06-13', '2016-08-16', 'livraison');
+Insert into Stock value (12, 15, 100, '2018-10-24', '2018-11-22', 'livraison');
+Insert into Stock value (13, 16, 250, '2018-01-11', '2018-02-17', 'livraison');
+Insert into Stock value (14, 17, 500, '2017-10-22', '2017-12-19', 'livraison');
+Insert into Stock value (15, 18, 300, '2016-04-15', '2016-06-17', 'livraison');
+Insert into Stock value (16, 19, 400, '2017-02-05', '2017-04-11', 'livraison');
+Insert into Stock value (17, 9, 100, '2016-07-01', '2016-09-16', 'livraison');
+Insert into Stock value (18, 7, 125, '2018-05-14', '2018-07-22', 'livraison');
 
 
 Insert into ChiffreDaffaires value ('31/01/2018', 6, 350000);
@@ -240,3 +252,5 @@ Insert into Frequentation value ('30/04/2018', 13, 2600);
 
 Insert into Bondelivraison value (1, '1,2', 2);
 Insert into Bondelivraison value (2, '2,3', 4);
+Insert into Bondelivraison value (3, '3,4', 3);
+Insert into Bondelivraison value (4, '4,5', 4);
