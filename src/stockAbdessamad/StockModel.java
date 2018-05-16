@@ -1,7 +1,8 @@
-package stockAbdessamad;
+package StockAbdessamad;
 
+import java.sql.SQLException;
 import java.util.List;
-
+import java.sql.Connection;
 import javax.swing.table.AbstractTableModel;
 
 import connexion.PoolDeConnexion;
@@ -10,7 +11,7 @@ import pojo.Stock;
 
 public class StockModel extends AbstractTableModel {
 
-	private final String[] entetes = { "Produit", "Magasin", "Quantitï¿½", "Date entree", "Date sortie", "Motif Entree" };
+	private final String[] entetes = { "Produit", "Magasin", "Quantité", "Date entree", "Date sortie", "Motif Entree" };
 
 	private List<Stock> listStock;
 
@@ -39,7 +40,9 @@ public class StockModel extends AbstractTableModel {
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		PoolDeConnexion connection = new PoolDeConnexion(5);
-		MagasinsDAO magasinDAO = new MagasinsDAO(connection.getConnection());
+		Connection con = connection.getConnection();
+		try { 
+		MagasinsDAO magasinDAO = new MagasinsDAO(con);
 		String magasinName = "";
 		switch (columnIndex) {
 		case 0: {
@@ -69,9 +72,19 @@ public class StockModel extends AbstractTableModel {
 		default:
 			throw new IllegalArgumentException();
 		}
+		} 
+		finally{
+		 if(con != null)
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}
 	}
 
-	@Override
+	
 	public Class<?> getColumnClass(int columnIndex) {
 		switch (columnIndex) {
 		case 0:

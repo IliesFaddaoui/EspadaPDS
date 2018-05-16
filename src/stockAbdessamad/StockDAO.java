@@ -1,6 +1,10 @@
-package stockAbdessamad;
+package StockAbdessamad;
+
+import com.sun.rowset.CachedRowSetImpl;
 
 import dao.DAO;
+import pojo.ChiffreDaffaires;
+import pojo.Product;
 import pojo.Stock;
 
 /**
@@ -8,11 +12,13 @@ import pojo.Stock;
  * @version 2
  * This is the Dao for turnover, which allows to create, delete, update or find a turnover in the data base. 
  */
+import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class StockDAO extends DAO<Stock> {
@@ -152,8 +158,9 @@ public class StockDAO extends DAO<Stock> {
 	/**
 	 * aramil: Getting stock table's data
 	 * @return List<Stock>
+	 * @throws SQLException 
 	 */
-	public List<Stock> getAll() {
+	public List<Stock> getAll() throws SQLException {
 		List<Stock> resultStock = new ArrayList<>();
 		PreparedStatement preparedStatement = null;
 		String selectSQL = "SELECT * FROM Stock";
@@ -170,7 +177,10 @@ public class StockDAO extends DAO<Stock> {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}finally{
+			 if(preparedStatement != null) preparedStatement.close(); 
+			 if(con != null)  con.close(); 
+			}
 		return resultStock;
 	}
 
