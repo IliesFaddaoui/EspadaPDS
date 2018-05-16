@@ -272,6 +272,7 @@ Insert into Frequentation value ('2018-03-31', 13, 3200);
 Insert into Frequentation value ('2018-04-30', 13, 2600);
 Insert into Frequentation value ('2018-04-30', 14, 3206);
 Insert into Frequentation value ('2018-04-30', 15, 2907);
+Insert into Frequentation value ('2018-04-30', 16, 6000);
 Insert into Frequentation value ('2018-04-30', 8, 4083);
 Insert into Frequentation value ('2018-04-30', 9, 6780);
 Insert into Frequentation value ('2018-04-30', 10, 5619);
