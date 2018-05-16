@@ -5,22 +5,16 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Client" />
+      <artifact name="Admin" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Client.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Server/Server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Server/Server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfiling.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketClientProfiling.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketCreateEmplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketCreateEmplacement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketDeleteEmplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketDeleteEmplacement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketFindEmplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/clientSocket/SocketFindEmplacement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/connexion/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/connexion/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +34,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SocketCreateEmplacement.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
+      <file leaf-file-name="SocketClientProfile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketClientProfiling.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="35" column="60" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -53,43 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PoolDeConnexion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/connexion/PoolDeConnexion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlowingScript.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreationTableScript.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
+              <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -98,25 +68,16 @@
         <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+              <caret line="24" column="60" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractClientSocket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
+      <file leaf-file-name="SocketCreateEmplacement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+            <state relative-caret-position="271">
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -185,13 +146,13 @@
         <option value="$PROJECT_DIR$/src/main/ClientMain.java" />
         <option value="$PROJECT_DIR$/src/main/AdminMain.java" />
         <option value="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" />
         <option value="$PROJECT_DIR$/src/connexion/Database.java" />
         <option value="$PROJECT_DIR$/FlowingScript.sql" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
       </list>
     </option>
   </component>
@@ -241,33 +202,6 @@
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
               <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
@@ -455,7 +389,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50208336" side_tool="true" weight="0.3076087" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286385" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.5226917" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" weight="0.7402191" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -716,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AdminMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -754,55 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/AdminMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+        <state relative-caret-position="39">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -820,17 +702,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+    <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="84">
+          <caret line="120" column="16" lean-forward="true" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="35" column="60" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +787,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
