@@ -1,9 +1,8 @@
-package StockAbdessamad;
+package dao;
 
 import com.sun.rowset.CachedRowSetImpl;
-
-import dao.DAO;
 import pojo.ChiffreDaffaires;
+import pojo.Frequentation;
 import pojo.Product;
 import pojo.Stock;
 
@@ -18,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +26,7 @@ public class StockDAO extends DAO<Stock> {
 	private Connection con;
 
 	/**
+	 * @author Anaximandro
 	 * this is the StockDAO constructor. This use a connection in the Connection
 	 * pool to have access to the database
 	 * 
@@ -157,6 +158,7 @@ public class StockDAO extends DAO<Stock> {
 
 	/**
 	 * aramil: Getting stock table's data
+	 * 
 	 * @return List<Stock>
 	 * @throws SQLException 
 	 */
@@ -183,11 +185,47 @@ public class StockDAO extends DAO<Stock> {
 			}
 		return resultStock;
 	}
+	
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
+	}
+	
+	public Collection<Stock> find(String type) {
+		Collection <Stock> Stocks = new ArrayList<Stock>();
+		try{
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT S.idMagasin S.idProduct, S.Quantite, S.dateEntree, S.dateSortie, S.motifEntree FROM Stock as C, Magasin as M Where M.magasinType="+ type +"and M.idMagasin = S.idMagasin and motifEntree = 'retourclient' and DATEDIFF(month, GETDATE(), S.dateEntree) = 1 ");
+            while(result.next()){
+                Stock stock = new Stock(result.getInt("idMagasin"),result.getInt("idProduct"), result.getInt("Quantite"), result.getString("dateEntree"), result.getString("dateSortie"), result.getString("motifEntree"));
+                Stocks.add(stock);        
+            }
+            return Stocks;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+	}
+	
+	public Collection<Stock> findHistory(int idProduct) throws SQLException{
+		Collection <Stock> Stocks = new ArrayList<Stock>();
+		ResultSet compteur = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT Count DISTINCT (dateEntree) as count FROM Stock where motifEntree = 'retourclient'");
+		int cpt = compteur.getInt("count");
+		try {
+			for(int i = 1; i<cpt; i++) {
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT S.idMagasin S.idProduct, S.Quantite, S.dateEntree, S.dateSortie, S.motifEntree FROM Stock as C, Product as P Where P.idProduct="+ idProduct +"and M.idMagasin = S.idMagasin and motifEntree = 'retourclient' and DATEDIFF(month, GETDATE(), S.dateEntree) = " + i);
+            while(result.next()){
+                Stock stock = new Stock(result.getInt("idMagasin"),result.getInt("idProduct"), result.getInt("Quantite"), result.getString("dateEntree"), result.getString("dateSortie"), result.getString("motifEntree"));
+                Stocks.add(stock);        
+            }
+			}
+			return Stocks;
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		return null;
 	}
 
 }
