@@ -3,202 +3,32 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Admin" />
+      <artifact name="Client" />
+      <artifact name="Server" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_6_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_46.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_json.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/EspadaPDS.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/EspadaPDS.iml" afterPath="$PROJECT_DIR$/espadaPDS.iml" />
-      <change beforePath="$PROJECT_DIR$/EspadaPDS_jar.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/EspadaPDServeur.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/.classpath" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/.project" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/DepreciatedClassFromR2/View$BoutonAfficher.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/DepreciatedClassFromR2/View$BoutonAjout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/DepreciatedClassFromR2/View$BoutonSupprimer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/DepreciatedClassFromR2/View.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/DAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/Emplacements.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/EmplacementsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MagasinsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/Magazins.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MappingView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MappingView$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MappingView$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MappingView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/MappingViewMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/Occupation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/OccupationDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/MappingAxel/connecterDB.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/BonDeLivraison.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/BonDeLivraisonDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/MagasinsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/PurchaseHistoryDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/Stock.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/StockDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/StockModel.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/ToDelete.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/ClientReturnOrderView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/ClientReturnOrderView$BoutonLivraison.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/ClientReturnOrderView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/InventoryListHistoryView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/InventoryListHistoryView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/SaleProductView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/SaleProductView$BoutonVente.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/SaleProductView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/StockDeliveryEntryView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/StockDeliveryEntryView$BoutonLivraison.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/StockAbdessamad/vue/StockDeliveryEntryView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ChiffreDaffaires.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ChiffreDaffairesDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ChiffreDaffairesView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ChiffreDaffairesView$RechercheButton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ChiffreDaffairesView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/DAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Database.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Emplacements.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/EmplacementsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Frequentation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/FrequentationDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/FrequentationView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/FrequentationView$RechercheButton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/FrequentationView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Magasins.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/MagasinsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Occupation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/OccupationDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/OccupationView$RechercheButton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/OccupationView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Pool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/PoolDeConnexion.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/Stock.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/StockDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/StockView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/StockView$RechercheButton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/StockView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/analyseAnax/ViewMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/AbstractClientSocket.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/SocketClientProfile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/SocketClientProfiling.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/SocketCreateEmplacement.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/SocketDeleteEmplacement.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/clientSocket/SocketFindEmplacement.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/connexion/Database.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/connexion/Pool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/connexion/PoolDeConnexion.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/BonDeLivraisonDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/ChiffreDaffairesDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/ClientDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/DAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/EmplacementsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/FrequentationDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/KeyWordDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/LinkClientTPDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/LinkTPKeyWordDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/MagasinsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/OccupationDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/ProductDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/PurchaseHistoryDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/StockDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dao/TypeProfileDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/BonDeLivraison.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/ChiffreDaffaires.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Client.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/ClientPurchaseList.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Emplacements.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Frequentation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Identification.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/KeyWord.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/KeyWordOccurence.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/LinkClientTP.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/LinkTPKeyWord.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Magasins.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Occupation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Product.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/PurchaseHistory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/SimpleId.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/Stock.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/pojo/TypeProfile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/DAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/Database.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/Facture.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/FactureDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/FactureView$bSearchLocation.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/FactureView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/FactureViewMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/Pool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/redevanceDan/PoolDeConnexion.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/said/ParcoursType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/said/ParcoursTypeDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/server/MainServeur.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/server/PeriodicProfiling.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/server/Server$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/server/Server.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/server/ServerProcessor.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/test/Test.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/AdminProfileView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientPathView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileView$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileView$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileView$ConnectionButton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileViewConnected$GeneratePath.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileViewConnected$UpdateProfile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ClientProfileViewConnected.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ServerAnswerView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/vue/ViewMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/Database.html" afterPath="$PROJECT_DIR$/doc/connexion/Database.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/Pool.html" afterPath="$PROJECT_DIR$/doc/connexion/Pool.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/PoolDeConnexion.html" afterPath="$PROJECT_DIR$/doc/connexion/PoolDeConnexion.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/package-frame.html" afterPath="$PROJECT_DIR$/doc/connexion/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/package-summary.html" afterPath="$PROJECT_DIR$/doc/connexion/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/connexion/package-tree.html" afterPath="$PROJECT_DIR$/doc/connexion/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/DAO.html" afterPath="$PROJECT_DIR$/doc/dao/DAO.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/EmplacementsDAO.html" afterPath="$PROJECT_DIR$/doc/dao/EmplacementsDAO.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/MagasinsDAO.html" afterPath="$PROJECT_DIR$/doc/dao/MagasinsDAO.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/package-frame.html" afterPath="$PROJECT_DIR$/doc/dao/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/package-summary.html" afterPath="$PROJECT_DIR$/doc/dao/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/dao/package-tree.html" afterPath="$PROJECT_DIR$/doc/dao/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-1.html" afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-10.html" afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-11.html" afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-12.html" afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-13.html" afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-2.html" afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-3.html" afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-4.html" afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-5.html" afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-6.html" afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-8.html" afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-9.html" afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/package-list" afterPath="$PROJECT_DIR$/doc/package-list" />
-      <change beforePath="$PROJECT_DIR$/doc/pojo/Emplacements.html" afterPath="$PROJECT_DIR$/doc/pojo/Emplacements.html" />
-      <change beforePath="$PROJECT_DIR$/doc/pojo/Magasins.html" afterPath="$PROJECT_DIR$/doc/pojo/Magasins.html" />
-      <change beforePath="$PROJECT_DIR$/doc/pojo/package-frame.html" afterPath="$PROJECT_DIR$/doc/pojo/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/pojo/package-summary.html" afterPath="$PROJECT_DIR$/doc/pojo/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/pojo/package-tree.html" afterPath="$PROJECT_DIR$/doc/pojo/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
-      <change beforePath="$PROJECT_DIR$/doc/vue/package-frame.html" afterPath="$PROJECT_DIR$/doc/vue/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/vue/package-summary.html" afterPath="$PROJECT_DIR$/doc/vue/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/vue/package-tree.html" afterPath="$PROJECT_DIR$/doc/vue/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/dao/LinkClientTPDAO.class" />
-      <change beforePath="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" afterPath="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Client.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowingScript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FlowingScript.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/espadaPDS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/espadaPDS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/DepreciatedClassFromR2/View$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/DepreciatedClassFromR2/View$BoutonAfficher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/DepreciatedClassFromR2/View$BoutonAjout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/DepreciatedClassFromR2/View$BoutonSupprimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/DepreciatedClassFromR2/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EspadaPDS/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EspadaPDS/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connexion/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connexion/Database.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -218,42 +48,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/ClientMain.java">
+      <file leaf-file-name="SocketClientProfiling.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="136">
+              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/depreciatedClassFromR2/View.java">
+      <file leaf-file-name="SocketCreateEmplacement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkClientTPDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
+      <file leaf-file-name="SocketDeleteEmplacement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="87" column="221" lean-forward="false" selection-start-line="87" selection-start-column="221" selection-end-line="87" selection-end-column="221" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/index.html">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlowingScript.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="111" selection-start-line="111" selection-end-line="136" selection-end-column="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreationTableScript.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketFindEmplacement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractClientSocket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -275,15 +146,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/server/PeriodicProfiling.java" />
         <option value="$PROJECT_DIR$/src/dao/TypicalProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/MagasinsDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/EmplacementsDAO.java" />
@@ -297,15 +162,11 @@
         <option value="$PROJECT_DIR$/src/clientSocket/SocketDisplayEmplacement.java" />
         <option value="$PROJECT_DIR$/src/vue/View.java" />
         <option value="$PROJECT_DIR$/src/pojo/Identification.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" />
         <option value="$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java" />
         <option value="$PROJECT_DIR$/src/vue/ViewMain.java" />
         <option value="$PROJECT_DIR$/src/clientSocket/SocketPurchaseList.java" />
         <option value="$PROJECT_DIR$/src/pojo/ClientPurchaseList.java" />
         <option value="$PROJECT_DIR$/src/pojo/Product.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientProfileView.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
         <option value="$PROJECT_DIR$/src/vue/ClientPathView.java" />
@@ -319,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/test/Test.java" />
         <option value="$PROJECT_DIR$/src/server/Server.java" />
         <option value="$PROJECT_DIR$/CreationTableScript.sql" />
-        <option value="$PROJECT_DIR$/FlowingScript.sql" />
         <option value="$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/TypeProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java" />
@@ -329,15 +189,21 @@
         <option value="$PROJECT_DIR$/src/vue/ServerAnswerView.java" />
         <option value="$PROJECT_DIR$/src/dao/KeyWordDAO.java" />
         <option value="$PROJECT_DIR$/src/server/ServerProcessor.java" />
-        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
         <option value="$PROJECT_DIR$/src/test/UnitTestProfiling.java" />
         <option value="$PROJECT_DIR$/src/main/ClientMain.java" />
         <option value="$PROJECT_DIR$/src/main/AdminMain.java" />
         <option value="$PROJECT_DIR$/src/dao/LinkClientTPDAO.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" />
+        <option value="$PROJECT_DIR$/src/connexion/Database.java" />
+        <option value="$PROJECT_DIR$/FlowingScript.sql" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="616" />
     <option name="y" value="-20" />
     <option name="width" value="1346" />
@@ -366,32 +232,18 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
               <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
@@ -414,14 +266,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -438,99 +288,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in espadaPDS">
-    <configuration name="AdminMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="main.AdminMain" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="espadaPDS" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="JAR Application.Admin.jar">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="main.ClientMain" />
+      <module name="espadaPDS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="main.ClientMain" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="espadaPDS" />
-      <envs />
-    </configuration>
-    <configuration name="MainServeur (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="server.MainServeur" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="espadaPDS" />
-      <envs />
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="EspadaPDS" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration name="All in espadaPDS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="espadaPDS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -541,17 +314,13 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -561,29 +330,32 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
+    <configuration name="Admin.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Admin/Admin.jar" />
+    </configuration>
+    <configuration name="Client.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Client/Client.jar" />
+    </configuration>
+    <configuration name="Server.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Server/Server.jar" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
+      <module name="EspadaPDS" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="EspadaPDS" />
-      <envs />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -596,37 +368,31 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainServeur (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="2" class="java.lang.String" itemvalue="Application.AdminMain" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ClientMain" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in espadaPDS" />
+    <list>
+      <item itemvalue="Application.ClientMain" />
+      <item itemvalue="JUnit.All in espadaPDS" />
+      <item itemvalue="JAR Application.Server.jar" />
+      <item itemvalue="JAR Application.Client.jar" />
+      <item itemvalue="JAR Application.Admin.jar" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in espadaPDS" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ClientMain" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MainServeur (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AdminMain" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Test" />
+      <list>
+        <item itemvalue="JAR Application.Admin.jar" />
+        <item itemvalue="JAR Application.Client.jar" />
+        <item itemvalue="JAR Application.Server.jar" />
+        <item itemvalue="JUnit.All in espadaPDS" />
+        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -647,34 +413,35 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3076087" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46304348" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3286385" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50208336" side_tool="true" weight="0.3076087" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286385" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.114241004" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1749634" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -691,255 +458,189 @@
     <breakpoint-manager>
       <option name="time" value="22" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileViewConnected.java" />
-    <entry file="file://$PROJECT_DIR$/src/vue/ClientProfileView.java" />
     <entry file="file://$PROJECT_DIR$/src/vue/ServerAnswerView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="36" column="66" lean-forward="true" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="45" column="89" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/BonDeLivraisonDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ChiffreDaffairesDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ProductDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/PurchaseHistoryDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/LinkTPKeyWordDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ClientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/KeyWordDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/TypeProfileDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/ClientPurchaseList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/KeyWord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/Identification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/Emplacements.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/KeyWordOccurence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/LinkClientTP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/LinkTPKeyWord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/PurchaseHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/SimpleId.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pojo/TypeProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/MainServeur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/PeriodicProfiling.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ServerProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vue/ViewMain.java" />
     <entry file="file://$PROJECT_DIR$/src/test/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="48" column="44" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="48" selection-end-column="44" />
+          <caret line="48" column="44" selection-start-line="38" selection-start-column="8" selection-end-line="48" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/UnitTestProfiling.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
-          <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="70" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="70" />
+          <caret line="85" column="54" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyseAnax/ViewMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="61" />
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -960,7 +661,7 @@
     <entry file="file://$PROJECT_DIR$/src/redevanceDan/FactureView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -999,35 +700,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/depreciatedClassFromR2/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/LinkClientTPDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="87" column="221" lean-forward="false" selection-start-line="87" selection-start-column="221" selection-end-line="87" selection-end-column="221" />
-          <folding />
+        <state relative-caret-position="1275">
+          <caret line="87" column="221" selection-start-line="87" selection-start-column="221" selection-end-line="87" selection-end-column="221" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/depreciatedClassFromR2/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ClientMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ServerProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="44" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/AbstractClientSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/connexion/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CreationTableScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlowingScript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="111" selection-start-line="111" selection-end-line="136" selection-end-column="105" />
         </state>
       </provider>
     </entry>
@@ -1037,11 +810,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>unnamed</last-edited>
+          <last-edited>Admin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1089,6 +863,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

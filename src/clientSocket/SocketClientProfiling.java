@@ -33,7 +33,7 @@ public class SocketClientProfiling extends AbstractClientSocket {
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             String jsonIdentification = gson.toJson(id);
-            Socket s = new Socket(InetAddress.getLocalHost(), 5000);
+            Socket s = new Socket("10.0.0.1", 5000);
             PrintWriter w1 = new PrintWriter(s.getOutputStream(), true);
             BufferedInputStream b2 = new BufferedInputStream(s.getInputStream());
             //We inform the server that we want to find data in database
