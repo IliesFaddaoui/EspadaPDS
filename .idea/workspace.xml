@@ -6,16 +6,12 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="Admin" />
+      <artifact name="Client" />
+      <artifact name="Server" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP">
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketClientProfiling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketCreateEmplacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketDeleteEmplacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientSocket/SocketFindEmplacement.java" afterDir="false" />
-    </list>
+    <list default="true" id="0b2c832a-3137-463b-8f35-89828c8156b9" name="Default" comment="Refactor: rename EtablishedProfile to LinkClientTP" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +33,7 @@
       <file leaf-file-name="SocketClientProfile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="39">
               <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -206,6 +202,33 @@
             <path>
               <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
               <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EspadaPDS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EspadaPDS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -252,14 +275,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.Admin.jar">
-    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.ClientMain" />
+  <component name="RunManager" selected="Application.MainServeur">
+    <configuration name="MainServeur" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.MainServeur" />
       <module name="espadaPDS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -342,19 +365,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.ClientMain" />
       <item itemvalue="JUnit.All in espadaPDS" />
       <item itemvalue="JAR Application.Server.jar" />
       <item itemvalue="JAR Application.Client.jar" />
       <item itemvalue="JAR Application.Admin.jar" />
+      <item itemvalue="Application.MainServeur" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainServeur" />
+        <item itemvalue="JAR Application.Server.jar" />
         <item itemvalue="JAR Application.Admin.jar" />
         <item itemvalue="JAR Application.Client.jar" />
-        <item itemvalue="JAR Application.Server.jar" />
         <item itemvalue="JUnit.All in espadaPDS" />
-        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>
@@ -378,7 +401,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -389,11 +411,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50208336" side_tool="true" weight="0.3076087" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286385" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" weight="0.7402191" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.7402191" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1749634" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1749634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -760,7 +782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clientSocket/SocketClientProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="39">
           <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
