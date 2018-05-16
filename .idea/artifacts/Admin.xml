@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Admin">
+    <output-path>$PROJECT_DIR$/out/artifacts/Admin</output-path>
+    <root id="archive" name="Admin.jar">
+      <element id="module-output" name="espadaPDS" />
+    </root>
+  </artifact>
+</component>
