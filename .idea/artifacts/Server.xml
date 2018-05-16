@@ -4,6 +4,8 @@
     <root id="archive" name="Server.jar">
       <element id="module-output" name="espadaPDS" />
       <element id="library" level="project" name="junit-4.10" />
+      <element id="library" level="project" name="mysql-connector-java-5.1.45-bin" />
+      <element id="library" level="project" name="gson-2.2.21" />
     </root>
   </artifact>
 </component>
