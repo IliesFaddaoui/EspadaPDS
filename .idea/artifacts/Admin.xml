@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Admin</output-path>
     <root id="archive" name="Admin.jar">
       <element id="module-output" name="espadaPDS" />
+      <element id="library" level="project" name="gson-2.2.21" />
+      <element id="library" level="project" name="junit-4.10" />
+      <element id="library" level="project" name="mysql-connector-java-5.1.45-bin" />
     </root>
   </artifact>
 </component>
