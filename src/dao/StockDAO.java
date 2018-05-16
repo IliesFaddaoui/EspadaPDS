@@ -160,8 +160,9 @@ public class StockDAO extends DAO<Stock> {
 	 * aramil: Getting stock table's data
 	 * 
 	 * @return List<Stock>
+	 * @throws SQLException 
 	 */
-	public List<Stock> getAll() {
+	public List<Stock> getAll() throws SQLException {
 		List<Stock> resultStock = new ArrayList<>();
 		PreparedStatement preparedStatement = null;
 		String selectSQL = "SELECT * FROM Stock";
@@ -178,9 +179,13 @@ public class StockDAO extends DAO<Stock> {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}finally{
+			 if(preparedStatement != null) preparedStatement.close(); 
+			 if(con != null)  con.close(); 
+			}
 		return resultStock;
 	}
+	
 
 	@Override
 	public String toString() {
