@@ -20,6 +20,7 @@ public class connecterDB {
 		EmplacementsDAO empldao = new EmplacementsDAO(con);
 		FileWriter fw = null;
 		
+		// Mettre en place socket + seria + thread 
 		try {
 			fw = new FileWriter("Location.txt");
 			
@@ -41,7 +42,10 @@ public class connecterDB {
 		OccupationDAO occpdao = new OccupationDAO(con);
 
 		for(i = 1; i < 31; i++) {
-	
+			
+		// Modifier critères attribution emplacement 
+		// Add Chiffre d'affaire et zone privilégié 
+			
 		Magazins mag1 = magdao.find(i);
 		Magazins mag2 = magdao.find(j);
 		if (mag1 == null)
@@ -76,7 +80,7 @@ public class connecterDB {
 		}
 		pw.close();
 	}
-	
+	// Pour nouvelle attribution Magasin Emplacement 
 	public void newStore(String magasin, String emplacement) {
 		
 		Connection con = BDD();
