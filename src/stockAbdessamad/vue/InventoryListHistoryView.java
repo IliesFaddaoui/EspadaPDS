@@ -24,7 +24,7 @@ import java.awt.Color;
  * @author aramil: This view displays the history of inventory
  *
  */
-/*
+
 public class InventoryListHistoryView extends JFrame {
 
 	private JPanel contentPane = new JPanel();;
@@ -46,7 +46,7 @@ public class InventoryListHistoryView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-/*	public InventoryListHistoryView() {
+	public InventoryListHistoryView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 819, 498);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -86,4 +86,4 @@ public class InventoryListHistoryView extends JFrame {
 
 	}
 
-}*/
+}
