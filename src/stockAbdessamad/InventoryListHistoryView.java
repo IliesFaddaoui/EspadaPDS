@@ -1,4 +1,4 @@
-package StockAbdessamad.vue;
+//package StockAbdessamad.vue;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

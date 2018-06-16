@@ -1,0 +1,30 @@
+Le magasin Courir à déjà été placé à l'emplacement A1
+Le magasin Adidas à déjà été placé à l'emplacement B1
+Le magasin Foot Locker à déjà été placé à l'emplacement C1
+Le magasin Nike à déjà été placé à l'emplacement D1
+Le magasin Go sport à déjà été placé à l'emplacement A2
+Le magasin Intersport à déjà été placé à l'emplacement C2
+Le magasin Decathlon n'a pas pu être placé
+Le magasin Fnac n'a pas pu être placé
+Le magasin Darty à déjà été placé à l'emplacement B3
+Le magasin Boulanger à déjà été placé à l'emplacement C3
+Le magasin H&M n'a pas pu être placé
+Le magasin Devred à déjà été placé à l'emplacement A4
+Le magasin Zara n'a pas pu être placé
+Le magasin Celio à déjà été placé à l'emplacement C4
+Le magasin C&A à déjà été placé à l'emplacement D4
+Le magasin Celio club à déjà été placé à l'emplacement A5
+Le magasin Levis à déjà été placé à l'emplacement B5
+Le magasin Mango à déjà été placé à l'emplacement C5
+Le magasin New look à déjà été placé à l'emplacement D5
+Le magasin Primark n'a pas pu être placé
+Le magasin Jules à déjà été placé à l'emplacement B6
+Le magasin Apple à déjà été placé à l'emplacement C6
+Le magasin JDsport n'a pas pu être placé
+Le magasin Bershka n'a pas pu être placé
+Le magasin Calzedonia à déjà été placé à l'emplacement B7
+Le magasin Carol à déjà été placé à l'emplacement C7
+Le magasin Desigual à déjà été placé à l'emplacement D7
+Le magasin Naf Naf à déjà été placé à l'emplacement A8
+Le magasin Carrefour à déjà été placé à l'emplacement B8
+Le magasin Bouygues à déjà été placé à l'emplacement C8

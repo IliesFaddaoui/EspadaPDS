@@ -2,7 +2,7 @@ package main;
 
 import analyseAnax.ChiffreDaffairesView;
 import mappingAxel.MappingView;
-import mappingAxel.connecterDB;
+import mappingAxel.Algorithm;
 import redevanceDan.FactureView;
 import stockAbdessamad.vue.ClientReturnOrderView;
 import stockAbdessamad.vue.InventoryListHistoryView;
@@ -12,7 +12,7 @@ import stockAbdessamad.vue.StockDeliveryEntryView;
 public class AdminMain {
     public static void main(String[]args){
         ChiffreDaffairesView p1 = new ChiffreDaffairesView();
-        connecterDB bd = new connecterDB();
+        Algorithm bd = new Algorithm();
         MappingView m1 = new MappingView(bd);
         FactureView rv = new FactureView();
         try {

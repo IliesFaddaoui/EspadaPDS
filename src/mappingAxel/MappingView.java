@@ -19,11 +19,11 @@ public class MappingView extends JFrame {
 	  private JLabel label = new JLabel("");
 	  private JButton b = new JButton ("OK");
 	  
-	  private connecterDB conDB;
+	  private Algorithm conDB;
 	
 	private JPanel container = new JPanel();
 	
-	    public MappingView(connecterDB con){
+	    public MappingView(Algorithm con){
 	    	this.conDB = con;
 	    	
 	    	    this.setTitle("Phygit : Store Location");

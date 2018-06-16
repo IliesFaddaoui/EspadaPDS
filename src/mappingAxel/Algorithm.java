@@ -11,10 +11,10 @@ import java.util.Date;
 //import com.mysql.jdbc.Statement;
 
 
-public class connecterDB {
+public class Algorithm {
 
 
-	public connecterDB() {
+	public Algorithm() {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
 		EmplacementsDAO empldao = new EmplacementsDAO(con);
