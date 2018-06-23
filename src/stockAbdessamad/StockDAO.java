@@ -1,4 +1,4 @@
-package StockAbdessamad;
+package stockAbdessamad;
 
 import com.sun.rowset.CachedRowSetImpl;
 

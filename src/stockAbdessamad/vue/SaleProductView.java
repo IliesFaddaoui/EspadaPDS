@@ -13,6 +13,7 @@ import dao.StockDAO;
 import pojo.Magasins;
 import pojo.Product;
 import pojo.Stock;
+import stockAbdessamad.SocketClient.SocketSaleProduct;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -75,7 +76,7 @@ public class SaleProductView extends JFrame {
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		panel.add(lblNewLabel);
 		// La quanti
-		JLabel lblQuantity = new JLabel("Quantit�:");
+		JLabel lblQuantity = new JLabel("Quantite:");
 		lblQuantity.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblQuantity.setBounds(234, 202, 87, 16);
 		contentPane.add(lblQuantity);
@@ -87,7 +88,7 @@ public class SaleProductView extends JFrame {
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
-		JButton btnSubmit = new JButton("Submit");
+		JButton btnSubmit = new JButton("OK");
 		btnSubmit.setBounds(370, 287, 97, 25);
 		contentPane.add(btnSubmit);
 		// Le code barre du produit
@@ -123,38 +124,17 @@ public class SaleProductView extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			PoolDeConnexion connection = new PoolDeConnexion(5);
-			MagasinsDAO magasinDAO = new MagasinsDAO(connection.getConnection());
-			ProductDAO productDAO = new ProductDAO(connection.getConnection());
-
+			//We send the input data to the remote server
 			int quantity = Integer.parseInt(textField_1.getText());
-
-			final Date date = new Date();
-
 			int idProduct = Integer.parseInt(textField.getText());
-			Product product = productDAO.find(idProduct);
-
 			String magasinName = textField_2.getText();
-			System.out.println("magasinName" + magasinName);
-			Magasins magasin = magasinDAO.findMagasinByName(magasinName);
-			int idMagasin = magasin.getIdMagasin();
-
-			if (magasin != null && product != null) {
-				System.out.println("Recherche du produit et du magasin associ�");
-
-				StockDAO stockDAO = new StockDAO(connection.getConnection());
-				// Updating Stock table
-				Stock stockToUpdate = stockDAO.find(idProduct, idMagasin);
-				stockToUpdate.setQuantite(stockToUpdate.getQuantite() - quantity);
-
-				String dateSortie = new SimpleDateFormat("yyyy-MM-dd").format(date);
-				stockToUpdate.setDateSortie(dateSortie);
-				stockDAO.update(stockToUpdate);
-
-			}
+			SocketSaleProduct socketSaleProduct = new SocketSaleProduct();
+			socketSaleProduct.updateStock(magasinName, idProduct, quantity);
 
 		}
 
 	}
 
 }
+
+

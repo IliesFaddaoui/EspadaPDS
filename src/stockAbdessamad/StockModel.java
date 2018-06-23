@@ -1,4 +1,4 @@
-package StockAbdessamad;
+package stockAbdessamad;
 
 import java.sql.SQLException;
 import java.util.List;

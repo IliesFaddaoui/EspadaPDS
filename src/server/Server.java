@@ -9,7 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * @author ilies, axel
+ * @author ilies, axel, aramil
  * @version 1.2
  * Class which instance the Connection Pool, the thread pool
  */
@@ -19,7 +19,11 @@ public class Server {
     private boolean isRunning = true;
     public Server(){
         try{
-            server = new ServerSocket(port, 100, InetAddress.getLocalHost());
+        	//To test in local machine please uncomment the lines below:
+        	//InetAddress bindAddr = InetAddress.getByName("127.0.0.1");
+        	//server = new ServerSocket(port, 100, bindAddr);
+        	server = new ServerSocket(port, 100, InetAddress.getLocalHost());
+            System.out.println("the Server"+InetAddress.getLocalHost()+ "is listening on port" + port);
         } catch (UnknownHostException e){
             e.printStackTrace();
         } catch (IOException e1){
@@ -37,6 +41,7 @@ public class Server {
                 PoolDeConnexion con = new PoolDeConnexion(20);
                 while (isRunning){
                     try{
+                    	System.out.println("Socket accepted");
                         Socket s1 = server.accept();
                         Thread t = new Thread(new server.ServerProcessor(s1, con));
                         t.start();

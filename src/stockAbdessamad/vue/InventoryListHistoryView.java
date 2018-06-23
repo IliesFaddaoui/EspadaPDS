@@ -16,6 +16,7 @@ import pojo.Stock;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.sql.SQLException;
 import java.util.List;
 import java.awt.Color;
 
@@ -82,7 +83,13 @@ public class InventoryListHistoryView extends JFrame {
 		PoolDeConnexion connection = new PoolDeConnexion(5);
 		StockDAO stockDAO = new StockDAO(connection.getConnection());
 
-		return stockDAO.getAll();
+		try {
+			return stockDAO.getAll();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 
 	}
 
