@@ -1,8 +1,14 @@
 package mappingAxel;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,18 +17,20 @@ import java.util.Date;
 //import com.mysql.jdbc.Statement;
 
 
-public class Algorithm {
+public class ServerProcessor {
 
 
-	public Algorithm() {
+	public ServerProcessor() {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
 		EmplacementsDAO empldao = new EmplacementsDAO(con);
 		FileWriter fw = null;
 		
+		
+
 		// Mettre en place socket + seria + thread 
 		try {
-			fw = new FileWriter("Location.txt");
+			fw = new FileWriter("Mapping.txt");
 			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -79,28 +87,47 @@ public class Algorithm {
 		pw.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
 		}
 		pw.close();
-	}
+	//}
 	// Pour nouvelle attribution Magasin Emplacement 
-	public void newStore(String magasin, String emplacement) {
+/*	public void newStore(String magasin, String emplacement) {
 		
 		Connection con = BDD();
 		Date aujourdhui = new Date();
 		SimpleDateFormat formater = null;
-		formater = new SimpleDateFormat("dd-MM-yy");
+		formater = new SimpleDateFormat("dd-MM-yy");*/
 		MagasinsDAO magdao1 = new MagasinsDAO(con);
-		EmplacementsDAO empldao = new EmplacementsDAO(con);
+		//EmplacementsDAO empldao = new EmplacementsDAO(con);
 		
 		try {
-			Magazins magname = magdao1.findName(magasin);
-			Emplacements emp = empldao.findName(emplacement);
+				ServerSocket s = new ServerSocket(500);
+		        Socket soc = s.accept();
+		        BufferedReader plec = new BufferedReader(new InputStreamReader(soc.getInputStream()));
+		        PrintWriter pred = new PrintWriter(new BufferedWriter(new OutputStreamWriter(soc.getOutputStream())),true);
+		        while(true) {
+		            String str = plec.readLine();
+		            String str2 = plec.readLine();
+		            if (str.equals("END")) break;
+		            if (str2.equals("END")) break;
+		            System.out.println(str);
+		            System.out.println(str2);
+		            pred.println(str);
+		            pred.println(str2);
+		        
+				
+			Magazins magname = magdao1.findName(str);
+			Emplacements emp = empldao.findName(str2);
 			java.sql.Statement stmt = con.createStatement();
 			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+magname.getIdMagasin()+","+ emp.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 			stmt.executeUpdate(sql);
 			System.out.println("Le magasin "+ magname.getMagasinName() +" a été placé à l'emplacement "+ emp.getLocalisation());
-		}catch(SQLException e) {
-				e.printStackTrace();
-			}
-	}
+		        }
+		        plec.close();
+		        pred.close();
+		        soc.close();
+		        } catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();}
+		}
 	
 
 	public static Connection BDD() {

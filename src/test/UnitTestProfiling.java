@@ -1,5 +1,5 @@
 package test;
-import static org.junit.Assert.*;
+/*import static org.junit.Assert.*;
 
 import clientSocket.SocketClientProfile;
 import connexion.PoolDeConnexion;
@@ -88,4 +88,4 @@ public class UnitTestProfiling {
 
 }
 
-
+*/
