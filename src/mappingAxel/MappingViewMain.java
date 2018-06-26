@@ -1,14 +1,10 @@
 package mappingAxel;
 
-public class MainServeur {
+public class MappingViewMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ServerProcessor DB = new ServerProcessor();
-
-	    }
-		
-		
+		MappingView p1 = new MappingView();
 	}
 
-
+}

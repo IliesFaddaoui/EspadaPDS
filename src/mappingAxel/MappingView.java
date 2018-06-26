@@ -1,12 +1,12 @@
 package mappingAxel;
 
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -117,24 +117,25 @@ public class MappingView extends JFrame {
 	    	            	String emplacement = jtf2.getText();
 	    	            	
 	    			            Socket socket = new Socket("127.0.0.1", 500);
-
+	    			       
 	    			            BufferedReader plec = new BufferedReader(
 	    			                    new InputStreamReader(socket.getInputStream())
 	    			            );
 
 	    			            PrintWriter pred = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
 
-	    			        	
+	    			        	Occupation obj = new Occupation();
+	    			        	String jason = gson.toJson(obj);
 	    			            String str = magasin;
 	    			            String str2 = emplacement;
 	    			         
 	    			            String json1 = gson.toJson(str);
-	    			            System.out.println(json1);
+	    			            System.out.println(jason);
 	    			            String json2 = gson.toJson(str2);
-	    			            pred.println(json1);          // envoi d'un message
-	    			            pred.println(json2);
-	    			            json1 = plec.readLine(); 
-	    			            json2 = plec.readLine();
+	    			           pred.println(jason);          // envoi d'un message
+	    			           // pred.println(json2);
+	    			            jason = plec.readLine(); 
+	    			        //    json2 = plec.readLine();
 	    			            // lecture de l'écho
 	    			            // message de terminaison
 	    			            pred.println("END") ;
@@ -151,6 +152,13 @@ public class MappingView extends JFrame {
 	    	    });
 	    }
 
+	    class Occupation {
+	    	 String magasin = jtf.getText();
+	    	 String emplacement = jtf2.getText();
+	   
+	    	Occupation(){
+	    }
+	    }
 	    public String getMagasin() {
 	    	return jtf.getText();
 	    }
@@ -158,6 +166,6 @@ public class MappingView extends JFrame {
 	    public String getEmplacement() {
 	    	return jtf2.getText();
 	    }
+	    
+	    
 }
-
-

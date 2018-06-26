@@ -24,7 +24,8 @@ import connexion.PoolDeConnexion;
 
 public class ServerProcessor {
 
-
+	BufferedInputStream reader=null;
+	
 	public ServerProcessor() {
 		// TODO Auto-generated method stub
 		Connection con = BDD();
@@ -35,7 +36,7 @@ public class ServerProcessor {
 
 		// Mettre en place socket + seria + thread 
 		try {
-			fw = new FileWriter("Mapping.txt");
+			fw = new FileWriter("Mapping1.txt");
 			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -72,10 +73,10 @@ public class ServerProcessor {
 				java.sql.Statement stmt = con.createStatement();
 				String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl0.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 				stmt.executeUpdate(sql);
-				pw.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl0.getLocalisation());
+				pw.println("Le magasin "+ mag1.getMagasinName()+" a été placé �  l'emplacement "+ empl0.getLocalisation());
 				
 				}catch(SQLException e) {
-					pw.println("Le magasin "+mag1.getMagasinName()+" à déjà été placé à l'emplacement "+empl0.getLocalisation());
+					pw.println("Le magasin "+mag1.getMagasinName()+" �  déj�  été placé �  l'emplacement "+empl0.getLocalisation());
 				}
 			
 		else if (mag1.getMagasinSuperficie() < empl01.getSuperficie())
@@ -83,72 +84,81 @@ public class ServerProcessor {
 			java.sql.Statement stmt = con.createStatement();
 			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+mag1.getIdMagasin()+","+ empl01.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
 			stmt.executeUpdate(sql);
-			pw.println("Le magasin "+ mag1.getMagasinName()+" a été placé à l'emplacement "+ empl01.getCategorie());
+			pw.println("Le magasin "+ mag1.getMagasinName()+" a été placé �  l'emplacement "+ empl01.getCategorie());
 			
 		}catch(SQLException e) {
-				pw.println("Le magasin "+mag1.getMagasinName()+" a déjà été placé à l'emplacement "+empl01.getLocalisation());
+				pw.println("Le magasin "+mag1.getMagasinName()+" a déj�  été placé �  l'emplacement "+empl01.getLocalisation());
 			}
 		else 
 		pw.println("Le magasin " + mag1.getMagasinName()+" n'a pas pu être placé");
 		}
 		pw.close();
+	
 	//}
+	
 	// Pour nouvelle attribution Magasin Emplacement 
-//	public void newStore(String magasin, String emplacement) {
+	//public void newStore(String magasin, String emplacement) {
 		 Socket sock = null;
 	 PrintWriter writer = null;
-	 BufferedInputStream reader=null;
+//	 BufferedInputStream reader=null;
 	 PoolDeConnexion connection;
 	 //writer = new PrintWriter(sock.getOutputStream());
 	//	reader = new BufferedInputStream(sock.getInputStream());
 		//Gson gson = new Gson();
-	/*	Connection con = BDD();
-		Date aujourdhui = new Date();
-		SimpleDateFormat formater = null;
-		formater = new SimpleDateFormat("dd-MM-yy");*/
+//	Connection con = BDD();
+//		Date aujourdhui = new Date();
+	//	SimpleDateFormat formater = null;
+		formater = new SimpleDateFormat("dd-MM-yy");
 		MagasinsDAO magdao1 = new MagasinsDAO(con);
 		//EmplacementsDAO empldao = new EmplacementsDAO(con);
-		
 		try {
-				ServerSocket s = new ServerSocket(500);
-		       Socket soc = s.accept();
-		        BufferedReader plec = new BufferedReader(new InputStreamReader(soc.getInputStream()));
-		        PrintWriter pred = new PrintWriter(new BufferedWriter(new OutputStreamWriter(soc.getOutputStream())),true);
-		       Gson gson = new Gson();
-		        //writer = new PrintWriter(sock.getOutputStream());
-			//reader = new BufferedInputStream(sock.getInputStream());
+			ServerSocket s = new ServerSocket(500);
+			System.out.println("test1");
+		    Socket socket = s.accept();    
+		    System.out.println("test2");
+		    BufferedReader plec = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		    PrintWriter pred = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+		    Gson gson = new Gson();
 
 		        while(true) {
 		            String str = plec.readLine();
-		          //  Emplacements e1 = gson.fromJson(str, Emplacements.class);
-		            String str2 = plec.readLine();
+		            System.out.println("--" + str +"--");
+		       
+		         Occupation e1 = gson.fromJson(str, Occupation.class);
+		          System.out.println("magasin = " +e1.magasin + " emplacement = " +e1.emplacement);
+		           // String str2 = plec.readLine();
 		            if (str.equals("END")) break;
-		            if (str2.equals("END")) break;
+		            //if (str2.equals("END")) break;
 		      //     Emplacements e1 = gson.fromJson(str, Emplacements.class);
 		            System.out.println(str);
-		            System.out.println(str2);
-		            pred.println(str);
-		            pred.println(str2);
-		        /*
+		         //   System.out.println(str2);
+		           pred.println(str);
+		           // pred.println(str2);
+		        
 				
-			//Magazins magname = magdao1.findName(str);
-			//Emplacements emp = empldao.findName(str2);
-		//	java.sql.Statement stmt = con.createStatement();
-		//	String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+magname.getIdMagasin()+","+ emp.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
-			//stmt.executeUpdate(sql);
-		//	System.out.println("Le magasin "+ magname.getMagasinName() +" a �t� plac� � l'emplacement "+ emp.getLocalisation());
-		       */   }
+			Magazins magname = magdao1.findName(e1.magasin);
+		Emplacements emp = empldao.findName(e1.emplacement);
+		java.sql.Statement stmt = con.createStatement();
+			String sql = "INSERT INTO Occupation(idMagasin, idEmplacement, dateEntree) values ("+magname.getIdMagasin()+","+ emp.getIdEmplacement()+", '"+formater.format(aujourdhui)+"')";
+			System.out.println(sql);
+			stmt.executeUpdate(sql);
+			System.out.println("Le magasin "+ magname.getMagasinName() +" a �t� plac� �  l'emplacement "+ emp.getLocalisation());
+		         }
 		      plec.close();
 		        pred.close();
-		        soc.close();
+		        socket.close();
 			
 			
-		        } catch (Exception e2) {
+		        } catch (Exception e) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();}
-		}
-	
+		System.out.println("Il y a eu une erreur");
+		}}
 
+	class Occupation {
+		String magasin;
+		String emplacement;
+	}
+	
 	public static Connection BDD() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
