@@ -312,6 +312,85 @@ public class ServerProcessor implements Runnable {
 							writer.flush();
 						} 
 					}
+
+
+					break;
+				case "DELIVERY":
+					//Server understands the action asked, he returns the msg below
+					String messageToclient2 = "Delivery Entry...Data received..Updating stock table";
+					Connection connexionDelivery = null;
+
+					try {
+						connexionDelivery =  connection.getConnection();
+
+
+						//the Server waits for the data
+						writer.write(messageToclient2);
+						writer.flush();
+						//the server read the data
+						String CelintRequest = read();
+						String datafromClient = gson.fromJson(CelintRequest, String.class);
+
+						//Data processing 
+
+						BonDeLivraisonDAO bonDeLivraisonDAO = new BonDeLivraisonDAO(connexionDelivery);
+
+						final Date date = new Date();
+						System.out.println("date" + date);
+						String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+						String motifEntree = "Livraison";
+						int numeroBonToSearch = (int)Double.parseDouble(datafromClient.toString());
+
+						BonDeLivraison bonLivraison = bonDeLivraisonDAO.find(numeroBonToSearch);
+
+
+						if (bonLivraison != null) {
+							System.out.println("Recherche du bon de Livraison..");
+							String[] listProduits = bonLivraison.getListProduits().split(",");
+							int idMagasin = bonLivraison.getIdMagasin();
+
+							StockDAO stockDAO = new StockDAO(connection.getConnection());
+							// Updating Stock table with the new delivery data
+							for (int i = 0; i < listProduits.length; ++i) {
+								Stock stockToUpdate = stockDAO.find(Integer.parseInt(listProduits[i]), idMagasin);
+								if(stockToUpdate != null) {
+								System.out.println("Stock trouvé !");
+								stockToUpdate.setDateEntree(dateEntree);
+								stockToUpdate.setMotifEntree(motifEntree);
+
+								stockToUpdate.setQuantite(stockToUpdate.getQuantite() + 1);
+
+								stockDAO.update(stockToUpdate);
+								System.out.println("date" + stockToUpdate.getDateEntree());
+								System.out.println("motif" + stockToUpdate.getMotifEntree());
+								}
+								else {
+									
+									messageToclient = "Aucun stock trouvé pour le produit ayant comme id: "+ listProduits[i]+ "..Veuillez vérifier les informations entrees!";
+									writer.write(messageToclient);
+									writer.flush();
+									break;
+									
+								}
+							}
+						}
+						else {
+
+							messageToclient = "Bon de Livraison erronne..Veuillez vérifier les informations entrees!";
+							writer.write(messageToclient);
+							writer.flush();
+							break;
+
+						}
+					}
+					finally{
+						if(connexionDelivery != null) {
+							connection.releaseConnection(connexionDelivery);
+							writer.write("Stock updated!");
+							writer.flush();
+						} 
+					}
 				}
 
 				break;
@@ -320,7 +399,7 @@ public class ServerProcessor implements Runnable {
 				e.printStackTrace();
 			}
 		}
-	}
+	}	
 
 
 	/**

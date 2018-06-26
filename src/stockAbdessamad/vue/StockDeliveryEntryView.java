@@ -11,6 +11,8 @@ import dao.BonDeLivraisonDAO;
 import dao.StockDAO;
 import pojo.BonDeLivraison;
 import pojo.Stock;
+import stockAbdessamad.SocketClient.SocketSaleProduct;
+import stockAbdessamad.SocketClient.SocketStockDeliveryEntry;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -106,39 +108,10 @@ public class StockDeliveryEntryView extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			PoolDeConnexion connection = new PoolDeConnexion(5);
-			BonDeLivraisonDAO bonDeLivraisonDAO = new BonDeLivraisonDAO(connection.getConnection());
-
-			final Date date = new Date();
-			System.out.println("date" + date);
-			String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
-
-			String motifEntree = "Livraison";
-
 			int numeroBonToSearch = Integer.parseInt(textField_1.getText());
-			BonDeLivraison bonLivraison = bonDeLivraisonDAO.find(numeroBonToSearch);
-			//
-			if (bonLivraison != null) {
-				System.out.println("Bon de livraison trouve... Recherche des produits associ�s");
-				String[] listProduits = bonLivraison.getListProduits().split(",");
-				int idMagasin = bonLivraison.getIdMagasin();
+			SocketStockDeliveryEntry socketStockDeliveryEntry = new SocketStockDeliveryEntry();
+			socketStockDeliveryEntry.updateStock(numeroBonToSearch);
 
-				StockDAO stockDAO = new StockDAO(connection.getConnection());
-				// Updating Stock table with the new delivery data
-				for (int i = 0; i < listProduits.length; ++i) {
-					Stock stockToUpdate = stockDAO.find(Integer.parseInt(listProduits[i]), idMagasin);
-					stockToUpdate.setDateEntree(dateEntree);
-					stockToUpdate.setMotifEntree(motifEntree);
-
-					stockToUpdate.setQuantite(stockToUpdate.getQuantite() + 1);
-
-					stockDAO.update(stockToUpdate);
-					System.out.println("date" + stockToUpdate.getDateEntree());
-					System.out.println("motif" + stockToUpdate.getMotifEntree());
-
-				}
-
-			}
 
 		}
 
