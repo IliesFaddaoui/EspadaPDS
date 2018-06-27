@@ -9,6 +9,8 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
 import stockAbdessamad.StockModel;
+import stockAbdessamad.SocketClient.SocketInventoryListHistoty;
+import stockAbdessamad.SocketClient.SocketSaleProduct;
 import connexion.PoolDeConnexion;
 import dao.StockDAO;
 import pojo.Stock;
@@ -63,7 +65,7 @@ public class InventoryListHistoryView extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		panel.add(lblNewLabel);
-        // We initialize data
+		// We initialize data
 		List<Stock> dataToDisplay = initData();
 
 		StockModel model = new StockModel(dataToDisplay);
@@ -77,19 +79,13 @@ public class InventoryListHistoryView extends JFrame {
 		this.setVisible(true);
 
 	}
-    
+
 	//Getting data from Stock's table
 	private List<Stock> initData() {
-		PoolDeConnexion connection = new PoolDeConnexion(5);
-		StockDAO stockDAO = new StockDAO(connection.getConnection());
 
-		try {
-			return stockDAO.getAll();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		SocketInventoryListHistoty socketInventoryListHistoty = new SocketInventoryListHistoty();
+		List<Stock> stockList = socketInventoryListHistoty.DisplayStock();
+		return stockList;
 
 	}
 

@@ -1,6 +1,8 @@
 package server;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import connexion.PoolDeConnexion;
 import dao.*;
 import pojo.*;
@@ -44,7 +46,9 @@ public class ServerProcessor implements Runnable {
 			try{
 				writer = new PrintWriter(sock.getOutputStream());
 				reader = new BufferedInputStream(sock.getInputStream());
-				Gson gson = new Gson();
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+				//	Gson gson = new Gson();
 				//first interaction with the client, sending the kind of action
 				String demand = read();
 				switch(demand.toUpperCase()){
@@ -355,23 +359,23 @@ public class ServerProcessor implements Runnable {
 							for (int i = 0; i < listProduits.length; ++i) {
 								Stock stockToUpdate = stockDAO.find(Integer.parseInt(listProduits[i]), idMagasin);
 								if(stockToUpdate != null) {
-								System.out.println("Stock trouvé !");
-								stockToUpdate.setDateEntree(dateEntree);
-								stockToUpdate.setMotifEntree(motifEntree);
+									System.out.println("Stock trouvé !");
+									stockToUpdate.setDateEntree(dateEntree);
+									stockToUpdate.setMotifEntree(motifEntree);
 
-								stockToUpdate.setQuantite(stockToUpdate.getQuantite() + 1);
+									stockToUpdate.setQuantite(stockToUpdate.getQuantite() + 1);
 
-								stockDAO.update(stockToUpdate);
-								System.out.println("date" + stockToUpdate.getDateEntree());
-								System.out.println("motif" + stockToUpdate.getMotifEntree());
+									stockDAO.update(stockToUpdate);
+									System.out.println("date" + stockToUpdate.getDateEntree());
+									System.out.println("motif" + stockToUpdate.getMotifEntree());
 								}
 								else {
-									
+
 									messageToclient = "Aucun stock trouvé pour le produit ayant comme id: "+ listProduits[i]+ "..Veuillez vérifier les informations entrees!";
 									writer.write(messageToclient);
 									writer.flush();
 									break;
-									
+
 								}
 							}
 						}
@@ -391,9 +395,63 @@ public class ServerProcessor implements Runnable {
 							writer.flush();
 						} 
 					}
+
+					break;
+
+
+				case "STOCKHISTORY":
+					//Server understands the action asked, he returns the msg below
+					String messageToclient3 = "Connection Ok..Displaying stock history...";
+					Connection connexionStockHistory = null;
+
+					try {
+						connexionStockHistory =  connection.getConnection();
+
+						//the Server write the data
+						writer.write(messageToclient3);
+						writer.flush();
+						//We search data in the Database
+						StockDAO stockDAO = new StockDAO(connexionStockHistory);
+
+						try {
+							List <Stock> stockList = new ArrayList<Stock>();
+							stockList = stockDAO.getAll();
+							if (stockList.isEmpty()) {
+
+								messageToclient = "La table stock est vide !";
+								writer.write(messageToclient);
+								writer.flush();
+								break;
+							}
+							else {
+								//Convert list of Stock to json
+								System.out.println("Converting list of -Stock-nto Json");
+								String json = gson.toJson(stockList);
+								System.out.println(json);
+								writer.write(json);
+								writer.flush();
+
+							}
+						} catch (SQLException e) {
+
+							e.printStackTrace();
+						}
+
+
+					}
+
+					finally{
+						if(connexionStockHistory != null) {
+							connection.releaseConnection(connexionStockHistory);
+							writer.write("Opération réussie!");
+							writer.flush();
+						} 
+					}
 				}
 
-				break;
+
+				break;	
+
 
 			}catch (IOException e){
 				e.printStackTrace();
