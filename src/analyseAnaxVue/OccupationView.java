@@ -1,4 +1,4 @@
-package analyseAnax;
+package analyseAnaxVue;
 
 import connexion.Database;
 import connexion.PoolDeConnexion;
@@ -10,6 +10,10 @@ import pojo.Magasins;
 import pojo.Product;
 
 import javax.swing.*;
+
+import analyseAnax.EmplacementsDAO;
+import analyseAnax.OccupationDAO;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

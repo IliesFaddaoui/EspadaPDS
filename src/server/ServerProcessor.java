@@ -13,12 +13,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @author ilies, axel, aramil
+ * @author ilies, axel, aramil, Anaximandro
  * @version 1.2
  * Class with all the Server sockets and operation with database
  */
@@ -312,9 +313,41 @@ public class ServerProcessor implements Runnable {
 							writer.flush();
 						} 
 					}
-				}
+					break;
+					
+					/**
+					 * Anaximandro
+					 */
+					
+				case "FINDCHIFFREDAFFAIRES":
+					//Server understands the action asked, he returns "OK"
+					String toSendC = "OK for find";
+					//the Server waits for the data
+					writer.write(toSendC);
+					writer.flush();
+					//the server read the data
+					String toFindC = read();
+					System.out.println("Donnée reçue sur le server: "+toFindC);
+					ChiffreDaffairesDAO cDaoFind = new ChiffreDaffairesDAO(connection.getConnection());
+					Collection<ChiffreDaffaires> cFind = cDaoFind.find(toFindC);
+					String jsonFindC = gson.toJson(cFind);
+					for(ChiffreDaffaires chiffre : cFind) {
+						System.out.println(chiffre.getMontant());
+					}
+					//the server looks and find (or not) the data asked and return his answer to the client
+					if(jsonFindC == null){
+						String failFind = "";
+						writer.write(failFind);
+						writer.flush();
 
-				break;
+					}else {
+						writer.write(jsonFindC);
+						writer.flush();
+
+					}
+					connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+					break;
+				}			
 
 			}catch (IOException e){
 				e.printStackTrace();

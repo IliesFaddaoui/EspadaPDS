@@ -1,11 +1,13 @@
-package analyseAnax;
+package analyseAnaxVue;
 
 import connexion.Database;
 import connexion.PoolDeConnexion;
-import dao.FrequentationDAO;
+import dao.StockDAO;
 import dao.MagasinsDAO;
-import pojo.Frequentation;
+import dao.ProductDAO;
+import pojo.Stock;
 import pojo.Magasins;
+import pojo.Product;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,13 +23,13 @@ import java.util.Collection;
 
 /**
  * @author Anaximandro
- * @version 1.0 This view allows to see the attendance of the differents stores of
+ * @version 1.0 This view allows to see the client's return of the differents stores of
  *          a category
  */
-public class FrequentationView extends JFrame {
+public class StockView extends JFrame {
 	PoolDeConnexion connection= new PoolDeConnexion(10);
 	
-	private JLabel rechercheText = new JLabel("Please enter the category attendance you want to see: ");
+	private JLabel rechercheText = new JLabel("Please enter the category client's return you want to see: ");
 	private JLabel espada = new JLabel("PhyGit Mall");
 	private Font police = new Font("Arial", Font.BOLD, 14);
 	private Font policeEspada = new Font("Arial", Font.BOLD, 28);
@@ -36,7 +38,7 @@ public class FrequentationView extends JFrame {
 	private JButton rechercheButton = new JButton("Rechecher");
 	private JPanel container = new JPanel();
 
-	public FrequentationView() {
+	public StockView() {
 		this.setLocationRelativeTo(null);
 		this.setTitle("PhyGit Mall: Mall activity indicators");
 		this.setSize(600, 600);
@@ -114,10 +116,11 @@ public class FrequentationView extends JFrame {
 	private class RechercheButton implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String type = jtfType.getText();
-			FrequentationDAO fdo = new FrequentationDAO(connection.getConnection());
-			Collection<Frequentation> fs = fdo.find(type);
-			MagasinsDAO md = new MagasinsDAO(connection.getConnection());
-			if (fs == null) {
+			StockDAO sdo = new StockDAO(BDD());
+			Collection<Stock> ss = sdo.find(type);
+			MagasinsDAO md = new MagasinsDAO(BDD());
+			ProductDAO pdo = new ProductDAO(BDD());
+			if (ss == null) {
 				JFrame fenResp = new JFrame();
 				JPanel containerResp = new JPanel();
 				fenResp.setSize(150, 150);
@@ -128,13 +131,29 @@ public class FrequentationView extends JFrame {
 				fenResp.setVisible(true);
 				jtfType.setText("category");
 			} else {
-				System.out.println("Niveau de fréquentation du mois précédent pour les magasins de la catégorie " + type);
+				System.out.println("Nombre de retour du mois précédent pour les magasins de la catégorie " + type);
 
-				for (Frequentation freq : fs) {
-					Magasins m = md.find(freq.getIdMagasin());
-					System.out.println("Magasin :" + m.getMagasinName() + " | Niveau de frequentation :" + freq.getNiveauFrequentation());
+				for (Stock stock : ss) {
+					Magasins m = md.find(stock.getIdMagasin());
+					Product p = pdo.find(stock.getIdProduct());
+					System.out.println("Magasin :" +m.getMagasinName() + " |  Produit retourné:" + p.getProductReference() + " |  Quantité retournée: " + stock.getQuantite());
 				}
 			}
 		}
+	}
+	public static Connection BDD() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("Driver OK");
+			String url="jdbc:mysql://localhost/pds";
+			String user="root";
+			String password="";
+			Connection con=DriverManager.getConnection(url, user, password);
+			System.out.println("Connexion Ã©tablie");
+			return con;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

@@ -1,10 +1,10 @@
 package analyseAnax;
 
 import com.sun.rowset.CachedRowSetImpl;
-import pojo.ChiffreDaffaires;
-import pojo.Frequentation;
+import analyseAnax.ChiffreDaffaires;
+import analyseAnax.Frequentation;
 import pojo.Product;
-import pojo.Stock;
+import analyseAnax.Stock;
 
 /**
  * @author Anaximandro
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import dao.DAO;
 
 public class StockDAO extends DAO<Stock> {
 

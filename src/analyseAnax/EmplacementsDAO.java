@@ -1,11 +1,11 @@
 package analyseAnax;
-import pojo.Emplacements;
+import analyseAnax.Emplacements;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-
+import dao.DAO;
 /**
  * @author ilies
  * this is the Dao for emplacements, which allows to create, delete, update or find an emplacement in the data base

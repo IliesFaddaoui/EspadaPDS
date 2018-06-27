@@ -98,7 +98,7 @@ public class ChiffreDaffairesDAO extends DAO<ChiffreDaffaires> {
 	public Collection<ChiffreDaffaires> find(String type) {
 		Collection <ChiffreDaffaires> ChiffresDaffaires = new ArrayList<ChiffreDaffaires>();
 		try{
-            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT C.chiffreDate C.idMagasin, C.montant FROM ChiffreDaffaires as C, Magasin as M Where M.magasinType="+ type +"and M.idMagasin = C.idMagasin and DATEDIFF(month, GETDATE(), C.chiffreDate) = 1 ");
+            ResultSet result = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT C.chiffreDate, C.idMagasin, C.montant FROM ChiffreDaffaires as C, Magasin as M Where M.magasinType='"+ type +"'and M.idMagasin = C.idMagasin and (month(now()) - month(C.chiffreDate)) = 1 ");
             while(result.next()){
                 ChiffreDaffaires chiffre = new ChiffreDaffaires(result.getString("chiffreDate"),result.getInt("idMagasin"), result.getInt("montant"));
                 ChiffresDaffaires.add(chiffre);        

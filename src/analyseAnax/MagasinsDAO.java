@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import pojo.Magasins;
-import pojo.Stock;
+import analyseAnax.Magasins;
+import analyseAnax.Stock;
+import dao.DAO;
 
 /**
- * @author Ilies
+ * @author anaximandro
  * @version 2 this is the Dao class for Magasin database table This class allows
  *          to create, delete, update or find an magasin in the data base
  */

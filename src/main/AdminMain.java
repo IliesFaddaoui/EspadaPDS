@@ -1,6 +1,6 @@
 package main;
 
-import analyseAnax.ChiffreDaffairesView;
+import analyseAnaxVue.ChiffreDaffairesView;
 //import mappingAxel.MappingView;
 import mappingAxel.ServerProcessor;
 import redevanceDan.FactureView;

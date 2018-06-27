@@ -1,14 +1,15 @@
 package analyseAnax;
 
 import java.sql.Connection;
+import dao.DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import pojo.Magasins;
-import pojo.Occupation;
-import pojo.Stock;
+import analyseAnax.Magasins;
+import analyseAnax.Occupation;
+import analyseAnax.Stock;
 
 public class OccupationDAO extends DAO<Occupation>{
 	

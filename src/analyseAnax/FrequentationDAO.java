@@ -1,9 +1,10 @@
 package analyseAnax;
 
 import com.sun.rowset.CachedRowSetImpl;
+import dao.DAO;
 
-import pojo.ChiffreDaffaires;
-import pojo.Frequentation;
+import analyseAnax.ChiffreDaffaires;
+import analyseAnax.Frequentation;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.Connection;
