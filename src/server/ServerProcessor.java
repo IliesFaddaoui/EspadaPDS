@@ -1,6 +1,8 @@
 package server;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import connexion.PoolDeConnexion;
 import dao.*;
 import pojo.*;
@@ -45,7 +47,9 @@ public class ServerProcessor implements Runnable {
 			try{
 				writer = new PrintWriter(sock.getOutputStream());
 				reader = new BufferedInputStream(sock.getInputStream());
-				Gson gson = new Gson();
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+				//	Gson gson = new Gson();
 				//first interaction with the client, sending the kind of action
 				String demand = read();
 				switch(demand.toUpperCase()){
@@ -309,7 +313,224 @@ public class ServerProcessor implements Runnable {
 							connection.releaseConnection(connexion1);
 							connection.releaseConnection(connexion2);
 							connection.releaseConnection(connexion3);
-							writer.write("Stock updated!");
+							writer.write("Connection closed!");
+							writer.flush();
+						} 
+					}
+
+
+					break;
+				case "DELIVERY":
+					//Server understands the action asked, he returns the msg below
+					String messageToclient2 = "Delivery Entry...Data received..Updating stock table";
+					Connection connexionDelivery = null;
+
+					try {
+						connexionDelivery =  connection.getConnection();
+
+
+						//the Server waits for the data
+						writer.write(messageToclient2);
+						writer.flush();
+						//the server read the data
+						String CelintRequest = read();
+						String datafromClient = gson.fromJson(CelintRequest, String.class);
+
+						//Data processing 
+
+						BonDeLivraisonDAO bonDeLivraisonDAO = new BonDeLivraisonDAO(connexionDelivery);
+
+						final Date date = new Date();
+						System.out.println("date" + date);
+						String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+						String motifEntree = "Livraison";
+						int numeroBonToSearch = (int)Double.parseDouble(datafromClient.toString());
+
+						BonDeLivraison bonLivraison = bonDeLivraisonDAO.find(numeroBonToSearch);
+
+
+						if (bonLivraison != null) {
+							System.out.println("Recherche du bon de Livraison..");
+							String[] listProduits = bonLivraison.getListProduits().split(",");
+							int idMagasin = bonLivraison.getIdMagasin();
+
+							StockDAO stockDAO = new StockDAO(connection.getConnection());
+							// Updating Stock table with the new delivery data
+							for (int i = 0; i < listProduits.length; ++i) {
+								Stock stockToUpdate = stockDAO.find(Integer.parseInt(listProduits[i]), idMagasin);
+								if(stockToUpdate != null) {
+									System.out.println("Stock trouvé !");
+									stockToUpdate.setDateEntree(dateEntree);
+									stockToUpdate.setMotifEntree(motifEntree);
+
+									stockToUpdate.setQuantite(stockToUpdate.getQuantite() + 1);
+
+									stockDAO.update(stockToUpdate);
+									System.out.println("date" + stockToUpdate.getDateEntree());
+									System.out.println("motif" + stockToUpdate.getMotifEntree());
+								}
+								else {
+
+									messageToclient = "Aucun stock trouvé pour le produit ayant comme id: "+ listProduits[i]+ "..Veuillez vérifier les informations entrees!";
+									writer.write(messageToclient);
+									writer.flush();
+									break;
+
+								}
+							}
+						}
+						else {
+
+							messageToclient = "Bon de Livraison erronne..Veuillez vérifier les informations entrees!";
+							writer.write(messageToclient);
+							writer.flush();
+							break;
+
+						}
+					}
+					finally{
+						if(connexionDelivery != null) {
+							connection.releaseConnection(connexionDelivery);
+							writer.write("Connection closed!");
+							writer.flush();
+						} 
+					}
+
+					break;
+
+
+				case "STOCKHISTORY":
+					//Server understands the action asked, he returns the msg below
+					String messageToclient3 = "Connection Ok..Displaying stock history...";
+					Connection connexionStockHistory = null;
+
+					try {
+						connexionStockHistory =  connection.getConnection();
+
+						//the Server write the data
+						writer.write(messageToclient3);
+						writer.flush();
+						//We search data in the Database
+						StockDAO stockDAO = new StockDAO(connexionStockHistory);
+
+						try {
+							List <Stock> stockList = new ArrayList<Stock>();
+							stockList = stockDAO.getAll();
+							if (stockList.isEmpty()) {
+
+								messageToclient = "La table stock est vide !";
+								writer.write(messageToclient);
+								writer.flush();
+								break;
+							}
+							else {
+								//Convert list of Stock to json
+								System.out.println("Converting list of -Stock-nto Json");
+								String json = gson.toJson(stockList);
+								System.out.println(json);
+								writer.write(json);
+								writer.flush();
+
+							}
+						} catch (SQLException e) {
+
+							e.printStackTrace();
+						}
+
+
+					}
+
+					finally{
+						if(connexionStockHistory != null) {
+							connection.releaseConnection(connexionStockHistory);
+							writer.write("Connection closed!");
+							writer.flush();
+						} 
+					}
+
+					break;	
+
+				case "CLIENTRETURN":
+					//Server understands the action asked, he returns the msg below
+					String messageToclientReturn = "Costumer order return...Data received..Updating stock table";
+					connexion1 = null;
+					connexion2 = null;
+					connexion3 = null;
+					try {
+						connexion1 =  connection.getConnection();
+						connexion2 =  connection.getConnection();
+						connexion3 =  connection.getConnection();
+
+						//the Server waits for the data
+						writer.write(messageToclientReturn);
+						writer.flush();
+						//the server read the data
+						String CelintRequest = read();
+						Map datafromClient = gson.fromJson(CelintRequest, Map.class);
+						int idProduct = (int)Double.parseDouble(datafromClient.get("idProduct").toString());
+						int idMagasin = (int)Double.parseDouble(datafromClient.get("idMagasin").toString());
+						int quantite = (int)Double.parseDouble(datafromClient.get("quantite").toString());
+						//Data processing					
+						MagasinsDAO magasinDAO = new MagasinsDAO(connexion1);
+						StockDAO stockDao = new StockDAO(connexion2);
+						PurchaseHistoryDAO purchaseHistoryDao = new PurchaseHistoryDAO(connexion3);
+
+						// the date of the action
+						final Date date = new Date();
+						String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
+						// Client order's return
+						String motifEntree = "Retour";
+						// The product must be recorded in the stock and the purchaseHistory tables
+						// We search the product in the purchaseHistory table
+						List<PurchaseHistory> purchaseHistory = purchaseHistoryDao.findByIdProduct(idProduct);
+						// We search the product in the stock table
+						Stock stock = stockDao.find(idProduct, idMagasin);
+						boolean updated = false;
+						if (purchaseHistory != null && stock != null) {
+
+							for (int i = 0; i < purchaseHistory.size(); i++) {
+
+								if ((purchaseHistory.get(i).getIdProduct() == stock.getIdProduct()
+										&& purchaseHistory.get(i).getPurchaseDate().equals(stock.getDateSortie()))) {
+
+									updated = true;
+								}
+
+							}
+							if (updated) {
+
+
+								stock.setDateEntree(dateEntree);
+								stock.setMotifEntree(motifEntree);
+
+								stock.setQuantite(stock.getQuantite() + quantite);
+
+								updated = stockDao.update(stock);
+
+
+								//Convert list of Stock to json
+								messageToclient = "Stock trouvé..Stock updated";
+								System.out.println(messageToclient);
+								writer.write(messageToclient);
+								writer.flush();
+							}
+
+						}
+						if (updated == false) {
+							messageToclient = "Aucune sortie de stock ne correspond a votre saisie-> id Magasin: "+idMagasin+ " et id Produit "+idProduct+"..Veuillez verifier les informations entrées !";
+							System.out.println(messageToclient);				
+							writer.write(messageToclient);
+							writer.flush();
+							break;
+						}
+					}
+					finally{
+						if(connexion1 != null && connexion2 != null && connexion3 != null) {
+							connection.releaseConnection(connexion1);
+							connection.releaseConnection(connexion2);
+							connection.releaseConnection(connexion3);
+							writer.write("Connection closed!");
 							writer.flush();
 						} 
 					}
@@ -331,9 +552,6 @@ public class ServerProcessor implements Runnable {
 					ChiffreDaffairesDAO cDaoFind = new ChiffreDaffairesDAO(connection.getConnection());
 					Collection<ChiffreDaffaires> cFind = cDaoFind.find(toFindC);
 					String jsonFindC = gson.toJson(cFind);
-					for(ChiffreDaffaires chiffre : cFind) {
-						System.out.println(chiffre.getMontant());
-					}
 					//the server looks and find (or not) the data asked and return his answer to the client
 					if(jsonFindC == null){
 						String failFind = "";
@@ -347,13 +565,89 @@ public class ServerProcessor implements Runnable {
 					}
 					connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
 					break;
+					
+				case "FINDMAGASIN":
+					//Server understands the action asked, he returns "OK"
+					String toSendM = "OK for find";
+					//the Server waits for the data
+					writer.write(toSendM);
+					writer.flush();
+					//the server read the data
+					String toFindM = read();
+					System.out.println("Donnée reçue sur le server: "+toFindM);
+					MagasinsDAO mDaoFind = new MagasinsDAO(connection.getConnection());
+					Magasins mFind = mDaoFind.find(Integer.valueOf(toFindM));
+					String jsonFindM = gson.toJson(mFind);
+					//the server looks and find (or not) the data asked and return his answer to the client
+					if(jsonFindM == null){
+						String failFind = "";
+						writer.write(failFind);
+						writer.flush();
+
+					}else {
+						writer.write(jsonFindM);
+						writer.flush();
+
+					}
+					connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+					break;
+					
+				case "FINDRETOUR":
+					//Server understands the action asked, he returns "OK"
+					String toSendR = "OK for find";
+					//the Server waits for the data
+					writer.write(toSendR);
+					writer.flush();
+					//the server read the data
+					String toFindR = read();
+					System.out.println("Donnée reçue sur le server: "+toFindR);
+					StockDAO sDaoFind = new StockDAO(connection.getConnection());
+					Collection<Stock> rFind = sDaoFind.find(toFindR);
+					String jsonFindR = gson.toJson(rFind);
+					//the server looks and find (or not) the data asked and return his answer to the client
+					if(jsonFindR == null){
+						String failFind = "";
+						writer.write(failFind);
+						writer.flush();
+
+					}else {
+						writer.write(jsonFindR);
+						writer.flush();
+
+					}
+					connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+					break;
+					
+				case "FINDPRODUCT":
+					//Server understands the action asked, he returns "OK"
+					String toSendP = "OK for find";
+					//the Server waits for the data
+					writer.write(toSendP);
+					writer.flush();
+					//the server read the data
+					String toFindP = read();
+					System.out.println("Donnée reçue sur le server: "+toFindP);
+					ProductDAO pDaoFind = new ProductDAO(connection.getConnection());
+					Product pFind = pDaoFind.find(Integer.valueOf(toFindP));
+					String jsonFindP = gson.toJson(pFind);
+					//the server looks and find (or not) the data asked and return his answer to the client
+					if(jsonFindP == null){
+						String failFind = "";
+						writer.write(failFind);
+						writer.flush();
+					}else {
+						writer.write(jsonFindP);
+						writer.flush();
+					}
+					connection.releaseConnection(connection.getListUsed().get(connection.getListUsed().size()-1));
+					break;
 				}			
 
 			}catch (IOException e){
 				e.printStackTrace();
 			}
 		}
-	}
+	}	
 
 
 	/**

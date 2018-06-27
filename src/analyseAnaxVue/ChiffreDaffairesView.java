@@ -72,7 +72,7 @@ public class ChiffreDaffairesView extends JFrame {
 			 */
 			public void mouseClicked(MouseEvent e) {
 				JTextField t1 = ((JTextField) e.getSource());
-				t1.setText("");
+				t1.setText(null);
 				t1.getFont().deriveFont(Font.PLAIN);
 				t1.setForeground(Color.black);
 				t1.removeMouseListener(this);
@@ -119,43 +119,23 @@ public class ChiffreDaffairesView extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			String type = jtfType.getText();
 			SocketChiffreDaffaires sCD = new SocketChiffreDaffaires();
-			//ChiffreDaffairesDAO cdo = new ChiffreDaffairesDAO(BDD());
 			Collection<ChiffreDaffaires> cds = sCD.getChiffreDaffaires(type);
-			MagasinsDAO md = new MagasinsDAO(BDD());
 			if (cds == null) {
 				JFrame fenResp = new JFrame();
 				JPanel containerResp = new JPanel();
 				fenResp.setSize(150, 150);
 				fenResp.setLocationRelativeTo(null);
-				JLabel jlabResp = new JLabel("Wrong category");
+				JLabel jlabResp = new JLabel("Wrong category or no datas");
 				containerResp.add(jlabResp, BorderLayout.CENTER);
 				fenResp.setContentPane(containerResp);
 				fenResp.setVisible(true);
 				jtfType.setText("category");
 			} else {
-				System.out.println("Chiffre d'affaires du mois précédent pour les magasins de la catégorie " + type);
-
-				for (ChiffreDaffaires cd : cds) {
-					Magasins m = md.find(cd.getIdMagasin());
-					System.out.println(m.getMagasinName() + " | " + cd.getMontant());
+				
+				ChiffreDaffairesResultView cdV = new ChiffreDaffairesResultView(cds, type);
+				
 				}
 			}
 		}
-	}
-	public static Connection BDD() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Driver OK");
-			String url="jdbc:mysql://localhost/pds";
-			String user="root";
-			String password="";
-			Connection con=DriverManager.getConnection(url, user, password);
-			System.out.println("Connexion Ã©tablie");
-			return con;
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 	
 }

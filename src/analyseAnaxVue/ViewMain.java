@@ -12,6 +12,6 @@ public class ViewMain {
 	public static void main(String[] args) {
 		Server s = new Server();
 		s.open();
-		ChiffreDaffairesView p1 = new ChiffreDaffairesView();
+		StockReturnView p1 = new StockReturnView();
 	}
 }

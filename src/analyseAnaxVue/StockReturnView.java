@@ -2,14 +2,17 @@ package analyseAnaxVue;
 
 import connexion.Database;
 import connexion.PoolDeConnexion;
-import dao.StockDAO;
-import dao.MagasinsDAO;
-import dao.ProductDAO;
-import pojo.Stock;
-import pojo.Magasins;
-import pojo.Product;
+import analyseAnax.StockDAO;
+import analyseAnax.MagasinsDAO;
+import analyseAnax.ProductDAO;
+import analyseAnax.Stock;
+import analyseAnax.Magasins;
+import analyseAnax.Product;
 
 import javax.swing.*;
+
+import analyseAnaxSocket.SocketStockR;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +29,7 @@ import java.util.Collection;
  * @version 1.0 This view allows to see the client's return of the differents stores of
  *          a category
  */
-public class StockView extends JFrame {
+public class StockReturnView extends JFrame {
 	PoolDeConnexion connection= new PoolDeConnexion(10);
 	
 	private JLabel rechercheText = new JLabel("Please enter the category client's return you want to see: ");
@@ -38,7 +41,7 @@ public class StockView extends JFrame {
 	private JButton rechercheButton = new JButton("Rechecher");
 	private JPanel container = new JPanel();
 
-	public StockView() {
+	public StockReturnView() {
 		this.setLocationRelativeTo(null);
 		this.setTitle("PhyGit Mall: Mall activity indicators");
 		this.setSize(600, 600);
@@ -116,28 +119,20 @@ public class StockView extends JFrame {
 	private class RechercheButton implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String type = jtfType.getText();
-			StockDAO sdo = new StockDAO(BDD());
-			Collection<Stock> ss = sdo.find(type);
-			MagasinsDAO md = new MagasinsDAO(BDD());
-			ProductDAO pdo = new ProductDAO(BDD());
+			SocketStockR sdo = new SocketStockR();
+			Collection<Stock> ss = sdo.getRetours(type);
 			if (ss == null) {
 				JFrame fenResp = new JFrame();
 				JPanel containerResp = new JPanel();
 				fenResp.setSize(150, 150);
 				fenResp.setLocationRelativeTo(null);
-				JLabel jlabResp = new JLabel("Wrong category");
+				JLabel jlabResp = new JLabel("Wrong category or no datas");
 				containerResp.add(jlabResp, BorderLayout.CENTER);
 				fenResp.setContentPane(containerResp);
 				fenResp.setVisible(true);
 				jtfType.setText("category");
 			} else {
-				System.out.println("Nombre de retour du mois précédent pour les magasins de la catégorie " + type);
-
-				for (Stock stock : ss) {
-					Magasins m = md.find(stock.getIdMagasin());
-					Product p = pdo.find(stock.getIdProduct());
-					System.out.println("Magasin :" +m.getMagasinName() + " |  Produit retourné:" + p.getProductReference() + " |  Quantité retournée: " + stock.getQuantite());
-				}
+				StockReturnResultsView srV = new StockReturnResultsView(ss, type);
 			}
 		}
 	}

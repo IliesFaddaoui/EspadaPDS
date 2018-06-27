@@ -90,7 +90,7 @@ public class MagasinsDAO extends DAO<Magasins> {
 		try {
 			ResultSet result = this.connect
 					.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(
-							"SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM Magasins Where idMagasin="
+							"SELECT idMagasin, magasinName, magasinType, magasinSuperficie FROM Magasin Where idMagasin="
 									+ idMagasins);
 			while (result.next()) {
 				Magasins mag = new Magasins(result.getInt("idMagasin"), result.getString("magasinName"),
