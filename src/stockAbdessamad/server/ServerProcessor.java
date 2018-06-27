@@ -1,4 +1,4 @@
-package server;
+package stockAbdessamad.server;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,7 +47,6 @@ public class ServerProcessor implements Runnable {
 				writer = new PrintWriter(sock.getOutputStream());
 				reader = new BufferedInputStream(sock.getInputStream());
 				Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
 				//	Gson gson = new Gson();
 				//first interaction with the client, sending the kind of action
 				String demand = read();
@@ -498,11 +497,9 @@ public class ServerProcessor implements Runnable {
 
 							}
 							if (updated) {
-
-
+								//We update stock table if we found the product in PurchaseHistory table, that's mean that the product has been sold
 								stock.setDateEntree(dateEntree);
 								stock.setMotifEntree(motifEntree);
-
 								stock.setQuantite(stock.getQuantite() + quantite);
 
 								updated = stockDao.update(stock);

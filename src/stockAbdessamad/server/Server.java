@@ -1,4 +1,4 @@
-package server;
+package stockAbdessamad.server;
 
 import connexion.PoolDeConnexion;
 
@@ -20,9 +20,9 @@ public class Server {
     public Server(){
         try{
         	//To test in local machine please uncomment the lines below:
-        	InetAddress bindAddr = InetAddress.getByName("127.0.0.1");
-        	server = new ServerSocket(port, 100, bindAddr);
-        	//server = new ServerSocket(port, 100, InetAddress.getLocalHost());
+        	//InetAddress bindAddr = InetAddress.getByName("127.0.0.1");
+        	//server = new ServerSocket(port, 100, bindAddr);
+        	server = new ServerSocket(port, 100, InetAddress.getLocalHost());
             System.out.println("the Server"+InetAddress.getLocalHost()+ "is listening on port" + port);
         } catch (UnknownHostException e){
             e.printStackTrace();
