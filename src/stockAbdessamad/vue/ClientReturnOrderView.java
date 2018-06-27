@@ -11,6 +11,8 @@ import dao.PurchaseHistoryDAO;
 import dao.StockDAO;
 import pojo.PurchaseHistory;
 import pojo.Stock;
+import stockAbdessamad.SocketClient.SocketClientReturnOrder;
+import stockAbdessamad.SocketClient.SocketStockDeliveryEntry;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -39,6 +41,7 @@ public class ClientReturnOrderView extends JFrame {
 	private final JPanel panel = new JPanel();
 	private JTextField textField_1;
 	private JTextField textField;
+	private JTextField textField_2;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -97,13 +100,23 @@ public class ClientReturnOrderView extends JFrame {
 
 		JLabel lblMagasin = new JLabel("Magasin:");
 		lblMagasin.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblMagasin.setBounds(105, 108, 150, 22);
+		lblMagasin.setBounds(105, 80, 150, 22);
 		contentPane.add(lblMagasin);
 
+		JLabel lblQuantite = new JLabel("Quantite:");
+		lblQuantite.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblQuantite.setBounds(105, 115, 150, 22);
+		contentPane.add(lblQuantite);
+
 		textField = new JTextField();
-		textField.setBounds(275, 108, 116, 22);
+		textField.setBounds(275, 80, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
+
+		textField_2 = new JTextField();
+		textField_2.setBounds(275, 115, 116, 22);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
 
 		this.setVisible(true);
 		btnSubmit.addActionListener(new BoutonLivraison());
@@ -120,49 +133,13 @@ public class ClientReturnOrderView extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			PoolDeConnexion connection = new PoolDeConnexion(5);
-			MagasinsDAO magasinDAO = new MagasinsDAO(connection.getConnection());
-
-			StockDAO stockDao = new StockDAO(connection.getConnection());
-			PurchaseHistoryDAO purchaseHistoryDao = new PurchaseHistoryDAO(connection.getConnection());
-			// the date of the action
-			final Date date = new Date();
-			String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
-			// Client order's return
-			String motifEntree = "Retour";
-			// id of the product return to the store
 			int idProduct = Integer.parseInt(textField_1.getText());
 			int idMagasin = Integer.parseInt(textField.getText());
-			// The product must be recorded in the stock and the purchaseHistory tables
-			// We search the product in the purchaseHistory table
-			List<PurchaseHistory> purchaseHistory = purchaseHistoryDao.findByIdProduct(idProduct);
-			// We search the product in the stock table
-			Stock stock = stockDao.find(idProduct, idMagasin);
-			boolean updated = false;
-			if (purchaseHistory != null && stock != null) {
+			int quantite = Integer.parseInt(textField_2.getText());
+			SocketClientReturnOrder socketClientReturnOrder = new SocketClientReturnOrder();
+			socketClientReturnOrder.updateStock(idMagasin,idProduct,quantite);
 
-				for (int i = 0; i < purchaseHistory.size(); i++) {
-
-					if ((purchaseHistory.get(i).getIdProduct() == stock.getIdProduct()
-							&& purchaseHistory.get(i).getPurchaseDate().equals(stock.getDateSortie()))) {
-
-						stock.setDateEntree(dateEntree);
-						stock.setMotifEntree(motifEntree);
-
-						stock.setQuantite(stock.getQuantite() + 1);
-
-						updated = stockDao.update(stock);
-					}
-
-				}
-
-			}
-			if (updated == false) {
-
-				System.out.println("Aucun produit ne correspond � votre saisie");
-			}
 		}
 
 	}
-
 }

@@ -312,7 +312,7 @@ public class ServerProcessor implements Runnable {
 							connection.releaseConnection(connexion1);
 							connection.releaseConnection(connexion2);
 							connection.releaseConnection(connexion3);
-							writer.write("Stock updated!");
+							writer.write("Connection closed!");
 							writer.flush();
 						} 
 					}
@@ -391,7 +391,7 @@ public class ServerProcessor implements Runnable {
 					finally{
 						if(connexionDelivery != null) {
 							connection.releaseConnection(connexionDelivery);
-							writer.write("Stock updated!");
+							writer.write("Connection closed!");
 							writer.flush();
 						} 
 					}
@@ -443,15 +443,99 @@ public class ServerProcessor implements Runnable {
 					finally{
 						if(connexionStockHistory != null) {
 							connection.releaseConnection(connexionStockHistory);
-							writer.write("Opération réussie!");
+							writer.write("Connection closed!");
+							writer.flush();
+						} 
+					}
+
+					break;	
+
+				case "CLIENTRETURN":
+					//Server understands the action asked, he returns the msg below
+					String messageToclientReturn = "Costumer order return...Data received..Updating stock table";
+					connexion1 = null;
+					connexion2 = null;
+					connexion3 = null;
+					try {
+						connexion1 =  connection.getConnection();
+						connexion2 =  connection.getConnection();
+						connexion3 =  connection.getConnection();
+
+						//the Server waits for the data
+						writer.write(messageToclientReturn);
+						writer.flush();
+						//the server read the data
+						String CelintRequest = read();
+						Map datafromClient = gson.fromJson(CelintRequest, Map.class);
+						int idProduct = (int)Double.parseDouble(datafromClient.get("idProduct").toString());
+						int idMagasin = (int)Double.parseDouble(datafromClient.get("idMagasin").toString());
+						int quantite = (int)Double.parseDouble(datafromClient.get("quantite").toString());
+                        System.out.println("Quantittttttttttty"+quantite);
+						//Data processing					
+						MagasinsDAO magasinDAO = new MagasinsDAO(connexion1);
+						StockDAO stockDao = new StockDAO(connexion2);
+						PurchaseHistoryDAO purchaseHistoryDao = new PurchaseHistoryDAO(connexion3);
+
+						// the date of the action
+						final Date date = new Date();
+						String dateEntree = new SimpleDateFormat("yyyy-MM-dd").format(date);
+						// Client order's return
+						String motifEntree = "Retour";
+						// The product must be recorded in the stock and the purchaseHistory tables
+						// We search the product in the purchaseHistory table
+						List<PurchaseHistory> purchaseHistory = purchaseHistoryDao.findByIdProduct(idProduct);
+						// We search the product in the stock table
+						Stock stock = stockDao.find(idProduct, idMagasin);
+						boolean updated = false;
+						if (purchaseHistory != null && stock != null) {
+
+							for (int i = 0; i < purchaseHistory.size(); i++) {
+
+								if ((purchaseHistory.get(i).getIdProduct() == stock.getIdProduct()
+										&& purchaseHistory.get(i).getPurchaseDate().equals(stock.getDateSortie()))) {
+
+									updated = true;
+								}
+
+							}
+							if (updated) {
+
+
+								stock.setDateEntree(dateEntree);
+								stock.setMotifEntree(motifEntree);
+
+								stock.setQuantite(stock.getQuantite() + quantite);
+
+								updated = stockDao.update(stock);
+
+
+								//Convert list of Stock to json
+								messageToclient = "Stock trouvé..Stock updated";
+								System.out.println(messageToclient);
+								writer.write(messageToclient);
+								writer.flush();
+							}
+
+						}
+						if (updated == false) {
+							messageToclient = "Aucune sortie de stock ne correspond a votre saisie-> id Magasin: "+idMagasin+ " et id Produit "+idProduct+"..Veuillez verifier les informations entrées !";
+							System.out.println(messageToclient);				
+							writer.write(messageToclient);
+							writer.flush();
+							break;
+						}
+					}
+					finally{
+						if(connexion1 != null && connexion2 != null && connexion3 != null) {
+							connection.releaseConnection(connexion1);
+							connection.releaseConnection(connexion2);
+							connection.releaseConnection(connexion3);
+							writer.write("Connection closed!");
 							writer.flush();
 						} 
 					}
 				}
-
-
-				break;	
-
+				break;
 
 			}catch (IOException e){
 				e.printStackTrace();
