@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/Users/sramil/Downloads/jar/gson-2.6.2.jar"/>
-	<classpathentry kind="lib" path="D:/Users/sramil/Downloads/jar/jackson-databind-2.3.1.jar"/>
-	<classpathentry kind="lib" path="D:/Users/sramil/Downloads/jar/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Users/sramil/Downloads/jar/mysql-connector-java-5.1.46.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/json-simple-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Desktop/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Downloads/jackson-databind-2.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Axel/Downloads/gson-2.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

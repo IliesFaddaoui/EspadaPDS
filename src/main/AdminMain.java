@@ -1,8 +1,8 @@
 package main;
 
 import analyseAnax.ChiffreDaffairesView;
-import mappingAxel.MappingView;
-import mappingAxel.Algorithm;
+//import mappingAxel.MappingView;
+import mappingAxel.ServerProcessor;
 import redevanceDan.FactureView;
 import stockAbdessamad.vue.ClientReturnOrderView;
 import stockAbdessamad.vue.InventoryListHistoryView;
@@ -12,8 +12,8 @@ import stockAbdessamad.vue.StockDeliveryEntryView;
 public class AdminMain {
     public static void main(String[]args){
         ChiffreDaffairesView p1 = new ChiffreDaffairesView();
-        Algorithm bd = new Algorithm();
-        MappingView m1 = new MappingView(bd);
+        ServerProcessor bd = new ServerProcessor();
+       // MappingView m1 = new MappingView(bd);
         FactureView rv = new FactureView();
         try {
             ClientReturnOrderView frame = new ClientReturnOrderView();
