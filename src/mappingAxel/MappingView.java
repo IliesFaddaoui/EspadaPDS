@@ -1,6 +1,5 @@
 package mappingAxel;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,24 +12,22 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+import javax.swing.JOptionPane;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class MappingView extends JFrame {
 	
 	  private JTextField jtf = new JTextField();
-	private JTextField jtf2 = new JTextField();
+	  private JTextField jtf2 = new JTextField();
 	  private JLabel label = new JLabel("");
 	  private JButton b = new JButton ("OK");
-	
-	private JPanel container = new JPanel();
+	  private JPanel container = new JPanel();
 	
 	    public MappingView(){
 
@@ -116,7 +113,7 @@ public class MappingView extends JFrame {
 	    	            	String magasin = jtf.getText();
 	    	            	String emplacement = jtf2.getText();
 	    	            	
-	    			            Socket socket = new Socket("127.0.0.1", 500);
+	    			            Socket socket = new Socket("127.0.0.1", 5001);
 	    			       
 	    			            BufferedReader plec = new BufferedReader(
 	    			                    new InputStreamReader(socket.getInputStream())
@@ -125,29 +122,31 @@ public class MappingView extends JFrame {
 	    			            PrintWriter pred = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
 
 	    			        	Occupation obj = new Occupation();
-	    			        	String jason = gson.toJson(obj);
+	    			        	String json = gson.toJson(obj);
 	    			            String str = magasin;
 	    			            String str2 = emplacement;
 	    			         
 	    			            String json1 = gson.toJson(str);
-	    			            System.out.println(jason);
+	    			            System.out.println(json);
 	    			            String json2 = gson.toJson(str2);
-	    			           pred.println(jason);          // envoi d'un message
-	    			           // pred.println(json2);
-	    			            jason = plec.readLine(); 
-	    			        //    json2 = plec.readLine();
-	    			            // lecture de l'�cho
+	    			           pred.println(json);          
+	    			           // envoi d'un message
+	    			            json = plec.readLine(); 
+	    			            // lecture de l'écho
 	    			            // message de terminaison
 	    			            pred.println("END") ;
 	    			            plec.close();
 	    			            pred.close();
 	    			            socket.close();
-	    			            System.out.println("Ok");
-	    			        }catch(Exception ex) {
-	    			        	System.out.println("Impossible de se connecter au serveur");
+	    			            JOptionPane jop1;
+	    						jop1 = new JOptionPane();
+	    						jop1.showMessageDialog(null, "Envoyé", "Information", JOptionPane.INFORMATION_MESSAGE);
+	    			            }catch(Exception ex) {
+	    			        	JOptionPane jop2;
+	    						jop2 = new JOptionPane();
+	    						jop2.showMessageDialog(null, "Impossible de se connecter au serveur", "Information", JOptionPane.INFORMATION_MESSAGE);
+	    			        
 	    			        }
-	    	            	
-	    	         //   	conDB.newStore(magasin, emplacement);
 	    	            }
 	    	    });
 	    }
