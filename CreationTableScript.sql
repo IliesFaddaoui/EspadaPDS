@@ -106,8 +106,8 @@ CREATE table ParcoursType (
 idMagasin integer not null,
 idTypePorfile integer not null,
 PRIMARY KEY(idMagasin,idTypeProfile),
-foreign key(idMagasin) references Magasin(idMagasin)
-foreign key(idTypeProfile) references TypeProfile(idTypeProfile),
+foreign key(idMagasin) references Magasin(idMagasin),
+foreign key(idTypeProfile) references TypeProfile(idTypeProfile)
 );
 
 
