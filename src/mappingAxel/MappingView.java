@@ -113,7 +113,7 @@ public class MappingView extends JFrame {
 	    	            	String magasin = jtf.getText();
 	    	            	String emplacement = jtf2.getText();
 	    	            	
-	    			            Socket socket = new Socket("127.0.0.1", 5001);
+	    			            Socket socket = new Socket("10.0.0.2", 5001);
 	    			       
 	    			            BufferedReader plec = new BufferedReader(
 	    			                    new InputStreamReader(socket.getInputStream())
