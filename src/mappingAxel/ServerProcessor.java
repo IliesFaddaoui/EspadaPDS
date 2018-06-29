@@ -20,6 +20,12 @@ import com.google.gson.Gson;
 import connexion.PoolDeConnexion;
 import javax.swing.JOptionPane;
 
+/**
+ * @author ilies, axel, aramil
+ * @version 1.3
+ * Class with all the Server sockets and operation with database
+ */
+
 public class ServerProcessor {
 
 	BufferedInputStream reader=null;
@@ -34,7 +40,7 @@ public class ServerProcessor {
 
 	
 		try {
-			fw = new FileWriter("L.txt");
+			fw = new FileWriter("Location.txt");
 			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -92,7 +98,7 @@ public class ServerProcessor {
 		Socket sock = null;
 		PrintWriter writer = null;
 		PoolDeConnexion connection;
-	
+		// Waiting client socket
 		try {
 			ServerSocket s = new ServerSocket(5001);
 			while (true) {
@@ -104,7 +110,7 @@ public class ServerProcessor {
 			// TODO Auto-generated catch block
 		}}
 
-	
+	// Connection to the database
 	public static Connection BDD() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -113,7 +119,7 @@ public class ServerProcessor {
 			String user="root";
 			String password="root";
 			Connection con=DriverManager.getConnection(url, user, password);
-			System.out.println("Connexion Ã©tablie");
+			System.out.println("Connexion etablie");
 			return con;
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -126,7 +132,7 @@ public class ServerProcessor {
 	String magasin;
 	String emplacement;
 }
-
+	// Permits to map new store with the information received by the client
 	class CreateNewStore implements Runnable {
 	Socket clientSocket;
 	Connection con;
