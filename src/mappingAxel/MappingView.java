@@ -21,6 +21,12 @@ import javax.swing.JOptionPane;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * @author Axel
+ * @version 1.0
+ * This client socket is used to create a new location with an existing Emplacement and a Store on the database, through json model.
+ */
+
 public class MappingView extends JFrame {
 	
 	  private JTextField jtf = new JTextField();
